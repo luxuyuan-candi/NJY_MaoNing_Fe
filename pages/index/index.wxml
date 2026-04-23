@@ -1,27 +1,97 @@
 <view class="page-shell home-page">
-  <view class="hero-card home-hero">
-    <swiper
-      class="video-swiper"
-      circular
-      indicator-dots
-      interval="{{swiperInterval}}"
-      duration="500"
-    >
-      <block wx:for="{{videoList}}" wx:key="index">
-        <swiper-item>
-          <video
-            class="swiper-video"
-            src="{{item.src}}"
-            controls
-            autoplay
-            muted
-            loop
-            objectFit="cover"
-            bindplay="onVideoPlay"
-            bindended="onVideoEnded"
-          ></video>
-        </swiper-item>
+  <view class="hero-card hero-banner">
+    <image class="hero-bg" src="../../images/bg-maoning.jpg" mode="aspectFill"></image>
+    <view class="hero-overlay"></view>
+    <view class="hero-content">
+      <text class="hero-title">中药渣变猫砂</text>
+      <text class="hero-title">绿色环保又省心</text>
+    </view>
+  </view>
+
+  <view class="section-card feature-panel">
+    <view class="feature-item">
+      <view class="feature-icon">药</view>
+      <text class="feature-label">中药渣回收</text>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">送</view>
+      <text class="feature-label">免费上门</text>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">环</view>
+      <text class="feature-label">环保再生</text>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">猫</view>
+      <text class="feature-label">优质猫砂</text>
+    </view>
+  </view>
+
+  <view class="section-card video-card">
+    <text class="section-title">看视频了解中药渣如何变成猫砂</text>
+    <video
+      class="feature-video"
+      src="{{videoList[currentVideoIndex].src}}"
+      poster="../../images/bg-maoning.jpg"
+      controls
+      show-center-play-btn
+      objectFit="contain"
+      enable-progress-gesture
+      page-gesture
+    ></video>
+    <view class="video-tabs">
+      <block wx:for="{{videoList}}" wx:key="id">
+        <view
+          class="video-tab {{currentVideoIndex === index ? 'video-tab-active' : ''}}"
+          bindtap="selectVideo"
+          data-index="{{index}}"
+        >
+          {{item.title}}
+        </view>
       </block>
-    </swiper>
+    </view>
+  </view>
+
+  <view class="section-card stats-card">
+    <view class="stats-head">
+      <text class="section-title">每一次回收，都是对地球和猫咪的爱</text>
+      <text class="stats-plant">芽</text>
+    </view>
+    <view class="stats-grid">
+      <view class="stats-item">
+        <text class="stats-value">25,618 kg</text>
+        <text class="stats-name">已回收中药渣</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-value">3,256 kg</text>
+        <text class="stats-name">再生猫砂产出</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-value">8,756 家</text>
+        <text class="stats-name">参与的药店</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card process-card">
+    <text class="section-title">回收流程</text>
+    <view class="process-grid">
+      <view class="process-item">
+        <view class="process-icon">1</view>
+        <text class="process-title">在线预约</text>
+      </view>
+      <view class="process-item">
+        <view class="process-icon">2</view>
+        <text class="process-title">上门回收</text>
+      </view>
+      <view class="process-item">
+        <view class="process-icon">3</view>
+        <text class="process-title">分类处理</text>
+      </view>
+      <view class="process-item">
+        <view class="process-icon">4</view>
+        <text class="process-title">制作猫砂</text>
+      </view>
+    </view>
   </view>
 </view>

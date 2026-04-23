@@ -2,20 +2,18 @@ const { asset } = require('../../utils/request');
 
 Page({
   data: {
-    swiperInterval: 5000,
     videoList: [
-      { src: asset('/public-assets/cat-video/video_1.mp4') },
-      { src: asset('/public-assets/cat-video/video_2.mp4') },
-      { src: asset('/public-assets/cat-video/video_3.mp4') },
-      { src: asset('/public-assets/cat-video/video_4.mp4') },
+      { id: 0, title: '宣传视频一', src: asset('/public-assets/cat-video/video_1.mp4') },
+      { id: 1, title: '宣传视频二', src: asset('/public-assets/cat-video/video_2.mp4') },
+      { id: 2, title: '宣传视频三', src: asset('/public-assets/cat-video/video_3.mp4') },
+      { id: 3, title: '宣传视频四', src: asset('/public-assets/cat-video/video_4.mp4') },
     ],
+    currentVideoIndex: 0,
   },
 
-  onVideoPlay() {
-    this.setData({ swiperInterval: 0 });
-  },
-
-  onVideoEnded() {
-    this.setData({ swiperInterval: 5000 });
+  selectVideo(e) {
+    this.setData({
+      currentVideoIndex: Number(e.currentTarget.dataset.index || 0),
+    });
   },
 });
