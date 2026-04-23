@@ -1,18 +1,18 @@
 <view class="page-shell home-page">
   <view class="home-stage">
-    <image class="home-reference" src="../../images/home-reference.png" mode="widthFix"></image>
+    <image class="home-reference" src="../../images/home-reference.png" mode="aspectFill"></image>
 
     <view class="video-shell">
-    <video
-      class="feature-video"
-      src="{{videoList[currentVideoIndex].src}}"
-      poster="../../images/home-reference.png"
-      controls
-      show-center-play-btn
-      objectFit="contain"
-      enable-progress-gesture
-      page-gesture
-    ></video>
+      <video
+        class="feature-video"
+        src="{{videoList[currentVideoIndex].src}}"
+        poster="../../images/home-reference.png"
+        controls
+        show-center-play-btn
+        objectFit="contain"
+        enable-progress-gesture
+        page-gesture
+      ></video>
     </view>
 
     <view class="video-tabs">
@@ -25,27 +25,6 @@
           {{item.title}}
         </view>
       </block>
-    </view>
-
-    <view class="stats-overlay">
-      <view class="stats-item">
-        <view class="stats-row">
-          <text class="stats-value">{{stats.recycledWeight}}</text>
-          <text class="stats-unit">kg</text>
-        </view>
-      </view>
-      <view class="stats-item">
-        <view class="stats-row">
-          <text class="stats-value">{{stats.catLitterOutput}}</text>
-          <text class="stats-unit">项</text>
-        </view>
-      </view>
-      <view class="stats-item">
-        <view class="stats-row">
-          <text class="stats-value">{{stats.pharmacyCount}}</text>
-          <text class="stats-unit">家</text>
-        </view>
-      </view>
     </view>
   </view>
 </view>
