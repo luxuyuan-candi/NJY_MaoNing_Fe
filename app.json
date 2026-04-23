@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/yaozha/index",
+    "pages/yaozha_add/index",
+    "pages/yaozha_recycle_detail/index",
+    "pages/yaozha_summary/index",
+    "pages/yaozha_summary_detail/index",
+    "pages/maosha/index",
+    "pages/maosha_add/index",
+    "pages/maoshashiyong/index",
+    "pages/maoshashiyong_add/index",
+    "pages/maoshashiyong_detail/index"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "window": {
+    "navigationBarTitleText": "猫宁平台",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f6f8fb"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于回收定位和填写回收地址"
+    }
+  }
+}

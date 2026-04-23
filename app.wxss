@@ -1,0 +1,8 @@
+page {
+  background: #f6f8fb;
+  color: #1f2937;
+}
+
+button {
+  box-sizing: border-box;
+}
