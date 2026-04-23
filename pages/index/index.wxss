@@ -1,114 +1,58 @@
 .home-page {
-  background:
-    radial-gradient(circle at top left, rgba(239, 229, 214, 0.9), transparent 34%),
-    linear-gradient(180deg, #f7f4ef 0%, #f4efe8 100%);
+  background: #f7f4ef;
 }
 
-.hero-banner {
+.home-stage {
   position: relative;
   width: 100%;
-  min-height: 520rpx;
-  overflow: hidden;
+  height: 0;
+  padding-top: 210.76%;
 }
 
-.hero-bg,
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-bg {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-overlay {
-  background: linear-gradient(90deg, rgba(248, 245, 238, 0.92) 0%, rgba(248, 245, 238, 0.56) 42%, rgba(248, 245, 238, 0.12) 100%);
-}
-
-.hero-content {
+.home-reference {
   position: relative;
+  width: 100%;
   z-index: 1;
-  min-height: 520rpx;
-  padding: 64rpx 40rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 14rpx;
 }
 
-.hero-title {
-  display: block;
-  max-width: 420rpx;
-  font-size: 68rpx;
-  line-height: 1.18;
-  font-weight: 700;
-  color: #355a36;
+.video-shell,
+.video-tabs,
+.stats-overlay {
+  position: absolute;
+  z-index: 2;
 }
 
-.feature-panel {
-  margin-top: 24rpx;
-  padding: 30rpx 18rpx;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12rpx;
-}
-
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14rpx;
-}
-
-.feature-icon {
-  width: 104rpx;
-  height: 104rpx;
-  border-radius: 50%;
-  background: #f5efe4;
-  color: #6f8a52;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 42rpx;
-  font-weight: 700;
-}
-
-.feature-label {
-  font-size: 24rpx;
-  color: #456235;
-  text-align: center;
-}
-
-.video-card,
-.stats-card,
-.process-card {
-  margin-top: 24rpx;
-  padding: 30rpx;
+.video-shell {
+  left: 3.4%;
+  top: 52.2%;
+  width: 93.2%;
+  height: 17.05%;
+  border-radius: 28rpx;
+  overflow: hidden;
 }
 
 .feature-video {
   width: 100%;
-  height: 420rpx;
-  margin-top: 24rpx;
-  border-radius: 24rpx;
-  overflow: hidden;
+  height: 100%;
   background: #111111;
 }
 
 .video-tabs {
-  margin-top: 20rpx;
+  left: 5.2%;
+  top: 69.8%;
+  width: 89.6%;
   display: flex;
   flex-wrap: wrap;
   gap: 14rpx;
 }
 
 .video-tab {
-  padding: 14rpx 22rpx;
+  padding: 12rpx 20rpx;
   border-radius: 999rpx;
-  background: #f3ede4;
-  color: #7f7267;
+  background: rgba(255, 252, 248, 0.92);
+  color: #6d665d;
   font-size: 24rpx;
+  box-shadow: 0 8rpx 18rpx rgba(67, 49, 28, 0.08);
 }
 
 .video-tab-active {
@@ -116,90 +60,37 @@
   color: #ffffff;
 }
 
-.stats-head {
+.stats-overlay {
+  left: 5%;
+  top: 73.65%;
+  width: 72%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16rpx;
-}
-
-.stats-plant {
-  width: 86rpx;
-  height: 86rpx;
-  border-radius: 50%;
-  background: #eef4e3;
-  color: #7aa051;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34rpx;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.stats-grid {
-  margin-top: 26rpx;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18rpx;
+  gap: 10rpx;
 }
 
 .stats-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
   min-width: 0;
-  padding-right: 12rpx;
-  border-right: 1rpx solid #e8dfd2;
 }
 
-.stats-item:last-child {
-  border-right: none;
-  padding-right: 0;
+.stats-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6rpx;
 }
 
 .stats-value {
-  display: block;
-  font-size: 48rpx;
-  line-height: 1.15;
+  font-size: 44rpx;
+  line-height: 1;
   font-weight: 700;
   color: #48633d;
 }
 
-.stats-name {
-  display: block;
-  margin-top: 10rpx;
+.stats-unit {
   font-size: 24rpx;
-  color: #7d7063;
-}
-
-.process-grid {
-  margin-top: 28rpx;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18rpx;
-}
-
-.process-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14rpx;
-}
-
-.process-icon {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 28rpx;
-  background: #f6efe3;
-  color: #789258;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 38rpx;
-  font-weight: 700;
-}
-
-.process-title {
-  font-size: 24rpx;
-  color: #456235;
-  text-align: center;
+  color: #6f665d;
 }
 
