@@ -28,10 +28,9 @@
 
 .video-shell {
   left: 38.5%;
-  top: 59.8%;
-  width: 54.8%;
-  height: 14.6%;
-  border-radius: 28rpx;
+  top: 58%;
+  width: 54%;
+  height: 18%;
   overflow: hidden;
 }
 
@@ -42,8 +41,8 @@
 }
 
 .video-tabs {
-  left: 5%;
-  top: 75.6%;
+  left: 60%;
+  top: 75%;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +54,7 @@
   border-radius: 999rpx;
   background: rgba(255, 252, 248, 0.92);
   color: #6d665d;
-  font-size: 22rpx;
+  font-size: 18rpx;
   box-shadow: 0 8rpx 18rpx rgba(67, 49, 28, 0.08);
 }
 
