@@ -20,14 +20,14 @@ Page({
   },
 
   goToYaoZha() {
-    wx.navigateTo({ url: '/pages/yaozha/index' });
+    wx.switchTab({ url: '/pages/yaozha/index' });
   },
 
   goToMaoSha() {
-    wx.navigateTo({ url: '/pages/maosha/index' });
+    wx.switchTab({ url: '/pages/cat/index' });
   },
 
-  goToMaoShaShiYong() {
-    wx.navigateTo({ url: '/pages/maoshashiyong/index' });
+  goToProfile() {
+    wx.switchTab({ url: '/pages/profile/index' });
   },
 });

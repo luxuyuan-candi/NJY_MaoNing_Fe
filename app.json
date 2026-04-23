@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/cat/index",
+    "pages/profile/index",
     "pages/yaozha/index",
     "pages/yaozha_add/index",
     "pages/yaozha_recycle_detail/index",
@@ -19,8 +21,40 @@
   "window": {
     "navigationBarTitleText": "猫宁平台",
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "backgroundColor": "#f6f8fb"
+    "navigationBarBackgroundColor": "#f5f3ef",
+    "backgroundColor": "#f6f3ee"
+  },
+  "tabBar": {
+    "color": "#8d7d70",
+    "selectedColor": "#345c4a",
+    "backgroundColor": "#fffdf9",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/yaozha/index",
+        "text": "药渣",
+        "iconPath": "images/tab-herb.png",
+        "selectedIconPath": "images/tab-herb-active.png"
+      },
+      {
+        "pagePath": "pages/cat/index",
+        "text": "猫砂",
+        "iconPath": "images/tab-cat.png",
+        "selectedIconPath": "images/tab-cat-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "个人",
+        "iconPath": "images/tab-profile.png",
+        "selectedIconPath": "images/tab-profile-active.png"
+      }
+    ]
   },
   "lazyCodeLoading": "requiredComponents",
   "permission": {

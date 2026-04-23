@@ -1,41 +1,66 @@
-<view class="container">
-  <!-- 顶部导航 -->
-  <view class="header">
-    <text class="title">药渣回收</text>
+<view class="page-shell recycle-page">
+  <view class="hero-card recycle-hero">
+    <text class="section-title">药渣回收</text>
+    <text class="section-subtitle">集中查看回收记录，支持按类型筛选，并保留统计与新增入口。</text>
+    <view class="summary-strip">
+      <view class="summary-item">
+        <text class="summary-value">{{unitList.length}}</text>
+        <text class="summary-label">当前记录</text>
+      </view>
+      <view class="summary-item">
+        <text class="summary-value">{{activeFilter}}</text>
+        <text class="summary-label">筛选条件</text>
+      </view>
+    </view>
   </view>
 
-  <!-- 筛选栏 -->
-  <view class="filter-bar">
+  <view class="pill-group recycle-filters">
     <block wx:for="{{filters}}" wx:key="index">
-      <text class="filter-item {{activeFilter === item ? 'active' : ''}}" 
-            bindtap="onFilterChange" data-type="{{item}}">
+      <view
+        class="pill {{activeFilter === item ? 'pill-active' : ''}}"
+        bindtap="onFilterChange"
+        data-type="{{item}}"
+      >
         {{item}}
-      </text>
-    </block>
-  </view>
-
-  <!-- 信息列表 -->
-  <scroll-view class="list" scroll-y="true">
-    <block wx:for="{{unitList}}" wx:key="id">
-      <view class="item" bindtap="goToDetail" data-id="{{item.id}}">
-        <text>单位/个人名称：{{item.name}}</text>
-        <text>联系人：{{item.contact}}</text>
-        <text>地址：{{item.address}}</text>
-        <text>日期：{{item.date}}</text>
-        <text>类型：{{item.typeLabel}}</text>
-        <text>
-          状态：
-          <text class="status {{item.status === '已回收' ? 'status-success' : 'status-pending'}}">
-            {{item.status}}
-          </text>
-        </text>
       </view>
     </block>
-  </scroll-view>
+  </view>
 
-  <!-- 底部统计按钮 -->
-  <view class="btn-group">
-    <button class="stat-btn" bindtap="goToStatistics">各单位回收统计</button>
-    <button class="stat-btn" bindtap="onAddClick">添加回收</button>
+  <view class="action-row">
+    <button class="secondary-btn action-btn" bindtap="goToStatistics">统计查看</button>
+    <button class="primary-btn action-btn" bindtap="onAddClick">新增回收</button>
+  </view>
+
+  <view wx:if="{{unitList.length}}" class="recycle-list">
+    <block wx:for="{{unitList}}" wx:key="id">
+      <view class="list-card recycle-card" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="card-top">
+          <text class="card-title">{{item.name}}</text>
+          <text class="status-chip {{item.status === '已回收' ? 'status-success' : 'status-pending'}}">{{item.status}}</text>
+        </view>
+        <view class="info-grid">
+          <view class="info-item">
+            <text class="info-label">联系人</text>
+            <text class="info-value">{{item.contact}}</text>
+          </view>
+          <view class="info-item">
+            <text class="info-label">回收日期</text>
+            <text class="info-value">{{item.date}}</text>
+          </view>
+          <view class="info-item info-item-wide">
+            <text class="info-label">地址</text>
+            <text class="info-value">{{item.address}}</text>
+          </view>
+          <view class="info-item">
+            <text class="info-label">类型</text>
+            <text class="info-value">{{item.typeLabel}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view wx:else class="section-card empty-state">
+    当前筛选下暂无药渣回收记录。
   </view>
 </view>

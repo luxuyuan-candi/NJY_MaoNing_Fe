@@ -1,0 +1,167 @@
+.cat-page {
+  background:
+    radial-gradient(circle at top center, rgba(230, 239, 233, 0.75), transparent 30%),
+    linear-gradient(180deg, #f7f4ef 0%, #f4eee6 100%);
+}
+
+.cat-hero {
+  padding: 32rpx;
+}
+
+.cat-stats {
+  margin-top: 28rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18rpx;
+}
+
+.cat-stat {
+  padding: 24rpx;
+  border-radius: 22rpx;
+  background: #f8f5f0;
+}
+
+.cat-stat-value,
+.trial-name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2e2a26;
+}
+
+.cat-stat-label,
+.meta-label {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #897b70;
+}
+
+.segment-wrap {
+  margin-top: 22rpx;
+}
+
+.segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14rpx;
+  padding: 10rpx;
+  border-radius: 26rpx;
+  background: #efe8dd;
+}
+
+.segment-item {
+  height: 76rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f7267;
+  font-size: 28rpx;
+}
+
+.segment-item-active {
+  background: #fffdf9;
+  color: #345c4a;
+  font-weight: 600;
+}
+
+.cat-action {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.cat-list {
+  margin-top: 22rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.cat-card {
+  padding: 26rpx;
+}
+
+.thumb-row {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.thumb {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 16rpx;
+  border-radius: 22rpx;
+  background: #ede4d8;
+}
+
+.thumb:last-child {
+  margin-right: 0;
+}
+
+.meta-grid {
+  margin-top: 22rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx 16rpx;
+}
+
+.meta-item {
+  min-width: 0;
+}
+
+.meta-item-wide {
+  grid-column: span 2;
+}
+
+.meta-value,
+.trial-phone {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #4b433c;
+  word-break: break-all;
+}
+
+.trial-card {
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+}
+
+.trial-image {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 22rpx;
+  background: #ede4d8;
+  flex-shrink: 0;
+}
+
+.trial-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trial-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16rpx;
+}
+
+.trial-status {
+  flex-shrink: 0;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+}
+
+.trial-status-success {
+  background: #e3f1e8;
+  color: #3f7f56;
+}
+
+.trial-status-pending {
+  background: #f6ead7;
+  color: #a56f33;
+}

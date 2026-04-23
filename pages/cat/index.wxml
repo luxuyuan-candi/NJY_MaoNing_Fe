@@ -1,0 +1,102 @@
+<view class="page-shell cat-page">
+  <view class="hero-card cat-hero">
+    <text class="section-title">猫砂服务</text>
+    <text class="section-subtitle">将猫砂出售与猫砂试用统一收纳，减少页面跳转，让信息更集中。</text>
+    <view class="cat-stats">
+      <view class="cat-stat">
+        <text class="cat-stat-value">{{saleProducts.length}}</text>
+        <text class="cat-stat-label">出售记录</text>
+      </view>
+      <view class="cat-stat">
+        <text class="cat-stat-value">{{trialProducts.length}}</text>
+        <text class="cat-stat-label">试用申请</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="segment-wrap">
+    <view class="segment">
+      <view class="segment-item {{activeTab === 'sale' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="sale">猫砂出售</view>
+      <view class="segment-item {{activeTab === 'trial' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="trial">猫砂试用</view>
+    </view>
+  </view>
+
+  <view wx:if="{{activeTab === 'sale'}}">
+    <button class="primary-btn cat-action" bindtap="goToSaleAdd">发布猫砂出售</button>
+    <view wx:if="{{saleProducts.length}}" class="cat-list">
+      <block wx:for="{{saleProducts}}" wx:key="id">
+        <view class="list-card cat-card">
+          <scroll-view class="thumb-row" scroll-x="true" enable-flex="true">
+            <image
+              wx:if="{{item.image}}"
+              class="thumb"
+              src="{{item.image}}"
+              mode="aspectFill"
+              bindtap="previewImage"
+              data-current="{{item.image}}"
+              data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"
+            ></image>
+            <image
+              wx:if="{{item.erweiimage}}"
+              class="thumb"
+              src="{{item.erweiimage}}"
+              mode="aspectFill"
+              bindtap="previewImage"
+              data-current="{{item.erweiimage}}"
+              data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"
+            ></image>
+            <image
+              wx:if="{{item.ywymimage}}"
+              class="thumb"
+              src="{{item.ywymimage}}"
+              mode="aspectFill"
+              bindtap="previewImage"
+              data-current="{{item.ywymimage}}"
+              data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"
+            ></image>
+          </scroll-view>
+          <view class="meta-grid">
+            <view class="meta-item">
+              <text class="meta-label">规格</text>
+              <text class="meta-value">{{item.spec}}</text>
+            </view>
+            <view class="meta-item">
+              <text class="meta-label">总价</text>
+              <text class="meta-value">{{item.price}}</text>
+            </view>
+            <view class="meta-item meta-item-wide">
+              <text class="meta-label">地点</text>
+              <text class="meta-value">{{item.location}}</text>
+            </view>
+            <view class="meta-item">
+              <text class="meta-label">电话</text>
+              <text class="meta-value">{{item.phone}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="section-card empty-state">当前暂无猫砂出售记录。</view>
+  </view>
+
+  <view wx:else>
+    <button class="primary-btn cat-action" bindtap="goToTrialAdd">申请猫砂试用</button>
+    <view wx:if="{{trialProducts.length}}" class="cat-list">
+      <block wx:for="{{trialProducts}}" wx:key="id">
+        <view class="list-card cat-card" bindtap="goToTrialDetail" data-id="{{item.id}}">
+          <view class="trial-card">
+            <image class="trial-image" src="{{item.image}}" mode="aspectFill"></image>
+            <view class="trial-info">
+              <view class="trial-head">
+                <text class="trial-name">{{item.name}}</text>
+                <text class="trial-status {{item.status === 'approve' ? 'trial-status-success' : 'trial-status-pending'}}">{{item.statusLabel}}</text>
+              </view>
+              <text class="trial-phone">联系电话：{{item.phone}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="section-card empty-state">当前暂无猫砂试用申请。</view>
+  </view>
+</view>
