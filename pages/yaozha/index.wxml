@@ -5,7 +5,7 @@
         <view class="hero-title-row">
           <text class="hero-title">药渣回收</text>
           <view class="hero-leaf">
-            <image class="circle-icon" src="../../images/tab-herb-active.png" mode="aspectFit"></image>
+            <image class="circle-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
           </view>
         </view>
       </view>
@@ -22,7 +22,7 @@
     <view class="summary-strip">
       <view class="summary-item">
         <view class="summary-icon">
-          <image class="circle-icon" src="../../images/tab-home-active.png" mode="aspectFit"></image>
+          <image class="circle-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
         </view>
         <view class="summary-copy">
           <text class="summary-value">{{unitList.length}}</text>
@@ -31,7 +31,7 @@
       </view>
       <view class="summary-item summary-item-warm">
         <view class="summary-icon summary-icon-warm">
-          <image class="circle-icon" src="../../images/tab-herb.png" mode="aspectFit"></image>
+          <image class="circle-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
         </view>
         <view class="summary-copy">
           <text class="summary-value">{{activeFilter}}</text>
@@ -58,13 +58,13 @@
   <view class="action-row">
     <button class="section-card outline-action action-btn" bindtap="goToStatistics">
       <view class="action-icon">
-        <image class="circle-icon" src="../../images/tab-home-active.png" mode="aspectFit"></image>
+        <image class="circle-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
       </view>
       <text class="action-text">统计查看</text>
     </button>
     <button class="solid-action action-btn" bindtap="onAddClick">
       <view class="action-icon action-icon-light">
-        <image class="circle-icon" src="../../images/tab-home.png" mode="aspectFit"></image>
+        <image class="circle-icon" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
       </view>
       <text class="action-text action-text-light">新增回收</text>
     </button>
@@ -78,7 +78,7 @@
             <view class="card-badge">
               <image
                 class="circle-icon"
-                src="{{item.typeLabel === '单位' ? '../../images/tab-herb-active.png' : '../../images/tab-profile-active.png'}}"
+                src="{{item.typeLabel === '单位' ? '../../images/yaozha/entity-company.png' : '../../images/yaozha/entity-person.png'}}"
                 mode="aspectFit"
               ></image>
             </view>

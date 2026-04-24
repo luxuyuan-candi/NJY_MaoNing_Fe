@@ -223,21 +223,22 @@
 }
 
 .outline-action {
-  border: 2rpx solid #77be89;
-  background: #fffefb;
+  border: 2rpx solid #8fa7a0;
+  background: linear-gradient(180deg, #f7fbfa 0%, #eef5f4 100%);
 }
 
 .solid-action {
-  background: #438a57;
+  background: linear-gradient(180deg, #b9854f 0%, #9a6637 100%);
   color: #ffffff;
+  box-shadow: 0 16rpx 28rpx rgba(154, 102, 55, 0.18);
 }
 
 .action-icon {
   width: 72rpx;
   height: 72rpx;
   border-radius: 50%;
-  background: #edf6ed;
-  color: #3f8150;
+  background: #e9f1f0;
+  color: #5a7f73;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,15 +247,15 @@
 }
 
 .action-icon-light {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 246, 237, 0.18);
   color: #ffffff;
-  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  border: 2rpx solid rgba(255, 241, 226, 0.3);
 }
 
 .action-text {
   font-size: 30rpx;
   font-weight: 600;
-  color: #1e6a3d;
+  color: #536f69;
 }
 
 .action-text-light {
