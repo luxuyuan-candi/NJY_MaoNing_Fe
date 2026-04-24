@@ -1,20 +1,98 @@
-<!--pages/yaozha_recycle_detail/index.wxml-->
-<view class="container">
-  <view class="info-item"><text>单位名称：{{form.unit}}</text></view>
-  <view class="info-item"><text>联系人：{{form.contact}}</text></view>
-  <view class="info-item"><text>地址：{{form.location}}</text></view>
-  <view class="info-item"><text>预约时间：{{form.date}}</text></view>
-  <view class="info-item"><text>批号：{{form.batch_no || '无'}}</text></view>
-  <view class="info-item"><text>药材重量：{{form.weight}}kg</text></view>
-  <view class="info-item">
-  <text>核准重量：{{form.approved_weight ? form.approved_weight + 'kg' : '未核准'}}</text>
+<view class="page-shell detail-page">
+  <view class="detail-hero">
+    <view class="hero-left">
+      <view class="hero-badge">
+        <image
+          class="hero-badge-icon"
+          src="{{form.type === 'person' ? '../../images/yaozha/entity-person.png' : '../../images/yaozha/entity-company.png'}}"
+          mode="aspectFit"
+        ></image>
+      </view>
+      <view class="hero-copy">
+        <text class="hero-name">{{form.unit}}</text>
+        <view class="hero-status {{form.status === '已回收' ? 'hero-status-finish' : 'hero-status-pending'}}">
+          {{form.status}}
+        </view>
+      </view>
+    </view>
+    <image class="hero-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
   </view>
-  <view class="info-item"><text>药材种类：{{form.herbs}}</text></view>
-  <view class="info-item"><text>状态：{{form.status}}</text></view>
 
-  <button wx:if="{{form.status === '待处理'}}" type="primary" bindtap="markAsFinished">
+  <view class="detail-card">
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="{{form.type === 'person' ? '../../images/yaozha/entity-person.png' : '../../images/yaozha/entity-company.png'}}" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">{{form.unitLabel}}</text>
+      <text class="detail-value">{{form.unit}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/entity-person.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">联系人</text>
+      <text class="detail-value">{{form.contact}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">地址</text>
+      <text class="detail-value detail-value-wide">{{form.location}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">预约时间</text>
+      <text class="detail-value">{{form.date}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">批号</text>
+      <text class="detail-value">{{form.batch_no || '无'}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">药材重量</text>
+      <text class="detail-value">{{form.weight}}kg</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">核准重量</text>
+      <text class="detail-value">{{form.approved_weight ? form.approved_weight + 'kg' : '未核准'}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">药材种类</text>
+      <text class="detail-value detail-value-wide">{{form.herbs}}</text>
+    </view>
+    <view class="detail-row detail-row-last">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">状态</text>
+      <text class="detail-value">{{form.status}}</text>
+    </view>
+  </view>
+
+  <button wx:if="{{form.status === '待处理'}}" class="finish-btn" bindtap="markAsFinished">
     标记为已回收
   </button>
+
+  <view class="tips-card">
+    <text class="tips-title">温馨提示</text>
+    <text class="tips-text">感谢您对中药渣回收的支持，绿色环保，从你我做起。</text>
+  </view>
+
   <view wx:if="{{showModal}}" class="modal-overlay">
     <view class="modal-content">
       <text class="modal-title">请输入核准重量 (kg)</text>
