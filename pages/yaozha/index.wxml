@@ -4,10 +4,10 @@
       <view class="hero-copy">
         <view class="hero-title-row">
           <text class="hero-title">药渣回收</text>
-          <text class="hero-leaf">叶</text>
+          <view class="hero-leaf">
+            <image class="circle-icon" src="../../images/tab-herb-active.png" mode="aspectFit"></image>
+          </view>
         </view>
-        <text class="hero-desc">集中查看回收记录，支持按类型筛选，</text>
-        <text class="hero-desc">并保留统计与新增入口。</text>
       </view>
       <view class="hero-illustration">
         <view class="bin-box">
@@ -21,14 +21,18 @@
 
     <view class="summary-strip">
       <view class="summary-item">
-        <view class="summary-icon">册</view>
+        <view class="summary-icon">
+          <image class="circle-icon" src="../../images/tab-home-active.png" mode="aspectFit"></image>
+        </view>
         <view class="summary-copy">
           <text class="summary-value">{{unitList.length}}</text>
           <text class="summary-label">当前记录</text>
         </view>
       </view>
       <view class="summary-item summary-item-warm">
-        <view class="summary-icon summary-icon-warm">筛</view>
+        <view class="summary-icon summary-icon-warm">
+          <image class="circle-icon" src="../../images/tab-herb.png" mode="aspectFit"></image>
+        </view>
         <view class="summary-copy">
           <text class="summary-value">{{activeFilter}}</text>
           <text class="summary-label">筛选条件</text>
@@ -53,11 +57,15 @@
 
   <view class="action-row">
     <button class="section-card outline-action action-btn" bindtap="goToStatistics">
-      <text class="action-icon">图</text>
+      <view class="action-icon">
+        <image class="circle-icon" src="../../images/tab-home-active.png" mode="aspectFit"></image>
+      </view>
       <text class="action-text">统计查看</text>
     </button>
     <button class="solid-action action-btn" bindtap="onAddClick">
-      <text class="action-icon action-icon-light">+</text>
+      <view class="action-icon action-icon-light">
+        <image class="circle-icon" src="../../images/tab-home.png" mode="aspectFit"></image>
+      </view>
       <text class="action-text action-text-light">新增回收</text>
     </button>
   </view>
@@ -67,7 +75,13 @@
       <view class="list-card recycle-card" bindtap="goToDetail" data-id="{{item.id}}">
         <view class="card-top">
           <view class="card-title-wrap">
-            <view class="card-badge">{{item.typeLabel === '单位' ? '企' : '人'}}</view>
+            <view class="card-badge">
+              <image
+                class="circle-icon"
+                src="{{item.typeLabel === '单位' ? '../../images/tab-herb-active.png' : '../../images/tab-profile-active.png'}}"
+                mode="aspectFit"
+              ></image>
+            </view>
             <text class="card-title">{{item.name}}</text>
           </view>
           <text class="status-chip {{item.status === '已回收' ? 'status-success' : 'status-pending'}}">{{item.status}}</text>
