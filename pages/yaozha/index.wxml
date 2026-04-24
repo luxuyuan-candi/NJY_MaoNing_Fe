@@ -80,20 +80,31 @@
         </view>
         <view class="info-grid">
           <view class="info-item">
-            <text class="info-label">联系人</text>
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="../../images/yaozha/entity-person.png" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">联系人</text>
+            </view>
             <text class="info-value">{{item.contact}}</text>
           </view>
           <view class="info-item">
-            <text class="info-label">回收日期</text>
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">回收日期</text>
+            </view>
             <text class="info-value">{{item.date}}</text>
           </view>
           <view class="info-item info-item-wide">
-            <text class="info-label">地址</text>
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">地址</text>
+            </view>
             <text class="info-value">{{item.address}}</text>
-          </view>
-          <view class="info-item">
-            <text class="info-label">类型</text>
-            <text class="info-value">{{item.typeLabel}}</text>
           </view>
         </view>
         <view class="card-landscape"></view>

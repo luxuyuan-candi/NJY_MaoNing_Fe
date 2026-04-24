@@ -102,9 +102,9 @@
 .summary-label,
 .info-label {
   display: block;
-  margin-top: 8rpx;
-  font-size: 22rpx;
-  color: #8b7b6f;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #54695b;
 }
 
 .filter-panel {
@@ -263,11 +263,34 @@
   grid-column: span 2;
 }
 
+.info-head {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.info-icon-wrap {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  background: #eef5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+
 .info-value {
   display: block;
   margin-top: 6rpx;
   font-size: 24rpx;
-  color: #4b433c;
+  color: #2f312d;
+  line-height: 1.45;
   word-break: break-all;
 }
 
