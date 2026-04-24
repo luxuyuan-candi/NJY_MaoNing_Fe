@@ -41,7 +41,7 @@ Page({
       data.status = data.state === 'finish' ? '已回收' : '待处理';
       data.herbs = data.herbs || '无';
       data.typeLabel = TYPE_MAP[data.type] || data.type || '未填写';
-      data.unitLabel = data.type === 'person' ? '个人名称' : '单位名称';
+      data.unitLabel = data.type === 'person' ? '名称' : '名称';
       this.setData({ form: data });
     }).catch(() => {
       wx.showToast({ title: '网络错误', icon: 'none' });

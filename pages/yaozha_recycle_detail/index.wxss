@@ -126,8 +126,9 @@ page {
 }
 
 .detail-label {
-  font-size: 28rpx;
-  color: #39413a;
+  font-size: 27rpx;
+  font-weight: 600;
+  color: #4f5c53;
 }
 
 .detail-value {
@@ -143,16 +144,57 @@ page {
 
 .finish-btn {
   margin-top: 24rpx;
-  height: 92rpx;
-  border-radius: 26rpx;
-  background: linear-gradient(180deg, #4d8f5f 0%, #39774b 100%);
-  color: #ffffff;
-  font-size: 30rpx;
-  font-weight: 600;
+  height: 110rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(180deg, #eef5ec 0%, #e2ede0 100%);
+  border: 2rpx solid #bdd3be;
+  color: #2c6f3f;
+  box-shadow: 0 14rpx 28rpx rgba(81, 112, 76, 0.08);
 }
 
 .finish-btn::after {
   border: none;
+}
+
+.finish-btn-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18rpx;
+}
+
+.finish-btn-icon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finish-btn-image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.finish-btn-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.finish-btn-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #2c6f3f;
+}
+
+.finish-btn-subtitle {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #6d7c70;
 }
 
 .tips-card {
@@ -188,17 +230,66 @@ page {
 }
 
 .modal-content {
-  background: #fff;
-  padding: 28rpx;
-  border-radius: 24rpx;
-  width: 80%;
-  text-align: center;
+  background: linear-gradient(180deg, #fffefc 0%, #f8f5ee 100%);
+  padding: 30rpx;
+  border-radius: 30rpx;
+  width: 82%;
+  text-align: left;
+  box-shadow: 0 24rpx 60rpx rgba(30, 30, 30, 0.16);
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  margin-bottom: 26rpx;
+}
+
+.modal-head-icon {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+  background: #edf5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-head-image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.modal-head-copy {
+  min-width: 0;
+}
+
+.modal-main-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #255d38;
+}
+
+.modal-subtitle {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+  color: #68756a;
+}
+
+.modal-field {
+  margin-bottom: 20rpx;
 }
 
 .modal-title {
-  font-size: 32rpx;
-  margin-bottom: 20rpx;
-  font-weight: bold;
+  display: block;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+  color: #435147;
 }
 
 .modal-input {
@@ -228,6 +319,6 @@ page {
 }
 
 .modal-btn.confirm {
-  background-color: #438a57;
+  background: linear-gradient(180deg, #4d8f5f 0%, #39774b 100%);
   color: white;
 }
