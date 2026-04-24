@@ -44,7 +44,7 @@ Page({
     const data = e.detail.value;
     const { date, location, type } = this.data;
 
-    if (!data.contact || !date || !location || !data.weight) {
+    if (!data.unit || !data.contact || !date || !location || !data.weight) {
       wx.showToast({
         title: '请填写所有字段',
         icon: 'none',
@@ -53,7 +53,7 @@ Page({
     }
 
     const postData = {
-      unit: type === 'company' ? '单位用户' : '个人用户',
+      unit: data.unit,
       contact: data.contact,
       date,
       location,
