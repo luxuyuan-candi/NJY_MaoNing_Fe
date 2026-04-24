@@ -4,9 +4,6 @@
       <view class="hero-copy">
         <view class="hero-title-row">
           <text class="hero-title">药渣回收</text>
-          <view class="hero-leaf">
-            <image class="circle-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
-          </view>
         </view>
       </view>
       <view class="hero-illustration">

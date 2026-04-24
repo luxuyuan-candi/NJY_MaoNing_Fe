@@ -17,30 +17,19 @@
 
 .hero-copy {
   flex: 1;
-  padding-top: 18rpx;
+  padding-top: 28rpx;
 }
 
 .hero-title-row {
   display: flex;
   align-items: center;
-  gap: 12rpx;
 }
 
 .hero-title {
-  font-size: 74rpx;
+  font-size: 64rpx;
   line-height: 1.05;
   font-weight: 700;
   color: #1f5f3a;
-}
-
-.hero-leaf {
-  width: 56rpx;
-  height: 56rpx;
-  border-radius: 50%;
-  background: #edf5e8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-illustration {
@@ -149,8 +138,8 @@
 }
 
 .circle-icon {
-  width: 42rpx;
-  height: 42rpx;
+  width: 56rpx;
+  height: 56rpx;
 }
 
 .summary-icon-warm {
