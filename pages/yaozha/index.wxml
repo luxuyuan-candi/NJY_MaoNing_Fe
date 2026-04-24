@@ -1,41 +1,75 @@
 <view class="page-shell recycle-page">
   <view class="hero-card recycle-hero">
-    <text class="section-title">药渣回收</text>
-    <text class="section-subtitle">集中查看回收记录，支持按类型筛选，并保留统计与新增入口。</text>
+    <view class="hero-main">
+      <view class="hero-copy">
+        <view class="hero-title-row">
+          <text class="hero-title">药渣回收</text>
+          <text class="hero-leaf">叶</text>
+        </view>
+        <text class="hero-desc">集中查看回收记录，支持按类型筛选，</text>
+        <text class="hero-desc">并保留统计与新增入口。</text>
+      </view>
+      <view class="hero-illustration">
+        <view class="bin-box">
+          <text class="bin-mark">回</text>
+        </view>
+        <view class="bag-box">
+          <text class="bag-mark">药渣</text>
+        </view>
+      </view>
+    </view>
+
     <view class="summary-strip">
       <view class="summary-item">
-        <text class="summary-value">{{unitList.length}}</text>
-        <text class="summary-label">当前记录</text>
+        <view class="summary-icon">册</view>
+        <view class="summary-copy">
+          <text class="summary-value">{{unitList.length}}</text>
+          <text class="summary-label">当前记录</text>
+        </view>
       </view>
-      <view class="summary-item">
-        <text class="summary-value">{{activeFilter}}</text>
-        <text class="summary-label">筛选条件</text>
+      <view class="summary-item summary-item-warm">
+        <view class="summary-icon summary-icon-warm">筛</view>
+        <view class="summary-copy">
+          <text class="summary-value">{{activeFilter}}</text>
+          <text class="summary-label">筛选条件</text>
+        </view>
       </view>
     </view>
   </view>
 
-  <view class="pill-group recycle-filters">
-    <block wx:for="{{filters}}" wx:key="index">
-      <view
-        class="pill {{activeFilter === item ? 'pill-active' : ''}}"
-        bindtap="onFilterChange"
-        data-type="{{item}}"
-      >
-        {{item}}
-      </view>
-    </block>
+  <view class="section-card filter-panel">
+    <view class="filter-tabs">
+      <block wx:for="{{filters}}" wx:key="index">
+        <view
+          class="filter-tab {{activeFilter === item ? 'filter-tab-active' : ''}}"
+          bindtap="onFilterChange"
+          data-type="{{item}}"
+        >
+          {{item}}
+        </view>
+      </block>
+    </view>
   </view>
 
   <view class="action-row">
-    <button class="secondary-btn action-btn" bindtap="goToStatistics">统计查看</button>
-    <button class="primary-btn action-btn" bindtap="onAddClick">新增回收</button>
+    <button class="section-card outline-action action-btn" bindtap="goToStatistics">
+      <text class="action-icon">图</text>
+      <text class="action-text">统计查看</text>
+    </button>
+    <button class="solid-action action-btn" bindtap="onAddClick">
+      <text class="action-icon action-icon-light">+</text>
+      <text class="action-text action-text-light">新增回收</text>
+    </button>
   </view>
 
   <view wx:if="{{unitList.length}}" class="recycle-list">
     <block wx:for="{{unitList}}" wx:key="id">
       <view class="list-card recycle-card" bindtap="goToDetail" data-id="{{item.id}}">
         <view class="card-top">
-          <text class="card-title">{{item.name}}</text>
+          <view class="card-title-wrap">
+            <view class="card-badge">{{item.typeLabel === '单位' ? '企' : '人'}}</view>
+            <text class="card-title">{{item.name}}</text>
+          </view>
           <text class="status-chip {{item.status === '已回收' ? 'status-success' : 'status-pending'}}">{{item.status}}</text>
         </view>
         <view class="info-grid">
@@ -56,6 +90,7 @@
             <text class="info-value">{{item.typeLabel}}</text>
           </view>
         </view>
+        <view class="card-landscape"></view>
       </view>
     </block>
   </view>

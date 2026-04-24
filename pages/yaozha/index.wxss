@@ -1,11 +1,127 @@
 .recycle-page {
   background:
-    radial-gradient(circle at top right, rgba(230, 239, 233, 0.85), transparent 30%),
-    linear-gradient(180deg, #f7f4ef 0%, #f5efe7 100%);
+    radial-gradient(circle at top right, rgba(240, 235, 220, 0.7), transparent 28%),
+    radial-gradient(circle at top left, rgba(225, 238, 226, 0.9), transparent 34%),
+    linear-gradient(180deg, #f8f5ef 0%, #f2eee5 100%);
 }
 
 .recycle-hero {
   padding: 32rpx;
+}
+
+.hero-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.hero-copy {
+  flex: 1;
+  padding-top: 8rpx;
+}
+
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.hero-title {
+  font-size: 74rpx;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #1f5f3a;
+}
+
+.hero-leaf {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: #edf5e8;
+  color: #7fa24f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+}
+
+.hero-desc {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #5f7364;
+}
+
+.hero-illustration {
+  width: 260rpx;
+  height: 228rpx;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.bin-box {
+  position: absolute;
+  right: 48rpx;
+  bottom: 0;
+  width: 150rpx;
+  height: 154rpx;
+  border-radius: 18rpx;
+  background: linear-gradient(180deg, #5ca56a 0%, #32754a 100%);
+  box-shadow: 0 18rpx 32rpx rgba(47, 97, 64, 0.18);
+}
+
+.bin-box::before {
+  content: '';
+  position: absolute;
+  left: -10rpx;
+  right: -10rpx;
+  top: -18rpx;
+  height: 28rpx;
+  border-radius: 18rpx;
+  background: #3f8051;
+}
+
+.bin-mark,
+.bag-mark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.bin-mark {
+  color: #e9f5eb;
+  font-size: 44rpx;
+}
+
+.bag-box {
+  position: absolute;
+  right: 0;
+  bottom: 6rpx;
+  width: 92rpx;
+  height: 126rpx;
+  border-radius: 46rpx 46rpx 26rpx 26rpx;
+  background: linear-gradient(180deg, #fff1d9 0%, #e8d5ae 100%);
+  box-shadow: 0 10rpx 24rpx rgba(125, 98, 55, 0.12);
+}
+
+.bag-box::before {
+  content: '';
+  position: absolute;
+  left: 18rpx;
+  right: 18rpx;
+  top: -10rpx;
+  height: 20rpx;
+  border-radius: 999rpx;
+  background: #d9bd88;
+}
+
+.bag-mark {
+  color: #6f8a3b;
+  font-size: 24rpx;
 }
 
 .summary-strip {
@@ -18,7 +134,37 @@
 .summary-item {
   padding: 24rpx;
   border-radius: 22rpx;
-  background: #f8f5f0;
+  background: linear-gradient(180deg, #eef4ed 0%, #f6f8f3 100%);
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.summary-item-warm {
+  background: linear-gradient(180deg, #fbefdf 0%, #fff7ee 100%);
+}
+
+.summary-icon {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #418353;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 6rpx rgba(232, 241, 230, 0.9);
+}
+
+.summary-icon-warm {
+  color: #e39a2f;
+  box-shadow: inset 0 0 0 6rpx rgba(255, 244, 228, 0.95);
+}
+
+.summary-copy {
+  flex: 1;
 }
 
 .summary-value,
@@ -37,8 +183,31 @@
   color: #8b7b6f;
 }
 
-.recycle-filters {
+.filter-panel {
   margin-top: 22rpx;
+  padding: 14rpx;
+}
+
+.filter-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18rpx;
+}
+
+.filter-tab {
+  height: 92rpx;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #37312c;
+}
+
+.filter-tab-active {
+  background: #438a57;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .action-row {
@@ -50,6 +219,51 @@
 
 .action-btn {
   width: 100%;
+  height: 116rpx;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18rpx;
+}
+
+.outline-action {
+  border: 2rpx solid #77be89;
+  background: #fffefb;
+}
+
+.solid-action {
+  background: #438a57;
+  color: #ffffff;
+}
+
+.action-icon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #edf6ed;
+  color: #3f8150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.action-icon-light {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.action-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1e6a3d;
+}
+
+.action-text-light {
+  color: #ffffff;
 }
 
 .recycle-list {
@@ -61,6 +275,8 @@
 
 .recycle-card {
   padding: 28rpx;
+  position: relative;
+  overflow: hidden;
 }
 
 .card-top {
@@ -68,6 +284,27 @@
   justify-content: space-between;
   align-items: center;
   gap: 16rpx;
+}
+
+.card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  min-width: 0;
+}
+
+.card-badge {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  background: #edf5ea;
+  color: #438a57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .status-chip {
@@ -108,4 +345,18 @@
   font-size: 26rpx;
   color: #4b433c;
   word-break: break-all;
+}
+
+.card-landscape {
+  position: absolute;
+  right: -10rpx;
+  bottom: -12rpx;
+  width: 260rpx;
+  height: 120rpx;
+  background:
+    radial-gradient(circle at 85% 70%, rgba(121, 170, 98, 0.2), transparent 18%),
+    radial-gradient(circle at 74% 58%, rgba(219, 238, 211, 0.55), transparent 24%),
+    linear-gradient(180deg, rgba(236, 244, 229, 0) 0%, rgba(219, 238, 211, 0.95) 100%);
+  border-radius: 120rpx 0 24rpx 0;
+  pointer-events: none;
 }
