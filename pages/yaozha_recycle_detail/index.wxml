@@ -124,8 +124,18 @@
       </view>
 
       <view class="modal-buttons">
-        <button bindtap="onCancel" class="modal-btn cancel">取消</button>
-        <button type="primary" bindtap="onConfirm" class="modal-btn confirm">确定</button>
+        <button bindtap="onCancel" class="modal-btn cancel">
+          <view class="modal-btn-inner">
+            <view class="modal-btn-icon modal-btn-icon-cancel">-</view>
+            <text class="modal-btn-text cancel-text">取消</text>
+          </view>
+        </button>
+        <button type="primary" bindtap="onConfirm" class="modal-btn confirm">
+          <view class="modal-btn-inner">
+            <view class="modal-btn-icon modal-btn-icon-confirm">+</view>
+            <text class="modal-btn-text confirm-text">确定</text>
+          </view>
+        </button>
       </view>
     </view>
   </view>
