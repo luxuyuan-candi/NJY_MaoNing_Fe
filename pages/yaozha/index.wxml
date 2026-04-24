@@ -7,12 +7,7 @@
         </view>
       </view>
       <view class="hero-illustration">
-        <view class="bin-box">
-          <text class="bin-mark">回</text>
-        </view>
-        <view class="bag-box">
-          <text class="bag-mark">药渣</text>
-        </view>
+        <image class="hero-illustration-image" src="../../images/yaozha/hero-illustration.png" mode="aspectFit"></image>
       </view>
     </view>
 
@@ -53,17 +48,17 @@
   </view>
 
   <view class="action-row">
-    <button class="section-card outline-action action-btn" bindtap="goToStatistics">
+    <button class="section-card soft-action soft-action-sage action-btn" bindtap="goToStatistics">
       <view class="action-icon">
         <image class="circle-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
       </view>
       <text class="action-text">统计查看</text>
     </button>
-    <button class="solid-action action-btn" bindtap="onAddClick">
+    <button class="section-card soft-action soft-action-sand action-btn" bindtap="onAddClick">
       <view class="action-icon action-icon-light">
         <image class="circle-icon" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
       </view>
-      <text class="action-text action-text-light">新增回收</text>
+      <text class="action-text">新增回收</text>
     </button>
   </view>
 
