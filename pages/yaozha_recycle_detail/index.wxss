@@ -294,12 +294,16 @@ page {
 
 .modal-input {
   width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
   box-sizing: border-box;
   border: 1px solid #d7ddd6;
   border-radius: 16rpx;
-  padding: 18rpx 20rpx;
+  padding: 0 20rpx;
   margin-bottom: 20rpx;
   background: #fbfcfa;
+  font-size: 26rpx;
+  color: #2f312d;
 }
 
 .modal-buttons {
