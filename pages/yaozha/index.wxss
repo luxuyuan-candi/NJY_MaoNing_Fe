@@ -109,22 +109,22 @@
 
 .filter-panel {
   margin-top: 22rpx;
-  padding: 14rpx;
+  padding: 10rpx;
 }
 
 .filter-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18rpx;
+  gap: 12rpx;
 }
 
 .filter-tab {
-  height: 92rpx;
-  border-radius: 28rpx;
+  height: 72rpx;
+  border-radius: 22rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #37312c;
 }
 
