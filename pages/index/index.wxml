@@ -1,12 +1,12 @@
 <view class="page-shell home-page">
   <view class="home-stage">
-    <image class="home-reference" src="../../images/home-reference.png" mode="aspectFill"></image>
+    <image class="home-reference" src="../../images/home-reference.jpg" mode="aspectFill"></image>
 
     <view class="video-shell">
       <video
         class="feature-video"
         src="{{videoList[currentVideoIndex].src}}"
-        poster="../../images/home-reference.png"
+        poster="../../images/home-reference.jpg"
         controls
         show-center-play-btn
         objectFit="contain"

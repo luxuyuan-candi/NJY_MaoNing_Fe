@@ -7,7 +7,7 @@
         </view>
       </view>
       <view class="hero-illustration">
-        <image class="hero-illustration-image" src="../../images/yaozha/hero-illustration.png" mode="aspectFit"></image>
+        <image class="hero-illustration-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
       </view>
     </view>
 
