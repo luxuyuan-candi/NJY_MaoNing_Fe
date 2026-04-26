@@ -79,7 +79,7 @@ page {
 }
 
 .section-item {
-  padding: 8rpx 0 9rpx;
+  padding: 6rpx 0 7rpx;
   border-bottom: 1rpx solid #e8ede7;
 }
 
@@ -91,16 +91,16 @@ page {
 .section-head {
   display: flex;
   align-items: flex-start;
-  gap: 8rpx;
+  gap: 6rpx;
 }
 
 .section-inline-value {
   margin-left: auto;
   flex: 1;
   min-width: 0;
-  padding-top: 2rpx;
-  font-size: 18rpx;
-  line-height: 1.35;
+  padding-top: 3rpx;
+  font-size: 17rpx;
+  line-height: 1.28;
   color: #a1aaa3;
   text-align: right;
   white-space: normal;
@@ -112,8 +112,8 @@ page {
 }
 
 .section-icon-wrap {
-  width: 42rpx;
-  height: 42rpx;
+  width: 38rpx;
+  height: 38rpx;
   border-radius: 50%;
   background: #edf5ec;
   display: flex;
@@ -123,12 +123,12 @@ page {
 }
 
 .section-icon {
-  width: 23rpx;
-  height: 23rpx;
+  width: 20rpx;
+  height: 20rpx;
 }
 
 .section-title {
-  padding-top: 4rpx;
+  padding-top: 2rpx;
   font-size: 24rpx;
   font-weight: 700;
   color: #202622;
@@ -136,16 +136,16 @@ page {
 
 .required-mark {
   color: #e26a57;
-  padding-top: 4rpx;
-  font-size: 22rpx;
+  padding-top: 2rpx;
+  font-size: 20rpx;
   font-weight: 700;
 }
 
 .radio-group {
-  margin-top: 6rpx;
+  margin-top: 3rpx;
   display: flex;
   gap: 28rpx;
-  padding-left: 50rpx;
+  padding-left: 44rpx;
 }
 
 .radio-item {
@@ -157,8 +157,8 @@ page {
 
 .field-input,
 .picker-field {
-  margin-top: 6rpx;
-  margin-left: 50rpx;
+  margin-top: 3rpx;
+  margin-left: 44rpx;
   height: 54rpx;
   border: 1rpx solid #d9dfd8;
   border-radius: 14rpx;
@@ -167,7 +167,7 @@ page {
 }
 
 .field-input {
-  width: calc(100% - 50rpx);
+  width: calc(100% - 44rpx);
   padding: 0 14rpx;
   line-height: 54rpx;
   font-size: 22rpx;
@@ -175,7 +175,7 @@ page {
 }
 
 .picker-field {
-  width: calc(100% - 50rpx);
+  width: calc(100% - 44rpx);
   padding: 0 14rpx;
   display: flex;
   align-items: center;
@@ -198,9 +198,9 @@ page {
 }
 
 .action-btn {
-  margin-top: 6rpx;
-  margin-left: 50rpx;
-  width: calc(100% - 50rpx);
+  margin-top: 3rpx;
+  margin-left: 44rpx;
+  width: calc(100% - 44rpx);
   height: 54rpx;
   box-sizing: border-box;
   overflow: hidden;
@@ -236,8 +236,8 @@ page {
 }
 
 .checkbox-group {
-  margin-top: 6rpx;
-  margin-left: 50rpx;
+  margin-top: 3rpx;
+  margin-left: 44rpx;
   display: flex;
   flex-wrap: wrap;
   gap: 8rpx;
