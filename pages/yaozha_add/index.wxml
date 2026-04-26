@@ -67,7 +67,12 @@
         </view>
         <text class="section-title">位置</text>
       </view>
-      <button class="location-btn" bindtap="getLocation">获取当前位置</button>
+      <button class="location-btn" bindtap="getLocation">
+        <view class="btn-inner">
+          <image class="btn-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+          <text class="btn-text">获取当前位置</text>
+        </view>
+      </button>
       <view wx:if="{{location}}" class="location-text">{{location}}</view>
     </view>
 
@@ -98,7 +103,10 @@
     </view>
 
     <button formType="submit" class="submit-btn">
-      <text class="submit-btn-text">提交</text>
+      <view class="btn-inner">
+        <image class="btn-icon btn-icon-light" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
+        <text class="submit-btn-text">提交</text>
+      </view>
     </button>
 
     <view class="privacy-tip">

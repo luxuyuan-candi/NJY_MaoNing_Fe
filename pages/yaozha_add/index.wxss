@@ -166,11 +166,39 @@ page {
   color: #ffffff;
   font-size: 30rpx;
   font-weight: 600;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .location-btn::after,
 .submit-btn::after {
   border: none;
+}
+
+.btn-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14rpx;
+}
+
+.btn-icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.btn-icon-light {
+  filter: brightness(0) invert(1);
+}
+
+.btn-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
 }
 
 .location-text {
@@ -209,12 +237,18 @@ page {
   border-radius: 999rpx;
   background: linear-gradient(90deg, #57a85d 0%, #44944f 100%);
   color: #ffffff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit-btn-text {
   font-size: 34rpx;
   font-weight: 700;
   letter-spacing: 2rpx;
+  color: #ffffff;
+  line-height: 1;
 }
 
 .privacy-tip {
