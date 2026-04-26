@@ -1,3 +1,5 @@
+const { ensureLogin } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { request } = require('../../utils/request');
 
 Page({
@@ -14,8 +16,23 @@ Page({
   onLoad(options) {
     const unit = decodeURIComponent(options.unit || '');
     const location = decodeURIComponent(options.location || '');
-    this.setData({ unit, location });
-    this.fetchDetail(unit, location);
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        if (profile.userType !== '管理员') {
+          wx.showToast({ title: '仅管理员可查看统计', icon: 'none' });
+          setTimeout(() => {
+            wx.navigateBack();
+          }, 1200);
+          return null;
+        }
+        this.setData({ unit, location });
+        this.fetchDetail(unit, location);
+        return null;
+      })
+      .catch(() => {
+        wx.showToast({ title: '加载失败', icon: 'none' });
+      });
   },
 
   fetchDetail(unit, location) {

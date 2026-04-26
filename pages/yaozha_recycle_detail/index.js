@@ -1,3 +1,5 @@
+const { getCachedProfile, ensureLogin } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { request } = require('../../utils/request');
 
 const TYPE_MAP = {
@@ -11,10 +13,19 @@ Page({
     showModal: false,
     inputWeight: '',
     inputBatchNo: '',
+    profile: getCachedProfile() || {
+      userType: '普通用户',
+    },
   },
 
   onLoad(options) {
     const { id } = options;
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({ profile });
+      })
+      .catch(() => {});
     this.fetchDetail(id);
   },
 
@@ -49,6 +60,10 @@ Page({
   },
 
   markAsFinished() {
+    if (this.data.profile.userType !== '管理员') {
+      wx.showToast({ title: '仅管理员可操作回收', icon: 'none' });
+      return;
+    }
     this.setData({ showModal: true });
   },
 

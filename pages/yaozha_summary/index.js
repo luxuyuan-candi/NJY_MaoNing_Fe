@@ -1,3 +1,5 @@
+const { ensureLogin } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { request } = require('../../utils/request');
 
 const TYPE_MAP = {
@@ -12,7 +14,22 @@ Page({
   },
 
   onLoad() {
-    this.fetchSummary();
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        if (profile.userType !== '管理员') {
+          wx.showToast({ title: '仅管理员可查看统计', icon: 'none' });
+          setTimeout(() => {
+            wx.navigateBack();
+          }, 1200);
+          return null;
+        }
+        this.fetchSummary();
+        return null;
+      })
+      .catch(() => {
+        wx.showToast({ title: '加载失败', icon: 'none' });
+      });
   },
 
   fetchSummary() {

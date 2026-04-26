@@ -1,3 +1,5 @@
+const { getCachedProfile, ensureLogin } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { request } = require('../../utils/request');
 
 const TYPE_MAP = {
@@ -10,16 +12,30 @@ Page({
     unitList: [],
     filters: ['全部', '单位', '个人'],
     activeFilter: '全部',
+    profile: getCachedProfile() || {
+      userType: '普通用户',
+    },
   },
 
   onLoad() {
+    this.refreshProfile();
     this.fetchRecycleList();
   },
 
   onPullDownRefresh() {
+    this.refreshProfile();
     this.fetchRecycleList(() => {
       wx.stopPullDownRefresh();
     });
+  },
+
+  refreshProfile() {
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({ profile });
+      })
+      .catch(() => {});
   },
 
   onFilterChange(e) {
@@ -75,6 +91,10 @@ Page({
   },
 
   goToStatistics() {
+    if (this.data.profile.userType !== '管理员') {
+      wx.showToast({ title: '仅管理员可查看统计', icon: 'none' });
+      return;
+    }
     wx.navigateTo({ url: '/pages/yaozha_summary/index' });
   },
 

@@ -84,7 +84,7 @@
     </view>
   </view>
 
-  <button wx:if="{{form.status === '待处理'}}" class="finish-btn" bindtap="markAsFinished">
+  <button wx:if="{{form.status === '待处理' && profile.userType === '管理员'}}" class="finish-btn" bindtap="markAsFinished">
     <view class="finish-btn-inner">
       <view class="finish-btn-icon">
         <image class="finish-btn-image" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
