@@ -7,11 +7,7 @@ page {
 
 .add-page.page-shell {
   min-height: 100vh;
-  height: 100vh;
   padding: 16rpx 18rpx 10rpx;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -60,10 +56,6 @@ page {
 .form-card {
   margin-top: 10rpx;
   padding: 4rpx 16rpx 12rpx;
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .form-main {
@@ -73,7 +65,7 @@ page {
 }
 
 .form-footer {
-  padding-top: 12rpx;
+  padding-top: 10rpx;
 }
 
 .section-item {
