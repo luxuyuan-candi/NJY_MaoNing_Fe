@@ -5,6 +5,12 @@ Page({
     date: '',
     location: '',
     type: 'company',
+    formData: {
+      unit: '',
+      contact: '',
+      weight: '',
+      herbs: [],
+    },
   },
 
   onDateChange(e) {
@@ -16,6 +22,26 @@ Page({
   onTypeChange(e) {
     this.setData({
       type: e.detail.value,
+    });
+  },
+
+  onFieldInput(e) {
+    const field = e.currentTarget.dataset.field;
+    const value = e.detail.value;
+    this.setData({
+      formData: {
+        ...this.data.formData,
+        [field]: value,
+      },
+    });
+  },
+
+  onHerbsChange(e) {
+    this.setData({
+      formData: {
+        ...this.data.formData,
+        herbs: e.detail.value || [],
+      },
     });
   },
 
@@ -40,8 +66,8 @@ Page({
     });
   },
 
-  onSubmit(e) {
-    const data = e.detail.value;
+  handleSubmit() {
+    const data = this.data.formData;
     const { date, location, type } = this.data;
 
     if (!data.unit || !data.contact || !date || !location || !data.weight) {

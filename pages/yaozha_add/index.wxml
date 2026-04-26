@@ -7,7 +7,7 @@
     <image class="intro-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
   </view>
 
-  <form bindsubmit="onSubmit" class="form-card">
+  <view class="form-card">
     <view class="section-item">
       <view class="section-head">
         <view class="section-icon-wrap">
@@ -32,7 +32,7 @@
         </view>
         <text class="section-title">单位/个人名称</text>
       </view>
-      <input class="field-input" name="unit" placeholder="请输入单位/个人名称" required/>
+      <input class="field-input" data-field="unit" bindinput="onFieldInput" value="{{formData.unit}}" placeholder="请输入单位/个人名称"/>
     </view>
 
     <view class="section-item">
@@ -42,7 +42,7 @@
         </view>
         <text class="section-title">联系方式</text>
       </view>
-      <input class="field-input" name="contact" placeholder="请输入手机号或微信" required/>
+      <input class="field-input" data-field="contact" bindinput="onFieldInput" value="{{formData.contact}}" placeholder="请输入手机号或微信"/>
     </view>
 
     <view class="section-item">
@@ -67,12 +67,12 @@
         </view>
         <text class="section-title">位置</text>
       </view>
-      <button class="location-btn" bindtap="getLocation">
+      <view class="action-btn location-btn" bindtap="getLocation">
         <view class="btn-inner">
-          <image class="btn-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+          <image class="btn-icon" src="../../images/yaozha/btn-location-white.png" mode="aspectFit"></image>
           <text class="btn-text">获取当前位置</text>
         </view>
-      </button>
+      </view>
       <view wx:if="{{location}}" class="location-text">{{location}}</view>
     </view>
 
@@ -84,7 +84,7 @@
         <text class="section-title">药材重量（kg）</text>
         <text class="required-mark">*</text>
       </view>
-      <input class="field-input" name="weight" placeholder="请输入重量" type="digit" required/>
+      <input class="field-input" data-field="weight" bindinput="onFieldInput" value="{{formData.weight}}" placeholder="请输入重量" type="digit"/>
     </view>
 
     <view class="section-item section-item-last">
@@ -94,7 +94,7 @@
         </view>
         <text class="section-title">药材标注（可多选）</text>
       </view>
-      <checkbox-group name="herbs" class="checkbox-group">
+      <checkbox-group class="checkbox-group" bindchange="onHerbsChange">
         <label class="check-item"><checkbox value="海藻" color="#4c955f"/> 海藻</label>
         <label class="check-item"><checkbox value="大戟" color="#4c955f"/> 大戟</label>
         <label class="check-item"><checkbox value="甘遂" color="#4c955f"/> 甘遂</label>
@@ -102,16 +102,16 @@
       </checkbox-group>
     </view>
 
-    <button formType="submit" class="submit-btn">
+    <view class="action-btn submit-btn" bindtap="handleSubmit">
       <view class="btn-inner">
-        <image class="btn-icon btn-icon-light" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
+        <image class="btn-icon" src="../../images/yaozha/btn-submit-white.png" mode="aspectFit"></image>
         <text class="submit-btn-text">提交</text>
       </view>
-    </button>
+    </view>
 
     <view class="privacy-tip">
       <image class="privacy-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
       <text class="privacy-text">我们将严格保护您的信息安全</text>
     </view>
-  </form>
+  </view>
 </view>
