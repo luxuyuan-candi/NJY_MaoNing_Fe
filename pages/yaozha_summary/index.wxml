@@ -2,7 +2,6 @@
   <view class="summary-hero">
     <view class="hero-copy">
       <text class="hero-title">回收药渣统计</text>
-      <text class="hero-subtitle">多维度统计分析，掌握回收情况</text>
     </view>
     <image class="hero-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
   </view>

@@ -30,17 +30,10 @@
 
 .hero-title {
   display: block;
-  font-size: 64rpx;
+  font-size: 54rpx;
   line-height: 1.08;
   font-weight: 700;
   color: #1f5f3a;
-}
-
-.hero-subtitle {
-  display: block;
-  margin-top: 16rpx;
-  font-size: 24rpx;
-  color: #5f7364;
 }
 
 .hero-image {
