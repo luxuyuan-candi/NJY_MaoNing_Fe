@@ -1,19 +1,236 @@
-/* pages/yaozha_add/index.wxss */
-.container {
-  padding: 20rpx;
+page {
+  background:
+    radial-gradient(circle at top right, rgba(240, 235, 220, 0.72), transparent 30%),
+    radial-gradient(circle at top left, rgba(225, 238, 226, 0.88), transparent 34%),
+    linear-gradient(180deg, #f8f5ef 0%, #f2eee5 100%);
 }
 
-.form-item {
-  margin-bottom: 30rpx;
+.add-page {
+  min-height: 100vh;
 }
 
-input, .picker {
-  border: 1px solid #ddd;
-  padding: 10rpx;
-  margin-top: 10rpx;
-  border-radius: 8rpx;
+.intro-card,
+.form-card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1rpx solid #ecf0e8;
+  border-radius: 30rpx;
+  box-shadow: 0 18rpx 44rpx rgba(61, 52, 40, 0.06);
 }
 
-button {
+.intro-card {
+  padding: 28rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.intro-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.intro-title {
+  display: block;
+  font-size: 34rpx;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #338347;
+}
+
+.intro-subtitle {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: #66766c;
+}
+
+.intro-image {
+  width: 250rpx;
+  height: 170rpx;
+  flex-shrink: 0;
+}
+
+.form-card {
+  margin-top: 24rpx;
+  padding: 10rpx 26rpx 28rpx;
+}
+
+.section-item {
+  padding: 24rpx 0 28rpx;
+  border-bottom: 1rpx solid #e8ede7;
+}
+
+.section-item-last {
+  border-bottom: none;
+  padding-bottom: 20rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.section-icon-wrap {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: #edf5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #202622;
+}
+
+.required-mark {
+  color: #e26a57;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.radio-group {
+  margin-top: 24rpx;
+  display: flex;
+  gap: 56rpx;
+  padding-left: 82rpx;
+}
+
+.radio-item {
+  font-size: 28rpx;
+  color: #25302a;
+  display: flex;
+  align-items: center;
+}
+
+.field-input,
+.picker-field {
   margin-top: 20rpx;
+  margin-left: 80rpx;
+  height: 86rpx;
+  border: 1rpx solid #d9dfd8;
+  border-radius: 18rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.field-input {
+  width: calc(100% - 80rpx);
+  padding: 0 20rpx;
+  line-height: 86rpx;
+  font-size: 26rpx;
+  color: #2c312d;
+}
+
+.picker-field {
+  width: calc(100% - 80rpx);
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-text {
+  font-size: 26rpx;
+  color: #a0a7a1;
+}
+
+.picker-text-active {
+  color: #2c312d;
+}
+
+.picker-arrow {
+  font-size: 42rpx;
+  line-height: 1;
+  color: #9aa49d;
+}
+
+.location-btn {
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+  width: calc(100% - 80rpx);
+  height: 86rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(180deg, #55a45d 0%, #45924f 100%);
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.location-btn::after,
+.submit-btn::after {
+  border: none;
+}
+
+.location-text {
+  margin-top: 14rpx;
+  margin-left: 80rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #5a6d61;
+}
+
+.checkbox-group {
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rpx;
+}
+
+.check-item {
+  min-width: 144rpx;
+  height: 72rpx;
+  padding: 0 18rpx;
+  border-radius: 18rpx;
+  border: 1rpx solid #d9dfd8;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #2b312d;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  margin-top: 24rpx;
+  height: 96rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #57a85d 0%, #44944f 100%);
+  color: #ffffff;
+}
+
+.submit-btn-text {
+  font-size: 34rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.privacy-tip {
+  margin-top: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+}
+
+.privacy-icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.privacy-text {
+  font-size: 24rpx;
+  color: #748178;
 }

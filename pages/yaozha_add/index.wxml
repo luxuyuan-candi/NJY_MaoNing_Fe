@@ -1,54 +1,109 @@
-<!--pages/yaozha_add/index.wxml-->
-<view class="container">
-  <form bindsubmit="onSubmit">
-    <view class="form-item">
-      <text>类型：</text>
-      <radio-group name="type" bindchange="onTypeChange">
-        <label><radio value="company" checked="{{type === 'company'}}"/> 单位</label>
-        <label><radio value="person" checked="{{type === 'person'}}"/> 个人</label>
+<view class="page-shell add-page">
+  <view class="intro-card">
+    <view class="intro-copy">
+      <text class="intro-title">让每一份药渣，都有绿色归宿</text>
+      <text class="intro-subtitle">感谢您的参与，共同守护资源与环境</text>
+    </view>
+    <image class="intro-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
+  </view>
+
+  <form bindsubmit="onSubmit" class="form-card">
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">类型</text>
+      </view>
+      <radio-group name="type" bindchange="onTypeChange" class="radio-group">
+        <label class="radio-item">
+          <radio value="company" checked="{{type === 'company'}}" color="#4c955f"/> 单位
+        </label>
+        <label class="radio-item">
+          <radio value="person" checked="{{type === 'person'}}" color="#4c955f"/> 个人
+        </label>
       </radio-group>
     </view>
 
-    <view class="form-item">
-      <text>单位/个人名称：</text>
-      <input name="unit" placeholder="请输入单位/个人名称" required/>
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/entity-person.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">单位/个人名称</text>
+      </view>
+      <input class="field-input" name="unit" placeholder="请输入单位/个人名称" required/>
     </view>
 
-    <view class="form-item">
-      <text>联系方式：</text>
-      <input name="contact" placeholder="请输入手机号或微信" required/>
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">联系方式</text>
+      </view>
+      <input class="field-input" name="contact" placeholder="请输入手机号或微信" required/>
     </view>
 
-    <view class="form-item">
-      <text>预约回收时间：</text>
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/summary-record.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">预约回收时间</text>
+      </view>
       <picker mode="date" name="date" bindchange="onDateChange">
-        <view class="picker">
-          {{date || '请选择日期'}}
+        <view class="picker-field">
+          <text class="picker-text {{date ? 'picker-text-active' : ''}}">{{date || '请选择日期'}}</text>
+          <text class="picker-arrow">›</text>
         </view>
       </picker>
     </view>
 
-    <view class="form-item">
-      <text>位置：</text>
-      <button type="primary" bindtap="getLocation">获取当前位置</button>
-      <view>{{location}}</view>
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">位置</text>
+      </view>
+      <button class="location-btn" bindtap="getLocation">获取当前位置</button>
+      <view wx:if="{{location}}" class="location-text">{{location}}</view>
     </view>
 
-    <view class="form-item">
-      <text>药材重量（kg）：</text>
-      <input name="weight" placeholder="请输入重量" type="digit" required/>
+    <view class="section-item">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">药材重量（kg）</text>
+        <text class="required-mark">*</text>
+      </view>
+      <input class="field-input" name="weight" placeholder="请输入重量" type="digit" required/>
     </view>
 
-    <view class="form-item">
-      <text>药材标注：</text>
-      <checkbox-group name="herbs">
-        <label><checkbox value="海藻"/> 海藻</label>
-        <label><checkbox value="大戟"/> 大戟</label>
-        <label><checkbox value="甘遂"/> 甘遂</label>
-        <label><checkbox value="芫花"/> 芫花</label>
+    <view class="section-item section-item-last">
+      <view class="section-head">
+        <view class="section-icon-wrap">
+          <image class="section-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
+        </view>
+        <text class="section-title">药材标注（可多选）</text>
+      </view>
+      <checkbox-group name="herbs" class="checkbox-group">
+        <label class="check-item"><checkbox value="海藻" color="#4c955f"/> 海藻</label>
+        <label class="check-item"><checkbox value="大戟" color="#4c955f"/> 大戟</label>
+        <label class="check-item"><checkbox value="甘遂" color="#4c955f"/> 甘遂</label>
+        <label class="check-item"><checkbox value="芫花" color="#4c955f"/> 芫花</label>
       </checkbox-group>
     </view>
 
-    <button formType="submit" type="primary">提交</button>
+    <button formType="submit" class="submit-btn">
+      <text class="submit-btn-text">提交</text>
+    </button>
+
+    <view class="privacy-tip">
+      <image class="privacy-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
+      <text class="privacy-text">我们将严格保护您的信息安全</text>
+    </view>
   </form>
 </view>
