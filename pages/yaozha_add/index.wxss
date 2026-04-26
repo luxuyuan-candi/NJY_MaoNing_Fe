@@ -6,8 +6,11 @@ page {
 }
 
 .add-page.page-shell {
-  min-height: 100vh;
-  padding: 16rpx 18rpx 10rpx;
+  min-height: auto;
+  padding-top: 16rpx;
+  padding-right: 18rpx;
+  padding-left: 18rpx;
+  padding-bottom: calc(10rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
