@@ -24,5 +24,14 @@
       </view>
       <view class="tool-arrow">›</view>
     </view>
+
+    <view wx:if="{{profile.userType === '管理员'}}" class="tool-item tool-item-admin" bindtap="goToUsers">
+      <view class="tool-icon">人</view>
+      <view class="tool-copy">
+        <text class="tool-name">用户管理</text>
+        <text class="tool-desc">更改所有用户的类型</text>
+      </view>
+      <view class="tool-arrow">›</view>
+    </view>
   </view>
 </view>

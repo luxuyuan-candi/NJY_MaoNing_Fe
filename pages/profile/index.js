@@ -25,4 +25,10 @@ Page({
       url: '/pages/profile_feedback/index',
     });
   },
+
+  goToUsers() {
+    wx.navigateTo({
+      url: '/pages/profile_users/index',
+    });
+  },
 });

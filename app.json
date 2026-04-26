@@ -5,6 +5,7 @@
     "pages/profile/index",
     "pages/profile_settings/index",
     "pages/profile_feedback/index",
+    "pages/profile_users/index",
     "pages/yaozha/index",
     "pages/yaozha_add/index",
     "pages/yaozha_recycle_detail/index",

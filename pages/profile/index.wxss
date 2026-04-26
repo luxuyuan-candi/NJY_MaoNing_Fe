@@ -124,6 +124,14 @@
   min-width: 0;
 }
 
+.tool-item + .tool-item {
+  margin-top: 16rpx;
+}
+
+.tool-item-admin {
+  background: linear-gradient(180deg, #f5fbf5 0%, #eaf4eb 100%);
+}
+
 .tool-name {
   display: block;
   font-size: 28rpx;

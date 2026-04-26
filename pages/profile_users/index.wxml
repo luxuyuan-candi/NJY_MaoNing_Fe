@@ -1,0 +1,29 @@
+<view class="page-shell users-page">
+  <view class="profile-card users-hero">
+    <text class="users-title">用户管理</text>
+    <text class="users-subtitle">管理员可在这里统一调整本地用户的类型设置。</text>
+  </view>
+
+  <view class="profile-card users-card">
+    <view wx:if="{{users.length}}">
+      <block wx:for="{{users}}" wx:key="id">
+        <view class="user-item">
+          <view class="user-main">
+            <view class="user-avatar">
+              <image wx:if="{{item.avatar}}" class="user-avatar-image" src="{{item.avatar}}" mode="aspectFill"></image>
+              <view wx:else class="user-avatar-fallback">{{item.avatarInitial}}</view>
+            </view>
+            <view class="user-copy">
+              <text class="user-name">{{item.nickname || '未设置昵称'}}</text>
+              <text class="user-email">{{item.email || '未填写邮箱'}}</text>
+            </view>
+          </view>
+          <picker mode="selector" range="{{userTypes}}" value="{{item.userTypeIndex}}" bindchange="onTypeChange" data-id="{{item.id}}">
+            <view class="user-type-picker">{{item.userType || '普通用户'}}</view>
+          </picker>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="empty-note">当前暂无可管理的用户记录。</view>
+  </view>
+</view>
