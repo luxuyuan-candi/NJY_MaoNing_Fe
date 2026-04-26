@@ -5,9 +5,10 @@ page {
     linear-gradient(180deg, #f8f5ef 0%, #f2eee5 100%);
 }
 
-.add-page {
+.add-page.page-shell {
   min-height: 100vh;
-  padding-bottom: 12rpx;
+  padding: 16rpx 18rpx 8rpx;
+  overflow: hidden;
 }
 
 .intro-card,
@@ -19,11 +20,11 @@ page {
 }
 
 .intro-card {
-  padding: 22rpx 24rpx;
+  padding: 16rpx 18rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14rpx;
+  gap: 10rpx;
 }
 
 .intro-copy {
@@ -33,49 +34,49 @@ page {
 
 .intro-title {
   display: block;
-  font-size: 30rpx;
-  line-height: 1.32;
+  font-size: 27rpx;
+  line-height: 1.24;
   font-weight: 700;
   color: #338347;
 }
 
 .intro-subtitle {
   display: block;
-  margin-top: 10rpx;
-  font-size: 22rpx;
+  margin-top: 4rpx;
+  font-size: 19rpx;
   color: #66766c;
 }
 
 .intro-image {
-  width: 220rpx;
-  height: 150rpx;
+  width: 176rpx;
+  height: 118rpx;
   flex-shrink: 0;
 }
 
 .form-card {
-  margin-top: 16rpx;
-  padding: 4rpx 22rpx 18rpx;
+  margin-top: 10rpx;
+  padding: 2rpx 16rpx 10rpx;
 }
 
 .section-item {
-  padding: 16rpx 0 18rpx;
+  padding: 10rpx 0 12rpx;
   border-bottom: 1rpx solid #e8ede7;
 }
 
 .section-item-last {
   border-bottom: none;
-  padding-bottom: 10rpx;
+  padding-bottom: 4rpx;
 }
 
 .section-head {
   display: flex;
   align-items: center;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .section-icon-wrap {
-  width: 54rpx;
-  height: 54rpx;
+  width: 44rpx;
+  height: 44rpx;
   border-radius: 50%;
   background: #edf5ec;
   display: flex;
@@ -85,31 +86,31 @@ page {
 }
 
 .section-icon {
-  width: 28rpx;
-  height: 28rpx;
+  width: 24rpx;
+  height: 24rpx;
 }
 
 .section-title {
-  font-size: 24rpx;
+  font-size: 22rpx;
   font-weight: 700;
   color: #202622;
 }
 
 .required-mark {
   color: #e26a57;
-  font-size: 24rpx;
+  font-size: 22rpx;
   font-weight: 700;
 }
 
 .radio-group {
-  margin-top: 14rpx;
+  margin-top: 8rpx;
   display: flex;
-  gap: 42rpx;
-  padding-left: 66rpx;
+  gap: 28rpx;
+  padding-left: 54rpx;
 }
 
 .radio-item {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #25302a;
   display: flex;
   align-items: center;
@@ -117,33 +118,33 @@ page {
 
 .field-input,
 .picker-field {
-  margin-top: 12rpx;
-  margin-left: 66rpx;
-  height: 68rpx;
+  margin-top: 8rpx;
+  margin-left: 54rpx;
+  height: 56rpx;
   border: 1rpx solid #d9dfd8;
-  border-radius: 16rpx;
+  border-radius: 14rpx;
   background: #ffffff;
   box-sizing: border-box;
 }
 
 .field-input {
-  width: calc(100% - 66rpx);
-  padding: 0 16rpx;
-  line-height: 68rpx;
-  font-size: 24rpx;
+  width: calc(100% - 54rpx);
+  padding: 0 14rpx;
+  line-height: 56rpx;
+  font-size: 22rpx;
   color: #2c312d;
 }
 
 .picker-field {
-  width: calc(100% - 66rpx);
-  padding: 0 16rpx;
+  width: calc(100% - 54rpx);
+  padding: 0 14rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .picker-text {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #a0a7a1;
 }
 
@@ -152,22 +153,22 @@ page {
 }
 
 .picker-arrow {
-  font-size: 34rpx;
+  font-size: 30rpx;
   line-height: 1;
   color: #9aa49d;
 }
 
 .action-btn {
-  margin-top: 12rpx;
-  margin-left: 66rpx;
-  width: calc(100% - 66rpx);
-  height: 68rpx;
+  margin-top: 8rpx;
+  margin-left: 54rpx;
+  width: calc(100% - 54rpx);
+  height: 56rpx;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .location-btn {
-  border-radius: 16rpx;
+  border-radius: 14rpx;
   background: linear-gradient(180deg, #55a45d 0%, #45924f 100%);
   display: flex;
   align-items: center;
@@ -180,58 +181,56 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10rpx;
+  gap: 8rpx;
 }
 
 .btn-icon {
-  width: 26rpx;
-  height: 26rpx;
-}
-
-.btn-icon-light {
-  filter: brightness(0) invert(1);
+  width: 22rpx;
+  height: 22rpx;
 }
 
 .btn-text {
-  font-size: 26rpx;
+  font-size: 22rpx;
   font-weight: 600;
   color: #ffffff;
   line-height: 1;
 }
 
 .location-text {
-  margin-top: 8rpx;
-  margin-left: 66rpx;
-  font-size: 22rpx;
-  line-height: 1.45;
+  margin-top: 6rpx;
+  margin-left: 54rpx;
+  font-size: 19rpx;
+  line-height: 1.35;
   color: #5a6d61;
 }
 
 .checkbox-group {
-  margin-top: 12rpx;
-  margin-left: 66rpx;
+  margin-top: 8rpx;
+  margin-left: 54rpx;
   display: flex;
   flex-wrap: wrap;
-  gap: 12rpx;
+  gap: 8rpx;
 }
 
 .check-item {
-  min-width: 132rpx;
-  height: 58rpx;
-  padding: 0 14rpx;
-  border-radius: 14rpx;
+  min-width: 112rpx;
+  height: 46rpx;
+  padding: 0 10rpx;
+  border-radius: 12rpx;
   border: 1rpx solid #d9dfd8;
   background: #ffffff;
   display: flex;
   align-items: center;
-  font-size: 23rpx;
+  font-size: 20rpx;
   color: #2b312d;
   box-sizing: border-box;
 }
 
 .submit-btn {
-  margin-top: 16rpx;
-  height: 76rpx;
+  margin-top: 10rpx;
+  margin-left: 0;
+  width: 100%;
+  height: 64rpx;
   border-radius: 999rpx;
   background: linear-gradient(90deg, #57a85d 0%, #44944f 100%);
   display: flex;
@@ -240,7 +239,7 @@ page {
 }
 
 .submit-btn-text {
-  font-size: 28rpx;
+  font-size: 24rpx;
   font-weight: 700;
   letter-spacing: 1rpx;
   color: #ffffff;
@@ -248,19 +247,19 @@ page {
 }
 
 .privacy-tip {
-  margin-top: 14rpx;
+  margin-top: 8rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8rpx;
+  gap: 6rpx;
 }
 
 .privacy-icon {
-  width: 22rpx;
-  height: 22rpx;
+  width: 18rpx;
+  height: 18rpx;
 }
 
 .privacy-text {
-  font-size: 20rpx;
+  font-size: 18rpx;
   color: #748178;
 }

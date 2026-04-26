@@ -110,7 +110,7 @@
     </view>
 
     <view class="privacy-tip">
-      <image class="privacy-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
+      <image class="privacy-icon" src="../../images/yaozha/privacy-shield.png" mode="aspectFit"></image>
       <text class="privacy-text">我们将严格保护您的信息安全</text>
     </view>
   </view>
