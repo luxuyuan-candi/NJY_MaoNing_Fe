@@ -1,0 +1,60 @@
+<view class="page-shell detail-page" wx:if="{{form}}">
+  <view class="detail-hero">
+    <view class="hero-left">
+      <view class="hero-badge">
+        <text class="hero-badge-text">出售</text>
+      </view>
+      <view class="hero-copy">
+        <text class="hero-name">{{form.spec || '猫砂商品'}}</text>
+        <view class="hero-status">在售</view>
+      </view>
+    </view>
+    <image class="hero-image" src="{{form.image ? form.image : '../../images/cat/hero-logo.png'}}" mode="aspectFill"></image>
+  </view>
+
+  <view class="detail-card">
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/cat/stat-sale.svg" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">规格</text>
+      <text class="detail-value">{{form.spec || '未填写'}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/cat/stat-trial.svg" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">总价</text>
+      <text class="detail-value">{{form.price || '未填写'}}</text>
+    </view>
+    <view class="detail-row">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/cat/location-green.svg" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">地点</text>
+      <text class="detail-value detail-value-wide">{{form.location || '未填写'}}</text>
+    </view>
+    <view class="detail-row detail-row-last">
+      <view class="detail-icon-wrap">
+        <image class="detail-icon" src="../../images/cat/phone-green.svg" mode="aspectFit"></image>
+      </view>
+      <text class="detail-label">电话</text>
+      <text class="detail-value">{{form.phone || '未填写'}}</text>
+    </view>
+  </view>
+
+  <view class="detail-card image-card">
+    <text class="image-card-title">图片信息</text>
+    <block wx:for="{{imageSections}}" wx:key="label">
+      <view class="image-block">
+        <text class="image-label">{{item.label}}</text>
+        <image class="detail-photo" src="{{item.url}}" mode="aspectFill" bindtap="previewImage" data-current="{{item.url}}"></image>
+      </view>
+    </block>
+  </view>
+
+  <view class="tips-card">
+    <text class="tips-title">展示说明</text>
+    <text class="tips-text">图片按单张独立展示，便于查看产品图、溯源码和一物一码细节。</text>
+  </view>
+</view>

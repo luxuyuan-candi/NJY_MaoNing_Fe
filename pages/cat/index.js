@@ -85,4 +85,10 @@ Page({
       url: `/pages/maoshashiyong_detail/index?id=${e.currentTarget.dataset.id}`,
     });
   },
+
+  goToSaleDetail(e) {
+    wx.navigateTo({
+      url: `/pages/maosha_detail/index?id=${e.currentTarget.dataset.id}`,
+    });
+  },
 });

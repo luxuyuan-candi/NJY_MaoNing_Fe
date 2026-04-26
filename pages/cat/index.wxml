@@ -114,7 +114,7 @@
             </view>
           </view>
           <view class="panel-link-row">
-            <text class="panel-link">查看全部出售信息</text>
+            <text class="panel-link" bindtap="goToSaleDetail" data-id="{{item.id}}">查看全部出售信息</text>
           </view>
         </view>
       </block>
