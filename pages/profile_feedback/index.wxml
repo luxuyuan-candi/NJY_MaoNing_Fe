@@ -9,10 +9,10 @@
       <block wx:for="{{feedbacks}}" wx:key="id">
         <view class="feedback-item">
           <view class="feedback-head">
-            <text class="feedback-name">{{item.nickname || '未设置昵称'}}</text>
+            <text class="feedback-name">{{item.nickname}}</text>
             <text class="feedback-time">{{item.formattedTime}}</text>
           </view>
-          <text class="feedback-email">{{item.email || '未填写邮箱'}}</text>
+          <text class="feedback-email">{{item.email}}</text>
           <text class="feedback-content">{{item.content}}</text>
         </view>
       </block>

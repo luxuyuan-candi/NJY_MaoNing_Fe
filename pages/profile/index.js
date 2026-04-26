@@ -1,17 +1,28 @@
-const { loadProfile } = require('../../utils/profileStore');
+const { ensureLogin, getCachedProfile } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 
 Page({
   data: {
-    profile: loadProfile(),
+    profile: getCachedProfile() || {
+      avatar: '',
+      nickname: '未设置昵称',
+      userType: '普通用户',
+    },
     avatarInitial: '猫',
   },
 
   onShow() {
-    const profile = loadProfile();
-    this.setData({
-      profile,
-      avatarInitial: (profile.nickname || '猫').slice(0, 1),
-    });
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({
+          profile,
+          avatarInitial: (profile.nickname || '猫').slice(0, 1),
+        });
+      })
+      .catch(() => {
+        wx.showToast({ title: '加载失败', icon: 'none' });
+      });
   },
 
   goToSettings() {

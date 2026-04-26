@@ -1,25 +1,38 @@
-const { addFeedback, loadFeedbacks, loadProfile } = require('../../utils/profileStore');
+const { ensureLogin, getCachedProfile } = require('../../utils/auth');
+const { fetchFeedbacks, fetchProfile, submitFeedback } = require('../../utils/profileApi');
 
 Page({
   data: {
-    profile: loadProfile(),
+    profile: getCachedProfile() || {
+      userType: '普通用户',
+    },
     feedbacks: [],
     draft: '',
   },
 
   onShow() {
-    const profile = loadProfile();
-    const feedbacks = profile.userType === '管理员'
-      ? loadFeedbacks().map((item) => ({
-          ...item,
-          formattedTime: item.createdAt.replace('T', ' ').slice(0, 16),
-        }))
-      : [];
-
-    this.setData({
-      profile,
-      feedbacks,
-    });
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({ profile });
+        if (profile.userType === '管理员') {
+          return fetchFeedbacks();
+        }
+        return [];
+      })
+      .then((feedbacks) => {
+        this.setData({
+          feedbacks: feedbacks.map((item) => ({
+            ...item,
+            formattedTime: item.created_at ? String(item.created_at).replace('T', ' ').slice(0, 16) : '',
+            nickname: item.nickname_snapshot || '未设置昵称',
+            email: item.email_snapshot || '未填写邮箱',
+          })),
+        });
+      })
+      .catch(() => {
+        wx.showToast({ title: '加载失败', icon: 'none' });
+      });
   },
 
   onDraftChange(e) {
@@ -36,14 +49,13 @@ Page({
       return;
     }
 
-    addFeedback({
-      nickname: this.data.profile.nickname,
-      email: this.data.profile.email,
-      userType: this.data.profile.userType,
-      content,
-    });
-
-    this.setData({ draft: '' });
-    wx.showToast({ title: '提交成功', icon: 'success' });
+    submitFeedback(content)
+      .then(() => {
+        this.setData({ draft: '' });
+        wx.showToast({ title: '提交成功', icon: 'success' });
+      })
+      .catch((error) => {
+        wx.showToast({ title: error.message || '提交失败', icon: 'none' });
+      });
   },
 });
