@@ -214,7 +214,7 @@
 
 .panel-action-text {
   color: #4b8f53;
-  font-size: 24rpx;
+  font-size: 28rpx;
   font-weight: 700;
 }
 
