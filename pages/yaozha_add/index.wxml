@@ -67,6 +67,8 @@
             <image class="section-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
           </view>
           <text class="section-title">位置</text>
+          <text wx:if="{{location}}" class="section-inline-value section-inline-value-active">{{location}}</text>
+          <text wx:else class="section-inline-value">未获取</text>
         </view>
         <view class="action-btn location-btn" bindtap="getLocation">
           <view class="btn-inner">
@@ -74,7 +76,6 @@
             <text class="btn-text">获取当前位置</text>
           </view>
         </view>
-        <view wx:if="{{location}}" class="location-text">{{location}}</view>
       </view>
 
       <view class="section-item">
