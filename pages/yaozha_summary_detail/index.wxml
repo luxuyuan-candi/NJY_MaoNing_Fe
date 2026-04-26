@@ -1,21 +1,60 @@
-<!-- pages/yaozha_summary_detail/index.wxml -->
-<view class="container">
-  <text class="title">回收详情</text>
+<view class="page-shell summary-detail-page">
+  <view class="chart-card">
+    <view class="chart-head">
+      <view class="chart-title-wrap">
+        <view class="chart-icon-wrap">
+          <image class="chart-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
+        </view>
+        <text class="chart-title">回收量统计</text>
+      </view>
+    </view>
 
-  <view class="chart-container">
-    <ec-canvas id="recycleChart" canvas-id="recycleChart" ec="{{ec}}" />
+    <view class="chart-container">
+      <ec-canvas id="recycleChart" canvas-id="recycleChart" ec="{{ec}}" />
+    </view>
+
+    <view class="detail-info-card">
+      <view class="detail-item">
+        <view class="detail-icon-wrap">
+          <image class="detail-icon" src="../../images/yaozha/entity-company.png" mode="aspectFit"></image>
+        </view>
+        <view class="detail-copy">
+          <text class="detail-label">名称</text>
+          <text class="detail-value">{{unit}}</text>
+        </view>
+      </view>
+      <view class="detail-item">
+        <view class="detail-icon-wrap">
+          <image class="detail-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+        </view>
+        <view class="detail-copy">
+          <text class="detail-label">地址</text>
+          <text class="detail-value">{{location}}</text>
+        </view>
+      </view>
+      <view class="detail-item detail-item-last">
+        <view class="detail-icon-wrap">
+          <image class="detail-icon" src="../../images/yaozha/action-add.png" mode="aspectFit"></image>
+        </view>
+        <view class="detail-copy">
+          <text class="detail-label">总回收量</text>
+          <text class="detail-value">{{total}} kg</text>
+        </view>
+      </view>
+    </view>
   </view>
 
-  <view class="info">
-    <view class="info-item">
-      <text>单位名称：{{unit}}</text>
+  <view class="tips-card">
+    <view class="tips-main">
+      <view class="tips-icon-wrap">
+        <image class="tips-icon" src="../../images/yaozha/title-leaf.png" mode="aspectFit"></image>
+      </view>
+      <view class="tips-copy">
+        <text class="tips-title">绿色回收，资源再生</text>
+        <text class="tips-text">感谢您的参与，共同守护绿色家园。</text>
+      </view>
     </view>
-    <view class="info-item">
-      <text>地址：{{location}}</text>
-    </view>
-    <view class="info-item">
-      <text>总回收量：{{total}} kg</text>
-    </view>
-</view>
+    <image class="tips-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
+  </view>
 </view>
 
