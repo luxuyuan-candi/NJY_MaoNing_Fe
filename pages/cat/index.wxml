@@ -2,30 +2,36 @@
   <view class="cat-hero">
     <view class="cat-hero-copy">
       <text class="cat-hero-title">猫砂服务</text>
-      <text class="cat-hero-subtitle">整合猫砂出售与猫砂试用，用更清晰的方式管理发布、申请与审核。</text>
       <view class="cat-stat-grid">
         <view class="cat-stat-card">
-          <text class="cat-stat-value">{{saleProducts.length}}</text>
-          <text class="cat-stat-label">出售记录</text>
+          <image class="cat-stat-icon" src="../../images/cat/stat-sale.svg" mode="aspectFit"></image>
+          <view class="cat-stat-copy">
+            <text class="cat-stat-value">{{saleProducts.length}}</text>
+            <text class="cat-stat-label">出售记录</text>
+          </view>
         </view>
         <view class="cat-stat-card">
-          <text class="cat-stat-value">{{trialProducts.length}}</text>
-          <text class="cat-stat-label">试用申请</text>
+          <image class="cat-stat-icon" src="../../images/cat/stat-trial.svg" mode="aspectFit"></image>
+          <view class="cat-stat-copy">
+            <text class="cat-stat-value">{{trialProducts.length}}</text>
+            <text class="cat-stat-label">试用申请</text>
+          </view>
         </view>
       </view>
     </view>
-    <view class="cat-hero-art">
-      <view class="cat-bag">
-        <view class="cat-bag-mark">猫砂</view>
-      </view>
-      <view class="cat-bowl"></view>
-    </view>
+    <image class="cat-hero-logo" src="../../images/cat/hero-logo.png" mode="aspectFit"></image>
   </view>
 
   <view class="segment-wrap">
     <view class="segment">
-      <view class="segment-item {{activeTab === 'sale' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="sale">猫砂出售</view>
-      <view class="segment-item {{activeTab === 'trial' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="trial">猫砂试用</view>
+      <view class="segment-item {{activeTab === 'sale' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="sale">
+        <image class="segment-icon" src="../../images/cat/tab-sale.svg" mode="aspectFit"></image>
+        <text class="segment-text">猫砂出售</text>
+      </view>
+      <view class="segment-item {{activeTab === 'trial' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="trial">
+        <image class="segment-icon" src="../../images/cat/tab-trial.svg" mode="aspectFit"></image>
+        <text class="segment-text">猫砂试用</text>
+      </view>
     </view>
   </view>
 
@@ -33,9 +39,11 @@
     <view class="panel-head">
       <view class="panel-copy">
         <text class="panel-title">出售发布</text>
-        <text class="panel-subtitle">集中展示规格、价格、地点和联系信息。</text>
       </view>
-      <view class="panel-action" bindtap="goToSaleAdd">发布出售</view>
+      <view class="panel-action" bindtap="goToSaleAdd">
+        <image class="panel-action-icon" src="../../images/cat/plus-white.svg" mode="aspectFit"></image>
+        <text class="panel-action-text">发布出售</text>
+      </view>
     </view>
 
     <view wx:if="{{saleProducts.length}}" class="cat-list">
@@ -80,13 +88,22 @@
               <text class="meta-value">{{item.price}}</text>
             </view>
             <view class="meta-item meta-item-wide">
-              <text class="meta-label">地点</text>
-              <text class="meta-value">{{item.location}}</text>
+              <view class="meta-inline">
+                <image class="meta-inline-icon" src="../../images/cat/location-green.svg" mode="aspectFit"></image>
+                <text class="meta-label">地点</text>
+              </view>
+              <text class="meta-value meta-value-compact">{{item.location}}</text>
             </view>
             <view class="meta-item">
-              <text class="meta-label">电话</text>
-              <text class="meta-value">{{item.phone}}</text>
+              <view class="meta-inline">
+                <image class="meta-inline-icon" src="../../images/cat/phone-green.svg" mode="aspectFit"></image>
+                <text class="meta-label">电话</text>
+              </view>
+              <text class="meta-value meta-value-compact">{{item.phone}}</text>
             </view>
+          </view>
+          <view class="panel-link-row">
+            <text class="panel-link">查看全部出售信息</text>
           </view>
         </view>
       </block>
@@ -101,9 +118,10 @@
     <view class="panel-head">
       <view class="panel-copy">
         <text class="panel-title">试用申请</text>
-        <text class="panel-subtitle">查看申请人信息、审核状态与详情处理。</text>
       </view>
-      <view class="panel-action panel-action-soft" bindtap="goToTrialAdd">申请试用</view>
+      <view class="panel-action panel-action-soft" bindtap="goToTrialAdd">
+        <text class="panel-action-text">申请试用</text>
+      </view>
     </view>
 
     <view wx:if="{{trialProducts.length}}" class="cat-list">
