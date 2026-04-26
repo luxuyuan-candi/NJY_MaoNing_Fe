@@ -1,25 +1,36 @@
 <view class="page-shell cat-page">
   <view class="cat-hero">
-    <view class="cat-hero-copy">
-      <text class="cat-hero-title">猫砂服务</text>
-      <view class="cat-stat-grid">
-        <view class="cat-stat-card">
-          <image class="cat-stat-icon" src="../../images/cat/stat-sale.svg" mode="aspectFit"></image>
-          <view class="cat-stat-copy">
-            <text class="cat-stat-value">{{saleProducts.length}}</text>
-            <text class="cat-stat-label">出售记录</text>
-          </view>
+    <view class="cat-hero-main">
+      <view class="cat-hero-copy">
+        <view class="cat-hero-title-row">
+          <text class="cat-hero-title">猫砂服务</text>
         </view>
-        <view class="cat-stat-card">
+      </view>
+      <view class="cat-hero-illustration">
+        <image class="cat-hero-logo" src="../../images/cat/hero-logo.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="cat-summary-strip">
+      <view class="cat-summary-item">
+        <view class="cat-summary-icon">
+          <image class="cat-stat-icon" src="../../images/cat/stat-sale.svg" mode="aspectFit"></image>
+        </view>
+        <view class="cat-stat-copy">
+          <text class="cat-stat-value">{{saleProducts.length}}</text>
+          <text class="cat-stat-label">出售记录</text>
+        </view>
+      </view>
+      <view class="cat-summary-item cat-summary-item-warm">
+        <view class="cat-summary-icon cat-summary-icon-warm">
           <image class="cat-stat-icon" src="../../images/cat/stat-trial.svg" mode="aspectFit"></image>
-          <view class="cat-stat-copy">
-            <text class="cat-stat-value">{{trialProducts.length}}</text>
-            <text class="cat-stat-label">试用申请</text>
-          </view>
+        </view>
+        <view class="cat-stat-copy">
+          <text class="cat-stat-value">{{trialProducts.length}}</text>
+          <text class="cat-stat-label">试用申请</text>
         </view>
       </view>
     </view>
-    <image class="cat-hero-logo" src="../../images/cat/hero-logo.png" mode="aspectFit"></image>
   </view>
 
   <view class="segment-wrap">
