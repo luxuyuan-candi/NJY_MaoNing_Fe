@@ -159,15 +159,18 @@ page {
   margin-top: 8rpx;
   margin-left: 44rpx;
   height: 62rpx;
-  border: 1rpx solid #d9dfd8;
-  border-radius: 16rpx;
-  background: #ffffff;
+  border: 1rpx solid #d8e2d8;
+  border-radius: 18rpx;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdfb 100%);
+  box-shadow:
+    0 10rpx 22rpx rgba(92, 110, 93, 0.08),
+    inset 0 1rpx 0 rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
 }
 
 .field-input {
   width: calc(100% - 44rpx);
-  padding: 0 16rpx;
+  padding: 0 18rpx;
   line-height: 62rpx;
   font-size: 23rpx;
   color: #2c312d;
@@ -175,7 +178,7 @@ page {
 
 .picker-field {
   width: calc(100% - 44rpx);
-  padding: 0 16rpx;
+  padding: 0 18rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -188,12 +191,13 @@ page {
 
 .picker-text-active {
   color: #2c312d;
+  font-weight: 500;
 }
 
 .picker-arrow {
   font-size: 32rpx;
   line-height: 1;
-  color: #9aa49d;
+  color: #82a088;
 }
 
 .action-btn {
@@ -245,15 +249,24 @@ page {
 .check-item {
   min-width: 120rpx;
   height: 52rpx;
-  padding: 0 12rpx;
-  border-radius: 14rpx;
-  border: 1rpx solid #d9dfd8;
-  background: #ffffff;
+  padding: 0 14rpx 0 10rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid #d7e2d7;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%);
+  box-shadow:
+    0 8rpx 18rpx rgba(92, 110, 93, 0.07),
+    inset 0 1rpx 0 rgba(255, 255, 255, 0.92);
   display: flex;
   align-items: center;
   font-size: 21rpx;
-  color: #2b312d;
+  color: #334236;
   box-sizing: border-box;
+}
+
+.check-item checkbox {
+  transform: scale(0.8);
+  transform-origin: left center;
+  margin-right: 4rpx;
 }
 
 .submit-btn {
