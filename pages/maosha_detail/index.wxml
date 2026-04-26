@@ -5,7 +5,7 @@
         <image class="hero-badge-icon" src="../../images/cat/tab-sale.svg" mode="aspectFit"></image>
       </view>
       <view class="hero-copy">
-        <text class="hero-name">{{form.spec || '猫砂商品'}}</text>
+        <text class="hero-name">{{form.location || form.spec || '猫砂商品'}}</text>
         <view class="hero-status">在售</view>
       </view>
     </view>
