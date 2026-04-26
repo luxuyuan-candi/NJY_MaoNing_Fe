@@ -1,19 +1,63 @@
-<!--pages/yaozha_recycle_detail/index.wxml-->
-<view class="container">
-  <image class="product-image" src="{{form.image}}" mode="aspectFill"></image>
-  <view class="info-item"><text>申请人：{{form.name}}</text></view>
-  <view class="info-item"><text>电话：{{form.phone}}
-  </text></view>
-  <view class="info-item"><text>状态：{{form.statusLabel}}</text></view>
+<view class="page-shell detail-page">
+  <view class="detail-hero">
+    <view class="hero-left">
+      <view class="hero-badge">
+        <text class="hero-badge-text">试用</text>
+      </view>
+      <view class="hero-copy">
+        <text class="hero-name">{{form.name}}</text>
+        <view class="hero-status {{form.status === 'approve' ? 'hero-status-finish' : 'hero-status-pending'}}">{{form.statusLabel}}</view>
+      </view>
+    </view>
+    <image class="hero-image" src="{{form.image}}" mode="aspectFill"></image>
+  </view>
 
-  <button wx:if="{{form.status === 'pending'}}" type="primary" bindtap="markAsFinished">
-    审核通过
+  <view class="detail-card">
+    <view class="detail-row">
+      <text class="detail-label">申请人</text>
+      <text class="detail-value">{{form.name}}</text>
+    </view>
+    <view class="detail-row">
+      <text class="detail-label">电话</text>
+      <text class="detail-value">{{form.phone}}</text>
+    </view>
+    <view class="detail-row detail-row-last">
+      <text class="detail-label">状态</text>
+      <text class="detail-value">{{form.statusLabel}}</text>
+    </view>
+  </view>
+
+  <button wx:if="{{form.status === 'pending'}}" class="finish-btn" bindtap="markAsFinished">
+    <view class="finish-btn-inner">
+      <view class="finish-btn-copy">
+        <text class="finish-btn-title">审核通过</text>
+        <text class="finish-btn-subtitle">确认后将更新当前试用申请状态</text>
+      </view>
+    </view>
   </button>
+
+  <view class="tips-card">
+    <text class="tips-title">审核说明</text>
+    <text class="tips-text">请确认申请资料完整、联系方式无误后再执行审核通过。</text>
+  </view>
+
   <view wx:if="{{showModal}}" class="modal-overlay">
     <view class="modal-content">
+      <view class="modal-head">
+        <text class="modal-main-title">确认审核通过</text>
+        <text class="modal-subtitle">当前操作会将试用申请标记为已通过</text>
+      </view>
       <view class="modal-buttons">
-        <button bindtap="onCancel" class="modal-btn cancel">取消</button>
-        <button type="primary" bindtap="onConfirm" class="modal-btn confirm">确定</button>
+        <button bindtap="onCancel" class="modal-btn cancel">
+          <view class="modal-btn-inner">
+            <text class="modal-btn-text cancel-text">取消</text>
+          </view>
+        </button>
+        <button type="primary" bindtap="onConfirm" class="modal-btn confirm">
+          <view class="modal-btn-inner">
+            <text class="modal-btn-text confirm-text">确定</text>
+          </view>
+        </button>
       </view>
     </view>
   </view>

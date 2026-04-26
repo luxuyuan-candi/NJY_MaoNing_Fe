@@ -1,10 +1,32 @@
-<!--pages/maosha_add/index.wxml-->
-<view class="form">
-  <button bindtap="chooseImage">审核图片</button>
-  <image wx:if="{{image}}" src="{{image}}" class="preview" mode="aspectFill"/>
+<view class="page-shell form-page">
+  <view class="intro-card">
+    <view class="intro-copy">
+      <text class="intro-title">申请猫砂试用</text>
+      <text class="intro-subtitle">提交审核图片与联系方式，便于统一查看和审核。</text>
+    </view>
+    <view class="intro-badge">试用</view>
+  </view>
 
-  <input placeholder="申请人" bindinput="onInput" data-key="name"/>
-  <input placeholder="电话" bindinput="onInput" data-key="phone"/>
+  <view class="form-card">
+    <view class="section-item">
+      <text class="section-title">审核图片</text>
+      <view class="upload-card" bindtap="chooseImage">
+        <text class="upload-title">选择审核图片</text>
+        <text class="upload-desc">建议上传清晰有效的申请图片</text>
+      </view>
+      <image wx:if="{{image}}" src="{{image}}" class="preview" mode="aspectFill"></image>
+    </view>
 
-  <button type="primary" bindtap="submit">上传</button>
+    <view class="section-item">
+      <text class="section-title">申请人</text>
+      <input class="field-input" placeholder="请输入申请人姓名" bindinput="onInput" data-key="name" value="{{name}}"/>
+    </view>
+
+    <view class="section-item section-item-last">
+      <text class="section-title">电话</text>
+      <input class="field-input" placeholder="请输入联系电话" bindinput="onInput" data-key="phone" value="{{phone}}"/>
+    </view>
+
+    <view class="submit-btn" bindtap="submit">提交申请</view>
+  </view>
 </view>

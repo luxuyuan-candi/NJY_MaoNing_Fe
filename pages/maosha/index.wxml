@@ -1,36 +1,44 @@
-<!--pages/maosha/index.wxml-->
-<view class="container">
-  <view class="header">
-    <text class="title">猫砂出售</text>
-    <view class="divider"></view>
-  </view>
-
-  <scroll-view class="list" scroll-y="true">
-    <view wx:for="{{products}}" wx:key="index" class="product-card">
-    
-    <!-- 图片行 -->
-    <view class="product-images">
-      <image wx:if="{{item.image}}" src="{{item.image}}" class="product-image"
-            bindtap="previewImage" data-current="{{item.image}}" 
-            data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
-
-      <image wx:if="{{item.erweiimage}}" src="{{item.erweiimage}}" class="product-image"
-            bindtap="previewImage" data-current="{{item.erweiimage}}" 
-            data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
-
-      <image wx:if="{{item.ywymimage}}" src="{{item.ywymimage}}" class="product-image"
-            bindtap="previewImage" data-current="{{item.ywymimage}}" 
-            data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
-  </view>
-
-      <view class="product-info">
-        <text>规格：{{item.spec}}</text>
-        <text>总价：{{item.price}}</text>
-        <text>地点：{{item.location}}</text>
-        <text>电话：{{item.phone}}</text>
-      </view>
+<view class="page-shell cat-subpage">
+  <view class="hero-card sale-hero">
+    <view class="hero-copy">
+      <text class="hero-title">猫砂出售</text>
+      <text class="hero-subtitle">集中展示猫砂出售记录，方便查看规格、价格和联系信息。</text>
     </view>
-  </scroll-view>
+    <view class="hero-badge">{{products.length}}</view>
+  </view>
 
-  <button class="add-btn" bindtap="goToAdd">添加猫砂</button>
+  <view class="action-row">
+    <view class="action-btn" bindtap="goToAdd">发布猫砂出售</view>
+  </view>
+
+  <view wx:if="{{products.length}}" class="sale-list">
+    <block wx:for="{{products}}" wx:key="id">
+      <view class="list-card sale-card">
+        <scroll-view class="thumb-row" scroll-x="true" enable-flex="true">
+          <image wx:if="{{item.image}}" src="{{item.image}}" class="thumb" mode="aspectFill" bindtap="previewImage" data-current="{{item.image}}" data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
+          <image wx:if="{{item.erweiimage}}" src="{{item.erweiimage}}" class="thumb" mode="aspectFill" bindtap="previewImage" data-current="{{item.erweiimage}}" data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
+          <image wx:if="{{item.ywymimage}}" src="{{item.ywymimage}}" class="thumb" mode="aspectFill" bindtap="previewImage" data-current="{{item.ywymimage}}" data-urls="{{[item.image, item.erweiimage, item.ywymimage]}}"></image>
+        </scroll-view>
+        <view class="meta-grid">
+          <view class="meta-item">
+            <text class="meta-label">规格</text>
+            <text class="meta-value">{{item.spec}}</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-label">总价</text>
+            <text class="meta-value">{{item.price}}</text>
+          </view>
+          <view class="meta-item meta-item-wide">
+            <text class="meta-label">地点</text>
+            <text class="meta-value">{{item.location}}</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-label">电话</text>
+            <text class="meta-value">{{item.phone}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class="section-card empty-state">当前暂无猫砂出售记录。</view>
 </view>

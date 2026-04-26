@@ -1,22 +1,32 @@
-<!--pages/maosha/index.wxml-->
-<view class="container">
-  <view class="header">
-    <text class="title">猫砂试用</text>
-    <view class="divider"></view>
-  </view>
-
-<scroll-view class="list" scroll-y="true">
-  <view wx:for="{{products}}" wx:key="index" class="product-card" bindtap="goToDetail" data-id="{{item.id}}">
-    <image class="product-image" src="{{item.image}}" mode="aspectFill"></image>
-    <view class="product-info">
-      <text>申请人：{{item.name}}</text>
-      <text>电话：{{item.phone}}</text>
-      <text class="status-text {{item.status === 'pending' ? 'status-pending' : (item.status === 'approve' ? 'status-approve' : '')}}">
-      状态：{{item.statusLabel}}
-      </text>
+<view class="page-shell trial-page">
+  <view class="hero-card trial-hero">
+    <view class="hero-copy">
+      <text class="hero-title">猫砂试用</text>
+      <text class="hero-subtitle">集中查看申请记录、联系方式和审核状态。</text>
     </view>
+    <view class="hero-badge">{{products.length}}</view>
   </view>
-</scroll-view>
 
-  <button class="add-btn" bindtap="goToAdd">申请猫砂</button>
+  <view class="action-row">
+    <view class="action-btn" bindtap="goToAdd">申请猫砂试用</view>
+  </view>
+
+  <view wx:if="{{products.length}}" class="trial-list">
+    <block wx:for="{{products}}" wx:key="id">
+      <view class="list-card trial-card-wrap" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="trial-card">
+          <image class="trial-image" src="{{item.image}}" mode="aspectFill"></image>
+          <view class="trial-info">
+            <view class="trial-head">
+              <text class="trial-name">{{item.name}}</text>
+              <text class="trial-status {{item.status === 'approve' ? 'trial-status-success' : 'trial-status-pending'}}">{{item.statusLabel}}</text>
+            </view>
+            <text class="trial-phone">联系电话：{{item.phone}}</text>
+            <text class="trial-link">点击查看详情</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class="section-card empty-state">当前暂无猫砂试用申请。</view>
 </view>

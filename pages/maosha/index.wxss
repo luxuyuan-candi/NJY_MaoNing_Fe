@@ -1,65 +1,112 @@
-/* pages/maosha/index.wxss */
-.container {
-  padding-bottom: 120rpx; /* 留出按钮空间 */
-}
-.header {
-  padding: 20rpx;
-  text-align: center;
+.cat-subpage {
+  background:
+    radial-gradient(circle at top right, rgba(220, 236, 223, 0.8), transparent 28%),
+    linear-gradient(180deg, #f8f5ef 0%, #f2eee5 100%);
 }
 
-.title {
-  font-size: 36rpx;
-  font-weight: bold;
-}
-
-.divider {
-  margin-top: 10rpx;
-  height: 4rpx;
-  background-color: #ccc;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2rpx;
-}
-
-.product-card {
-  margin: 20rpx;
-  padding: 20rpx;
-  border: 1rpx solid #ccc;
-  border-radius: 12rpx;
-  background-color: #fff;
-}
-.product-images {
+.sale-hero {
+  padding: 30rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 5px; /* 图片间距 */
-  margin-bottom: 10px;
-}
-.product-image {
-  width: 30%; /* 三张图平分一行 */
-  height: 100rpx; /* 固定高度，可根据需要调整 */
-  border-radius: 5rpx;
-  object-fit: cover; /* 保持比例填充 */
-}
-.product-info text {
-  display: block;
-  margin: 6rpx 0;
-}
-.add-btn {
-  position: fixed;
-  bottom: 30rpx;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #007aff;
-  color: white;
-  font-size: 32rpx;
-  padding: 20rpx 60rpx;
-  border-radius: 50rpx;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18rpx;
 }
 
-.list {
-  flex-grow: 1;
+.hero-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #284b36;
+}
+
+.hero-subtitle {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #708073;
+}
+
+.hero-badge {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #eff7ee 0%, #dfeee1 100%);
+  color: #4d8b5a;
+  font-size: 38rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.action-row {
   margin-top: 20rpx;
-  overflow-y: scroll;
+}
+
+.action-btn {
+  height: 84rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(180deg, #58a45f 0%, #448f4d 100%);
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sale-list {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.sale-card {
+  padding: 24rpx;
+}
+
+.thumb-row {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.thumb {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 16rpx;
+  border-radius: 22rpx;
+  background: #ede4d8;
+}
+
+.meta-grid {
+  margin-top: 22rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx 16rpx;
+}
+
+.meta-item-wide {
+  grid-column: span 2;
+}
+
+.meta-label {
+  display: block;
+  font-size: 22rpx;
+  color: #8a7f74;
+}
+
+.meta-value {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #4b433c;
+  word-break: break-all;
 }

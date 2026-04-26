@@ -1,20 +1,63 @@
-<!--pages/maosha_add/index.wxml-->
-<view class="form">
-  <button bindtap="chooseImage" data-key="image">选择产品图片</button>
-  <image wx:if="{{image}}" src="{{image}}" class="preview" mode="aspectFill"/>
+<view class="page-shell form-page">
+  <view class="intro-card">
+    <view class="intro-copy">
+      <text class="intro-title">发布猫砂出售</text>
+      <text class="intro-subtitle">补充图片、规格与联系方式，让展示更完整清晰。</text>
+    </view>
+    <view class="intro-badge">出售</view>
+  </view>
 
-  <button bindtap="chooseImage" data-key="erweiimage">选择质量溯源二维码图</button>
-  <image wx:if="{{erweiimage}}" src="{{erweiimage}}" class="preview" mode="aspectFill"/>
+  <view class="form-card">
+    <view class="section-item">
+      <text class="section-title">产品图片</text>
+      <view class="upload-card" bindtap="chooseImage" data-key="image">
+        <text class="upload-title">选择产品图</text>
+        <text class="upload-desc">建议上传清晰主图</text>
+      </view>
+      <image wx:if="{{image}}" src="{{image}}" class="preview" mode="aspectFill"></image>
+    </view>
 
-  <button bindtap="chooseImage" data-key="ywymimage">选择一物一码图</button>
-  <image wx:if="{{ywymimage}}" src="{{ywymimage}}" class="preview" mode="aspectFill"/>
+    <view class="section-item">
+      <text class="section-title">质量溯源二维码</text>
+      <view class="upload-card upload-card-soft" bindtap="chooseImage" data-key="erweiimage">
+        <text class="upload-title">选择二维码图</text>
+        <text class="upload-desc">可选，用于质量追溯</text>
+      </view>
+      <image wx:if="{{erweiimage}}" src="{{erweiimage}}" class="preview" mode="aspectFill"></image>
+    </view>
 
-  <input placeholder="规格" bindinput="onInput" data-key="spec"/>
-  <input placeholder="价格" bindinput="onInput" data-key="price"/>
-  <text>位置：</text>
-      <button type="primary" bindtap="getLocation">获取当前位置</button>
-      <view>{{location}}</view>
-  <input placeholder="电话" bindinput="onInput" data-key="phone"/>
+    <view class="section-item">
+      <text class="section-title">一物一码图</text>
+      <view class="upload-card upload-card-soft" bindtap="chooseImage" data-key="ywymimage">
+        <text class="upload-title">选择一物一码图</text>
+        <text class="upload-desc">可选，增强可信度</text>
+      </view>
+      <image wx:if="{{ywymimage}}" src="{{ywymimage}}" class="preview" mode="aspectFill"></image>
+    </view>
 
-  <button type="primary" bindtap="submit">上传</button>
+    <view class="section-item">
+      <text class="section-title">规格</text>
+      <input class="field-input" placeholder="请输入规格" bindinput="onInput" data-key="spec" value="{{spec}}"/>
+    </view>
+
+    <view class="section-item">
+      <text class="section-title">价格</text>
+      <input class="field-input" placeholder="请输入价格" bindinput="onInput" data-key="price" value="{{price}}"/>
+    </view>
+
+    <view class="section-item">
+      <view class="section-head">
+        <text class="section-title">位置</text>
+        <text class="section-inline {{location ? 'section-inline-active' : ''}}">{{location || '未获取'}}</text>
+      </view>
+      <view class="location-btn" bindtap="getLocation">获取当前位置</view>
+    </view>
+
+    <view class="section-item section-item-last">
+      <text class="section-title">电话</text>
+      <input class="field-input" placeholder="请输入电话" bindinput="onInput" data-key="phone" value="{{phone}}"/>
+    </view>
+
+    <view class="submit-btn" bindtap="submit">上传发布</view>
+  </view>
 </view>
