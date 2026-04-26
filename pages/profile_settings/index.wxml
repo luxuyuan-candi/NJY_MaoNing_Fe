@@ -9,7 +9,7 @@
     </view>
     <view class="settings-copy">
       <text class="settings-title">个人信息配置</text>
-      <text class="settings-subtitle">维护头像、昵称、邮箱与用户类型。</text>
+      <text class="settings-subtitle">维护头像、昵称与邮箱地址。</text>
     </view>
   </view>
 
@@ -21,12 +21,6 @@
     <view class="field">
       <text class="field-label">邮箱地址</text>
       <input class="field-input" placeholder="请输入邮箱地址" value="{{profile.email}}" data-field="email" bindinput="onInputChange"/>
-    </view>
-    <view class="field field-last">
-      <text class="field-label">用户类型</text>
-      <picker mode="selector" range="{{userTypes}}" value="{{userTypeIndex}}" bindchange="onTypeChange">
-        <view class="field-input picker-field">{{profile.userType}}</view>
-      </picker>
     </view>
     <button class="primary-btn save-btn" bindtap="saveSettings">保存配置</button>
   </view>

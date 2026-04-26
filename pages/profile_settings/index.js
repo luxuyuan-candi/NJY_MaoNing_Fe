@@ -3,16 +3,11 @@ const { loadProfile, saveProfile } = require('../../utils/profileStore');
 Page({
   data: {
     profile: loadProfile(),
-    userTypes: ['普通用户', '管理员'],
-    userTypeIndex: 0,
   },
 
   onLoad() {
-    const profile = loadProfile();
-    const userTypes = ['普通用户', '管理员'];
     this.setData({
-      profile,
-      userTypeIndex: Math.max(userTypes.indexOf(profile.userType), 0),
+      profile: loadProfile(),
     });
   },
 
@@ -31,19 +26,6 @@ Page({
       profile: {
         ...this.data.profile,
         [field]: e.detail.value,
-      },
-    });
-  },
-
-  onTypeChange(e) {
-    const index = Number(e.detail.value);
-    const nextType = this.data.userTypes[index] || '普通用户';
-
-    this.setData({
-      userTypeIndex: index,
-      profile: {
-        ...this.data.profile,
-        userType: nextType,
       },
     });
   },
