@@ -1,40 +1,28 @@
-const STORAGE_KEY = 'maoning_profile';
+const { loadProfile } = require('../../utils/profileStore');
 
 Page({
   data: {
-    profile: {
-      nickname: '',
-      phone: '',
-      role: '',
-    },
+    profile: loadProfile(),
+    avatarInitial: '猫',
   },
 
   onShow() {
-    this.loadProfile();
-  },
-
-  loadProfile() {
-    const saved = wx.getStorageSync(STORAGE_KEY);
-
-    if (saved) {
-      this.setData({ profile: saved });
-    }
-  },
-
-  onInputChange(e) {
-    const field = e.currentTarget.dataset.field;
-    const value = e.detail.value;
-
+    const profile = loadProfile();
     this.setData({
-      profile: {
-        ...this.data.profile,
-        [field]: value,
-      },
+      profile,
+      avatarInitial: (profile.nickname || '猫').slice(0, 1),
     });
   },
 
-  saveProfile() {
-    wx.setStorageSync(STORAGE_KEY, this.data.profile);
-    wx.showToast({ title: '已保存', icon: 'success' });
+  goToSettings() {
+    wx.navigateTo({
+      url: '/pages/profile_settings/index',
+    });
+  },
+
+  goToFeedback() {
+    wx.navigateTo({
+      url: '/pages/profile_feedback/index',
+    });
   },
 });
