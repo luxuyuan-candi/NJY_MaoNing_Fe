@@ -83,7 +83,7 @@ Page({
           data: ['柱状图', '折线图'],
         },
         grid: {
-          left: 44,
+          left: 66,
           right: 18,
           top: 72,
           bottom: 42,
@@ -103,10 +103,11 @@ Page({
         yAxis: {
           type: 'value',
           name: '回收量（kg）',
+          nameGap: 28,
           nameTextStyle: {
             color: '#50635a',
             fontSize: 12,
-            padding: [0, 0, 8, -28],
+            padding: [0, 0, 12, -8],
           },
           splitLine: {
             lineStyle: {
