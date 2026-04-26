@@ -36,11 +36,11 @@
   <view class="segment-wrap">
     <view class="segment">
       <view class="segment-item {{activeTab === 'sale' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="sale">
-        <image class="segment-icon" src="../../images/cat/tab-sale.svg" mode="aspectFit"></image>
+        <image class="segment-icon" src="{{activeTab === 'sale' ? '../../images/cat/tab-sale-active.svg' : '../../images/cat/tab-sale.svg'}}" mode="aspectFit"></image>
         <text class="segment-text">猫砂出售</text>
       </view>
       <view class="segment-item {{activeTab === 'trial' ? 'segment-item-active' : ''}}" bindtap="switchInnerTab" data-tab="trial">
-        <image class="segment-icon" src="../../images/cat/tab-trial.svg" mode="aspectFit"></image>
+        <image class="segment-icon" src="{{activeTab === 'trial' ? '../../images/cat/tab-trial-active.svg' : '../../images/cat/tab-trial.svg'}}" mode="aspectFit"></image>
         <text class="segment-text">猫砂试用</text>
       </view>
     </view>
