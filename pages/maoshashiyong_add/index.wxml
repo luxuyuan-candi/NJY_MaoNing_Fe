@@ -4,7 +4,9 @@
       <text class="intro-title">申请猫砂试用</text>
       <text class="intro-subtitle">提交审核图片与联系方式，便于统一查看和审核。</text>
     </view>
-    <view class="intro-badge">试用</view>
+    <view class="intro-badge">
+      <image class="intro-badge-icon" src="../../images/cat/tab-trial-active.svg" mode="aspectFit"></image>
+    </view>
   </view>
 
   <view class="form-card">

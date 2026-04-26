@@ -45,13 +45,15 @@
   height: 110rpx;
   border-radius: 50%;
   background: linear-gradient(180deg, #f7efe4 0%, #efe1cc 100%);
-  color: #8f6e47;
-  font-size: 30rpx;
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.intro-badge-icon {
+  width: 54rpx;
+  height: 54rpx;
 }
 
 .form-card {

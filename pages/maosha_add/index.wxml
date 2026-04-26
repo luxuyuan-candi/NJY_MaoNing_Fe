@@ -4,7 +4,9 @@
       <text class="intro-title">发布猫砂出售</text>
       <text class="intro-subtitle">补充图片、规格与联系方式，让展示更完整清晰。</text>
     </view>
-    <view class="intro-badge">出售</view>
+    <view class="intro-badge">
+      <image class="intro-badge-icon" src="../../images/cat/tab-sale-active.svg" mode="aspectFit"></image>
+    </view>
   </view>
 
   <view class="form-card">
