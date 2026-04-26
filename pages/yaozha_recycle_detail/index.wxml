@@ -115,7 +115,7 @@
 
       <view class="modal-field">
         <text class="modal-title">核准重量</text>
-        <input type="number" placeholder="如：2.5" bindinput="onInputWeight" value="{{inputWeight}}" class="modal-input"/>
+        <input type="digit" placeholder="如：2.5" bindinput="onInputWeight" value="{{inputWeight}}" class="modal-input"/>
       </view>
 
       <view class="modal-field">
