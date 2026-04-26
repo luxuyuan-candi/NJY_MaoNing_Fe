@@ -44,10 +44,9 @@ page {
   flex-shrink: 0;
 }
 
-.hero-badge-text {
-  font-size: 26rpx;
-  font-weight: 700;
-  color: #8f6e47;
+.hero-badge-icon {
+  width: 52rpx;
+  height: 52rpx;
 }
 
 .hero-copy {

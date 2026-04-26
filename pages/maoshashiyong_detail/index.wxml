@@ -2,7 +2,7 @@
   <view class="detail-hero">
     <view class="hero-left">
       <view class="hero-badge">
-        <text class="hero-badge-text">试用</text>
+        <image class="hero-badge-icon" src="../../images/cat/tab-trial.svg" mode="aspectFit"></image>
       </view>
       <view class="hero-copy">
         <text class="hero-name">{{form.name}}</text>

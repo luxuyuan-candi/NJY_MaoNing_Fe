@@ -2,7 +2,7 @@
   <view class="detail-hero">
     <view class="hero-left">
       <view class="hero-badge">
-        <text class="hero-badge-text">出售</text>
+        <image class="hero-badge-icon" src="../../images/cat/tab-sale.svg" mode="aspectFit"></image>
       </view>
       <view class="hero-copy">
         <text class="hero-name">{{form.spec || '猫砂商品'}}</text>
