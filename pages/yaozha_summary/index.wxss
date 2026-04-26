@@ -1,57 +1,211 @@
-/* pages/yaozha_summary/index.wxss */
-.container {
-  padding: 20rpx;
-}
-.item {
-  margin-bottom: 20rpx;
-  padding: 20rpx;
-  background-color: #f9f9f9;
-  border-radius: 12rpx;
-  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+.summary-page {
+  background:
+    radial-gradient(circle at top right, rgba(240, 235, 220, 0.72), transparent 30%),
+    radial-gradient(circle at top left, rgba(225, 238, 226, 0.88), transparent 34%),
+    linear-gradient(180deg, #f8f5ef 0%, #f2eee5 100%);
 }
 
-.row {
-  font-size: 28rpx;
-  color: #333;
-  margin-bottom: 12rpx;
+.summary-hero,
+.filter-panel,
+.summary-card,
+.empty-card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1rpx solid #ecf0e8;
+  border-radius: 30rpx;
+  box-shadow: 0 18rpx 44rpx rgba(61, 52, 40, 0.06);
 }
 
-.header {
-  text-align: center;
-  margin: 20rpx 0;
-}
-
-.title {
-  font-size: 36rpx;
-  font-weight: bold;
-}
-
-.divider {
-  margin: 10rpx auto;
-  width: 60%;
-  height: 4rpx;
-  background-color: #ccc;
-  border-radius: 2rpx;
-}
-
-.filter-bar {
+.summary-hero {
+  padding: 30rpx;
   display: flex;
-  justify-content: space-around;
-  margin: 20rpx 0;
-  padding: 10rpx 0;
-  background-color: #ffffff;
-  border-radius: 12rpx;
-  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.hero-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-title {
+  display: block;
+  font-size: 64rpx;
+  line-height: 1.08;
+  font-weight: 700;
+  color: #1f5f3a;
+}
+
+.hero-subtitle {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #5f7364;
+}
+
+.hero-image {
+  width: 250rpx;
+  height: 180rpx;
+  flex-shrink: 0;
+}
+
+.filter-panel {
+  margin-top: 24rpx;
+  padding: 12rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
 }
 
 .filter-item {
+  height: 74rpx;
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 28rpx;
-  padding: 10rpx 20rpx;
-  color: #666;
+  color: #3d3834;
 }
 
 .filter-item.active {
+  background: #438a57;
   color: #ffffff;
-  background-color: #007aff;
-  border-radius: 8rpx;
+  font-weight: 600;
+}
+
+.summary-list {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.summary-card {
+  padding: 26rpx 24rpx;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.head-main {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  min-width: 0;
+}
+
+.head-icon-wrap {
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+  background: #edf5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.head-icon {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.card-name {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1e2a24;
+  word-break: break-all;
+}
+
+.type-chip {
+  flex-shrink: 0;
+  min-width: 94rpx;
+  height: 58rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: #edf6ee;
+  color: #438a57;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+}
+
+.card-body {
+  margin-top: 24rpx;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1rpx minmax(0, 1.6fr) 1rpx minmax(0, 1.2fr) 28rpx;
+  align-items: center;
+  gap: 14rpx;
+}
+
+.info-col {
+  min-width: 0;
+}
+
+.info-col-address .info-value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-head {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.info-icon-wrap {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  background: #eef5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.info-label {
+  font-size: 22rpx;
+  color: #7b867e;
+}
+
+.info-value {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  line-height: 1.35;
+  color: #1f1f1f;
+  word-break: break-all;
+}
+
+.info-divider {
+  width: 1rpx;
+  height: 80rpx;
+  background: #e3e9e2;
+}
+
+.card-arrow {
+  font-size: 52rpx;
+  line-height: 1;
+  color: #8c9891;
+  text-align: right;
+}
+
+.empty-card {
+  margin-top: 24rpx;
+  padding: 50rpx 28rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #738177;
 }

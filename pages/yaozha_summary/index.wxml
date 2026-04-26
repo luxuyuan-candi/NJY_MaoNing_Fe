@@ -1,24 +1,77 @@
-<!--pages/yaozha_summary/index.wxml-->
-<view class="container">
-  <view class="header">
-    <text class="title">回收药渣统计</text>
-    <view class="divider"></view>
+<view class="page-shell summary-page">
+  <view class="summary-hero">
+    <view class="hero-copy">
+      <text class="hero-title">回收药渣统计</text>
+      <text class="hero-subtitle">多维度统计分析，掌握回收情况</text>
+    </view>
+    <image class="hero-image" src="../../images/yaozha/hero-illustration.jpg" mode="aspectFit"></image>
   </view>
 
-  <view class="filter-bar">
+  <view class="filter-panel">
     <view class="filter-item {{activeFilter === 'all' ? 'active' : ''}}" bindtap="changeFilter" data-type="all">全部</view>
     <view class="filter-item {{activeFilter === 'company' ? 'active' : ''}}" bindtap="changeFilter" data-type="company">单位</view>
     <view class="filter-item {{activeFilter === 'person' ? 'active' : ''}}" bindtap="changeFilter" data-type="person">个人</view>
   </view>
 
-  <scroll-view scroll-y class="list">
+  <view wx:if="{{summaryList.length}}" class="summary-list">
     <block wx:for="{{summaryList}}" wx:key="index">
-      <view class="item" bindtap="goToDetail" data-unit="{{item.name}}" data-location="{{item.address}}">
-        <view class="row">单位/个人：{{item.name}}</view>
-        <view class="row">类型：{{item.typeLabel}}</view>
-        <view class="row">地址：{{item.address}}</view>
-        <view class="row">总回收重量：{{item.total_weight}} kg</view>
+      <view class="summary-card" bindtap="goToDetail" data-unit="{{item.name}}" data-location="{{item.address}}">
+        <view class="card-head">
+          <view class="head-main">
+            <view class="head-icon-wrap">
+              <image
+                class="head-icon"
+                src="{{item.typeLabel === '单位' ? '../../images/yaozha/entity-company.png' : '../../images/yaozha/entity-person.png'}}"
+                mode="aspectFit"
+              ></image>
+            </view>
+            <text class="card-name">{{item.name}}</text>
+          </view>
+          <view class="type-chip">{{item.typeLabel}}</view>
+        </view>
+
+        <view class="card-body">
+          <view class="info-col">
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="{{item.typeLabel === '单位' ? '../../images/yaozha/entity-company.png' : '../../images/yaozha/entity-person.png'}}" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">类型</text>
+            </view>
+            <text class="info-value">{{item.typeLabel}}</text>
+          </view>
+
+          <view class="info-divider"></view>
+
+          <view class="info-col info-col-address">
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="../../images/yaozha/summary-filter.png" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">地址</text>
+            </view>
+            <text class="info-value">{{item.address}}</text>
+          </view>
+
+          <view class="info-divider"></view>
+
+          <view class="info-col">
+            <view class="info-head">
+              <view class="info-icon-wrap">
+                <image class="info-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
+              </view>
+              <text class="info-label">总回收重量</text>
+            </view>
+            <text class="info-value">{{item.total_weight}} kg</text>
+          </view>
+
+          <view class="card-arrow">›</view>
+        </view>
       </view>
     </block>
-  </scroll-view>
+  </view>
+
+  <view wx:else class="empty-card">
+    当前筛选下暂无统计数据。
+  </view>
 </view>
