@@ -52,7 +52,7 @@
         <text class="panel-title">出售发布</text>
       </view>
       <view class="panel-action" bindtap="goToSaleAdd">
-        <image class="panel-action-icon" src="../../images/cat/plus-white.svg" mode="aspectFit"></image>
+        <image class="panel-action-icon" src="../../images/cat/publish-green.svg" mode="aspectFit"></image>
         <text class="panel-action-text">发布出售</text>
       </view>
     </view>
@@ -131,6 +131,7 @@
         <text class="panel-title">试用申请</text>
       </view>
       <view class="panel-action panel-action-soft" bindtap="goToTrialAdd">
+        <image class="panel-action-icon" src="../../images/cat/trial-green.svg" mode="aspectFit"></image>
         <text class="panel-action-text">申请试用</text>
       </view>
     </view>

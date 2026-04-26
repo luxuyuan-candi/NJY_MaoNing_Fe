@@ -193,7 +193,8 @@
   height: 86rpx;
   padding: 0 30rpx;
   border-radius: 999rpx;
-  background: linear-gradient(180deg, #58a45f 0%, #448f4d 100%);
+  background: linear-gradient(180deg, #edf7ee 0%, #dfefdf 100%);
+  border: 1rpx solid #d6e7d6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +202,8 @@
 }
 
 .panel-action-soft {
-  background: linear-gradient(180deg, #f2eadc 0%, #e8ddcc 100%);
+  background: linear-gradient(180deg, #edf7ee 0%, #dfefdf 100%);
+  border: 1rpx solid #d6e7d6;
 }
 
 .panel-action-icon {
@@ -211,13 +213,13 @@
 }
 
 .panel-action-text {
-  color: #ffffff;
+  color: #4b8f53;
   font-size: 24rpx;
   font-weight: 700;
 }
 
 .panel-action-soft .panel-action-text {
-  color: #7d6547;
+  color: #4b8f53;
 }
 
 .cat-list {
