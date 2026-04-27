@@ -30,28 +30,22 @@
         <image class="tool-title-icon" src="../../images/profile/leaf-title.svg" mode="aspectFit"></image>
         <text class="tool-title">工具区</text>
       </view>
-      <text class="tool-subtitle">{{profile.userType === '管理员' ? '查看并处理用户反馈' : '提交帮助反馈与使用建议'}}</text>
-    </view>
-    <view class="tool-item" bindtap="goToFeedback">
-      <view class="tool-icon-shell">
-        <image class="tool-icon" src="../../images/profile/tool-help.svg" mode="aspectFit"></image>
-      </view>
-      <view class="tool-copy">
-        <text class="tool-name">帮助工具</text>
-        <text class="tool-desc">{{profile.userType === '管理员' ? '查看反馈' : '提交反馈'}}</text>
-      </view>
-      <image class="tool-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
     </view>
 
-    <view wx:if="{{profile.userType === '管理员'}}" class="tool-item tool-item-admin" bindtap="goToUsers">
-      <view class="tool-icon-shell">
-        <image class="tool-icon" src="../../images/profile/tool-user.svg" mode="aspectFit"></image>
+    <view class="tool-grid {{profile.userType === '管理员' ? 'tool-grid-admin' : 'tool-grid-single'}}">
+      <view class="tool-panel" bindtap="goToFeedback">
+        <view class="tool-panel-visual">
+          <image class="tool-panel-graphic" src="../../images/profile/tool-feedback-card.svg" mode="aspectFit"></image>
+        </view>
+        <text class="tool-panel-title">{{profile.userType === '管理员' ? '用户反馈' : '帮助工具'}}</text>
       </view>
-      <view class="tool-copy">
-        <text class="tool-name">用户管理</text>
-        <text class="tool-desc">更改所有用户的类型</text>
+
+      <view wx:if="{{profile.userType === '管理员'}}" class="tool-panel tool-panel-soft" bindtap="goToUsers">
+        <view class="tool-panel-visual">
+          <image class="tool-panel-graphic" src="../../images/profile/tool-manage-card.svg" mode="aspectFit"></image>
+        </view>
+        <text class="tool-panel-title">用户管理</text>
       </view>
-      <image class="tool-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
     </view>
   </view>
 </view>
