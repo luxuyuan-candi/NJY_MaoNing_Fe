@@ -1,8 +1,5 @@
 <view class="page-shell profile-page">
-  <image class="profile-page-bg" src="../../images/profile/page-bg.jpg" mode="widthFix"></image>
-
   <view class="profile-hero" bindtap="goToSettings">
-    <image class="profile-hero-bg" src="../../images/profile/hero-bg.jpg" mode="widthFix"></image>
     <view class="profile-hero-content">
       <view class="avatar-shell">
         <image wx:if="{{profile.avatar}}" class="avatar-image" src="{{profile.avatar}}" mode="aspectFill"></image>
