@@ -169,9 +169,9 @@
 }
 
 .field-input-icon {
-  width: 56rpx;
-  height: 56rpx;
-  margin-right: 20rpx;
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 22rpx;
   flex-shrink: 0;
 }
 
