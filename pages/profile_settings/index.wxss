@@ -85,15 +85,15 @@
 
 .camera-badge {
   position: absolute;
-  left: 78rpx;
-  bottom: -12rpx;
-  width: 54rpx;
-  height: 54rpx;
+  left: 76rpx;
+  bottom: -14rpx;
+  width: 64rpx;
+  height: 64rpx;
 }
 
 .camera-badge-icon {
-  width: 54rpx;
-  height: 54rpx;
+  width: 64rpx;
+  height: 64rpx;
 }
 
 .settings-copy {
@@ -144,9 +144,9 @@
 }
 
 .field-title-icon {
-  width: 32rpx;
-  height: 32rpx;
-  margin-right: 12rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 14rpx;
 }
 
 .field-label {
@@ -158,13 +158,13 @@
 .field-title-leaf {
   margin-left: 8rpx;
   color: #97b56f;
-  font-size: 28rpx;
+  font-size: 32rpx;
   line-height: 1;
 }
 
 .field-input-shell {
-  height: 92rpx;
-  padding: 0 22rpx;
+  height: 98rpx;
+  padding: 0 24rpx;
   border-radius: 22rpx;
   background: linear-gradient(180deg, #f9f6ef 0%, #f6f1e7 100%);
   box-shadow:
@@ -176,17 +176,17 @@
 }
 
 .field-input-icon {
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 18rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
   flex-shrink: 0;
 }
 
 .field-input {
   flex: 1;
-  height: 92rpx;
+  height: 98rpx;
   color: #2e2a26;
-  font-size: 26rpx;
+  font-size: 28rpx;
   box-sizing: border-box;
 }
 
@@ -208,9 +208,9 @@
 }
 
 .save-btn-icon {
-  width: 34rpx;
-  height: 34rpx;
-  margin-right: 14rpx;
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 16rpx;
 }
 
 .save-btn-text {
