@@ -1,14 +1,27 @@
+const { ensureLogin, getCachedProfile } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { buildUrl, request } = require('../../utils/request');
 
 Page({
   data: {
     form: {},
     showModal: false,
+    profile: getCachedProfile() || {
+      userType: '普通用户',
+    },
   },
 
   onLoad(options) {
     const { id } = options;
-    this.fetchDetail(id);
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({ profile });
+        this.fetchDetail(id);
+      })
+      .catch(() => {
+        this.fetchDetail(id);
+      });
   },
 
   fetchDetail(id) {
@@ -16,6 +29,13 @@ Page({
       url: `/api/maoning_maoshashiyong/product?id=${id}`,
       method: 'GET',
     }).then((res) => {
+      if (!res.data || !res.data.success) {
+        wx.showToast({ title: (res.data && res.data.msg) || '无权限', icon: 'none' });
+        setTimeout(() => {
+          wx.navigateBack();
+        }, 1200);
+        return;
+      }
       this.setData({
         form: {
           ...res.data,
@@ -29,6 +49,10 @@ Page({
   },
 
   markAsFinished() {
+    if (this.data.profile.userType !== '管理员') {
+      wx.showToast({ title: '仅管理员可审批', icon: 'none' });
+      return;
+    }
     this.setData({ showModal: true });
   },
 
@@ -37,6 +61,12 @@ Page({
   },
 
   onConfirm() {
+    if (this.data.profile.userType !== '管理员') {
+      wx.showToast({ title: '仅管理员可审批', icon: 'none' });
+      this.setData({ showModal: false });
+      return;
+    }
+
     request({
       url: '/api/maoning_maoshashiyong/update',
       method: 'POST',

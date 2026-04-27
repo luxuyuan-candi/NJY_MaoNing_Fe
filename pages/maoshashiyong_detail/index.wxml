@@ -27,7 +27,7 @@
     </view>
   </view>
 
-  <button wx:if="{{form.status === 'pending'}}" class="finish-btn" bindtap="markAsFinished">
+  <button wx:if="{{form.status === 'pending' && profile.userType === '管理员'}}" class="finish-btn" bindtap="markAsFinished">
     <view class="finish-btn-inner">
       <view class="finish-btn-copy">
         <text class="finish-btn-title">审核通过</text>

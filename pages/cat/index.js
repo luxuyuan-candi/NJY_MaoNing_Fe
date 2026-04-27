@@ -1,3 +1,5 @@
+const { ensureLogin, getCachedProfile } = require('../../utils/auth');
+const { fetchProfile } = require('../../utils/profileApi');
 const { buildUrl, request } = require('../../utils/request');
 
 Page({
@@ -5,10 +7,21 @@ Page({
     activeTab: 'sale',
     saleProducts: [],
     trialProducts: [],
+    profile: getCachedProfile() || {
+      userType: '普通用户',
+    },
   },
 
   onLoad() {
-    this.loadAll();
+    ensureLogin()
+      .then(() => fetchProfile())
+      .then((profile) => {
+        this.setData({ profile });
+        this.loadAll();
+      })
+      .catch(() => {
+        this.loadAll();
+      });
   },
 
   onPullDownRefresh() {
