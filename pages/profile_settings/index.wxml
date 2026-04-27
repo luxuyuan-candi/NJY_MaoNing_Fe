@@ -22,7 +22,7 @@
         <text class="field-label">昵称</text>
       </view>
       <view class="field-input-shell">
-        <image class="field-input-icon" src="../../images/profile/config-user.svg" mode="aspectFit"></image>
+        <image class="field-input-icon" src="../../images/profile/config-user-line.svg" mode="aspectFit"></image>
         <input class="field-input" placeholder="请输入昵称" value="{{profile.nickname}}" data-field="nickname" bindinput="onInputChange"/>
       </view>
     </view>
@@ -32,7 +32,7 @@
         <text class="field-label">邮箱</text>
       </view>
       <view class="field-input-shell">
-        <image class="field-input-icon" src="../../images/profile/config-mail.svg" mode="aspectFit"></image>
+        <image class="field-input-icon" src="../../images/profile/config-mail-line.svg" mode="aspectFit"></image>
         <input class="field-input" placeholder="请输入邮箱地址" value="{{profile.email}}" data-field="email" bindinput="onInputChange"/>
       </view>
     </view>
