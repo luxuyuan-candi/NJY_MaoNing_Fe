@@ -1,11 +1,10 @@
-<view
-  class="page-shell profile-page"
-  style="padding: 32rpx 24rpx 72rpx; background: #f8f4ea url('../../images/profile/page-bg.jpg') no-repeat center top / 100% auto;"
->
+<view class="page-shell profile-page">
+  <image class="profile-page-bg" src="../../images/profile/page-bg.jpg" mode="widthFix"></image>
   <view
     bindtap="goToSettings"
-    style="min-height: 360rpx; border-radius: 36rpx; overflow: hidden; background: #fbf8f1 url('../../images/profile/hero-bg.jpg') no-repeat center / 100% 100%; box-shadow: 0 18rpx 42rpx rgba(152,155,107,0.13); padding: 70rpx 32rpx 36rpx; box-sizing: border-box;"
+    class="profile-hero"
   >
+    <image class="profile-hero-bg" src="../../images/profile/hero-bg.jpg" mode="aspectFill"></image>
     <view style="display: flex; flex-direction: row; align-items: flex-start;">
       <view style="width: 160rpx; margin-top: 58rpx; flex-shrink: 0;">
         <view style="width: 160rpx; height: 160rpx; border-radius: 80rpx; overflow: hidden; border: 10rpx solid rgba(255,255,255,0.96); box-shadow: 0 14rpx 36rpx rgba(102,124,77,0.16); background: linear-gradient(180deg,#5e9b4b 0%,#4b7c3f 100%);">
@@ -31,7 +30,7 @@
     </view>
   </view>
 
-  <view style="margin-top: 32rpx; border-radius: 36rpx; padding: 34rpx 28rpx 34rpx; background: rgba(255,252,246,0.88); box-shadow: 0 18rpx 46rpx rgba(168,164,125,0.14);">
+    <view style="position: relative; z-index: 2; margin-top: 32rpx; border-radius: 36rpx; padding: 34rpx 28rpx 34rpx; background: rgba(255,252,246,0.88); box-shadow: 0 18rpx 46rpx rgba(168,164,125,0.14);">
     <view style="display: flex; flex-direction: row; align-items: center; margin-bottom: 30rpx;">
       <text style="color: #27322b; font-size: 36rpx; font-weight: 700; letter-spacing: 2rpx;">工具区</text>
     </view>
@@ -68,5 +67,4 @@
       </view>
       <text style="display: block; margin-top: 10rpx; text-align: center; color: #223328; font-size: 22rpx; font-weight: 700; line-height: 1.25;">帮助工具</text>
     </view>
-  </view>
 </view>
