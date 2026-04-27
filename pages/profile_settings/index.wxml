@@ -20,7 +20,6 @@
       <view class="field-title-row">
         <image class="field-title-icon" src="../../images/profile/config-user.svg" mode="aspectFit"></image>
         <text class="field-label">昵称</text>
-        <text class="field-title-leaf">◜</text>
       </view>
       <view class="field-input-shell">
         <image class="field-input-icon" src="../../images/profile/config-user.svg" mode="aspectFit"></image>
@@ -30,8 +29,7 @@
     <view class="field field-last">
       <view class="field-title-row">
         <image class="field-title-icon" src="../../images/profile/config-mail.svg" mode="aspectFit"></image>
-        <text class="field-label">邮箱地址</text>
-        <text class="field-title-leaf">◜</text>
+        <text class="field-label">邮箱</text>
       </view>
       <view class="field-input-shell">
         <image class="field-input-icon" src="../../images/profile/config-mail.svg" mode="aspectFit"></image>

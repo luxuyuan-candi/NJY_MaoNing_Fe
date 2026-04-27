@@ -144,8 +144,8 @@
 }
 
 .field-title-icon {
-  width: 46rpx;
-  height: 46rpx;
+  width: 54rpx;
+  height: 54rpx;
   margin-right: 14rpx;
 }
 
@@ -153,13 +153,6 @@
   font-size: 24rpx;
   font-weight: 700;
   color: #556548;
-}
-
-.field-title-leaf {
-  margin-left: 8rpx;
-  color: #97b56f;
-  font-size: 32rpx;
-  line-height: 1;
 }
 
 .field-input-shell {
