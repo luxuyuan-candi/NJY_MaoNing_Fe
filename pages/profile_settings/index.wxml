@@ -1,27 +1,48 @@
 <view class="page-shell settings-page">
-  <view class="profile-card settings-hero">
+  <view class="settings-hero">
     <view class="avatar-panel">
       <button class="avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
         <image wx:if="{{profile.avatar}}" class="avatar-image" src="{{profile.avatar}}" mode="aspectFill"></image>
-        <view wx:else class="avatar-fallback">头像</view>
+        <view wx:else class="avatar-fallback">猫</view>
       </button>
-      <text class="avatar-hint">点击默认使用微信头像</text>
+      <view class="camera-badge">
+        <image class="camera-badge-icon" src="../../images/profile/config-camera.svg" mode="aspectFit"></image>
+      </view>
     </view>
     <view class="settings-copy">
       <text class="settings-title">个人信息配置</text>
-      <text class="settings-subtitle">维护头像、昵称与邮箱地址。</text>
+      <text class="settings-subtitle">维护头像、昵称与邮箱地址</text>
     </view>
   </view>
 
-  <view class="profile-card form-card">
+  <view class="form-card">
     <view class="field">
-      <text class="field-label">昵称</text>
-      <input class="field-input" placeholder="请输入昵称" value="{{profile.nickname}}" data-field="nickname" bindinput="onInputChange"/>
+      <view class="field-title-row">
+        <image class="field-title-icon" src="../../images/profile/config-user.svg" mode="aspectFit"></image>
+        <text class="field-label">昵称</text>
+        <text class="field-title-leaf">◜</text>
+      </view>
+      <view class="field-input-shell">
+        <image class="field-input-icon" src="../../images/profile/config-user.svg" mode="aspectFit"></image>
+        <input class="field-input" placeholder="请输入昵称" value="{{profile.nickname}}" data-field="nickname" bindinput="onInputChange"/>
+      </view>
     </view>
-    <view class="field">
-      <text class="field-label">邮箱地址</text>
-      <input class="field-input" placeholder="请输入邮箱地址" value="{{profile.email}}" data-field="email" bindinput="onInputChange"/>
+    <view class="field field-last">
+      <view class="field-title-row">
+        <image class="field-title-icon" src="../../images/profile/config-mail.svg" mode="aspectFit"></image>
+        <text class="field-label">邮箱地址</text>
+        <text class="field-title-leaf">◜</text>
+      </view>
+      <view class="field-input-shell">
+        <image class="field-input-icon" src="../../images/profile/config-mail.svg" mode="aspectFit"></image>
+        <input class="field-input" placeholder="请输入邮箱地址" value="{{profile.email}}" data-field="email" bindinput="onInputChange"/>
+      </view>
     </view>
-    <button class="primary-btn save-btn" bindtap="saveSettings">保存配置</button>
+    <button class="save-btn" bindtap="saveSettings">
+      <view class="save-btn-inner">
+        <image class="save-btn-icon" src="../../images/profile/config-save.svg" mode="aspectFit"></image>
+        <text class="save-btn-text">保存配置</text>
+      </view>
+    </button>
   </view>
 </view>
