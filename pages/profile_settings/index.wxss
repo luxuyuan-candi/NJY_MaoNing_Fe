@@ -1,12 +1,14 @@
 .settings-page {
   min-height: 100vh;
-  padding: 30rpx 24rpx 64rpx;
+  padding: 30rpx 24rpx 28rpx;
   background:
     radial-gradient(circle at top left, rgba(219, 235, 200, 0.72), transparent 18%),
     radial-gradient(circle at top right, rgba(218, 235, 204, 0.7), transparent 18%),
     radial-gradient(circle at bottom right, rgba(217, 235, 199, 0.75), transparent 18%),
     linear-gradient(180deg, #faf6ed 0%, #f7f2e8 100%);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .settings-hero {
@@ -83,15 +85,15 @@
 
 .camera-badge {
   position: absolute;
-  left: 74rpx;
-  bottom: -8rpx;
-  width: 40rpx;
-  height: 40rpx;
+  left: 70rpx;
+  bottom: -10rpx;
+  width: 46rpx;
+  height: 46rpx;
 }
 
 .camera-badge-icon {
-  width: 40rpx;
-  height: 40rpx;
+  width: 46rpx;
+  height: 46rpx;
 }
 
 .settings-copy {
@@ -124,6 +126,10 @@
   border-radius: 32rpx;
   background: rgba(255, 252, 246, 0.94);
   box-shadow: 0 18rpx 40rpx rgba(176, 172, 132, 0.12);
+  min-height: 640rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .field {
@@ -141,9 +147,9 @@
 }
 
 .field-title-icon {
-  width: 22rpx;
-  height: 22rpx;
-  margin-right: 8rpx;
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
 }
 
 .field-label {
@@ -155,7 +161,7 @@
 .field-title-leaf {
   margin-left: 8rpx;
   color: #97b56f;
-  font-size: 22rpx;
+  font-size: 24rpx;
   line-height: 1;
 }
 
@@ -173,9 +179,9 @@
 }
 
 .field-input-icon {
-  width: 28rpx;
-  height: 28rpx;
-  margin-right: 14rpx;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
   flex-shrink: 0;
 }
 
@@ -194,6 +200,7 @@
   background: linear-gradient(180deg, #77a85c 0%, #5b8f45 100%);
   box-shadow: 0 14rpx 30rpx rgba(106, 145, 79, 0.22);
   padding: 0;
+  margin-top: auto;
 }
 
 .save-btn-inner {
@@ -204,9 +211,9 @@
 }
 
 .save-btn-icon {
-  width: 24rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
 }
 
 .save-btn-text {
