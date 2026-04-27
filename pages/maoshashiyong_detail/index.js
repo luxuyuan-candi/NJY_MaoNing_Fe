@@ -29,8 +29,12 @@ Page({
       url: `/api/maoning_maoshashiyong/product?id=${id}`,
       method: 'GET',
     }).then((res) => {
-      if (!res.data || !res.data.success) {
-        wx.showToast({ title: (res.data && res.data.msg) || '无权限', icon: 'none' });
+      const hasError = res.statusCode >= 400 || (res.data && res.data.success === false);
+      if (hasError || !res.data || !res.data.id) {
+        wx.showToast({
+          title: (res.data && res.data.msg) || '无权限',
+          icon: 'none',
+        });
         setTimeout(() => {
           wx.navigateBack();
         }, 1200);
