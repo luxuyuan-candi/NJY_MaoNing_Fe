@@ -1,37 +1,57 @@
 <view class="page-shell profile-page">
-  <view class="profile-card profile-hero" bindtap="goToSettings">
-    <view class="avatar-shell">
-      <image wx:if="{{profile.avatar}}" class="avatar-image" src="{{profile.avatar}}" mode="aspectFill"></image>
-      <view wx:else class="avatar-fallback">{{avatarInitial}}</view>
+  <image class="profile-page-bg" src="../../images/profile/page-bg.jpg" mode="widthFix"></image>
+
+  <view class="profile-hero" bindtap="goToSettings">
+    <image class="profile-hero-bg" src="../../images/profile/hero-bg.jpg" mode="widthFix"></image>
+    <view class="profile-hero-content">
+      <view class="avatar-shell">
+        <image wx:if="{{profile.avatar}}" class="avatar-image" src="{{profile.avatar}}" mode="aspectFill"></image>
+        <view wx:else class="avatar-fallback">{{avatarInitial}}</view>
+      </view>
+      <view class="profile-copy">
+        <text class="profile-name">{{profile.nickname}}</text>
+        <view class="profile-type-badge">
+          <image
+            class="profile-type-icon"
+            src="{{profile.userType === '管理员' ? '../../images/profile/badge-admin.svg' : '../../images/profile/badge-user.svg'}}"
+            mode="aspectFit"
+          ></image>
+          <text class="profile-type">{{profile.userType}}</text>
+        </view>
+        <text class="profile-note">一起让中药渣重生，为猫咪造福</text>
+      </view>
+      <image class="profile-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
     </view>
-    <view class="profile-copy">
-      <text class="profile-name">{{profile.nickname}}</text>
-      <text class="profile-type">{{profile.userType}}</text>
-    </view>
-    <view class="profile-arrow">›</view>
   </view>
 
-  <view class="profile-card tool-card">
+  <view class="tool-card">
     <view class="tool-head">
-      <text class="tool-title">工具区</text>
+      <view class="tool-title-row">
+        <image class="tool-title-icon" src="../../images/profile/leaf-title.svg" mode="aspectFit"></image>
+        <text class="tool-title">工具区</text>
+      </view>
       <text class="tool-subtitle">{{profile.userType === '管理员' ? '查看并处理用户反馈' : '提交帮助反馈与使用建议'}}</text>
     </view>
     <view class="tool-item" bindtap="goToFeedback">
-      <view class="tool-icon">?</view>
+      <view class="tool-icon-shell">
+        <image class="tool-icon" src="../../images/profile/tool-help.svg" mode="aspectFit"></image>
+      </view>
       <view class="tool-copy">
         <text class="tool-name">帮助工具</text>
         <text class="tool-desc">{{profile.userType === '管理员' ? '查看反馈' : '提交反馈'}}</text>
       </view>
-      <view class="tool-arrow">›</view>
+      <image class="tool-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
     </view>
 
     <view wx:if="{{profile.userType === '管理员'}}" class="tool-item tool-item-admin" bindtap="goToUsers">
-      <view class="tool-icon">人</view>
+      <view class="tool-icon-shell">
+        <image class="tool-icon" src="../../images/profile/tool-user.svg" mode="aspectFit"></image>
+      </view>
       <view class="tool-copy">
         <text class="tool-name">用户管理</text>
         <text class="tool-desc">更改所有用户的类型</text>
       </view>
-      <view class="tool-arrow">›</view>
+      <image class="tool-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
     </view>
   </view>
 </view>
