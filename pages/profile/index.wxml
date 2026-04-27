@@ -1,48 +1,73 @@
-<view class="page-shell profile-page">
-  <view class="profile-hero" bindtap="goToSettings">
-    <view class="profile-hero-content">
-      <view class="avatar-shell">
-        <image wx:if="{{profile.avatar}}" class="avatar-image" src="{{profile.avatar}}" mode="aspectFill"></image>
-        <view wx:else class="avatar-fallback">{{avatarInitial}}</view>
+<view
+  class="page-shell profile-page"
+  style="padding: 32rpx 24rpx 72rpx; background: #f8f4ea url('../../images/profile/page-bg.jpg') no-repeat center top / 100% auto;"
+>
+  <view
+    bindtap="goToSettings"
+    style="min-height: 360rpx; border-radius: 36rpx; overflow: hidden; background: #fbf8f1 url('../../images/profile/hero-bg.jpg') no-repeat center / 100% 100%; box-shadow: 0 18rpx 42rpx rgba(152,155,107,0.13); padding: 70rpx 32rpx 36rpx; box-sizing: border-box;"
+  >
+    <view style="display: flex; flex-direction: row; align-items: flex-start;">
+      <view style="width: 160rpx; margin-top: 58rpx; flex-shrink: 0;">
+        <view style="width: 160rpx; height: 160rpx; border-radius: 80rpx; overflow: hidden; border: 10rpx solid rgba(255,255,255,0.96); box-shadow: 0 14rpx 36rpx rgba(102,124,77,0.16); background: linear-gradient(180deg,#5e9b4b 0%,#4b7c3f 100%);">
+          <image wx:if="{{profile.avatar}}" src="{{profile.avatar}}" mode="aspectFill" style="width: 160rpx; height: 160rpx;"></image>
+          <view wx:else style="width: 160rpx; height: 160rpx; color: #fffef8; font-size: 56rpx; font-weight: 700; text-align: center; line-height: 160rpx;">{{avatarInitial}}</view>
+        </view>
       </view>
-      <view class="profile-copy">
-        <text class="profile-name">{{profile.nickname}}</text>
-        <view class="profile-type-badge">
+
+      <view style="flex: 1; padding-top: 72rpx; padding-left: 24rpx; box-sizing: border-box;">
+        <text style="display: block; color: #26322a; font-size: 52rpx; line-height: 1.08; font-weight: 700;">{{profile.nickname}}</text>
+        <view style="display: inline-flex; align-items: center; margin-top: 22rpx; padding: 10rpx 22rpx 10rpx 14rpx; border-radius: 999rpx; background: linear-gradient(180deg, rgba(241,249,230,0.98) 0%, rgba(232,244,212,0.98) 100%);">
           <image
-            class="profile-type-icon"
             src="{{profile.userType === '管理员' ? '../../images/profile/badge-admin.svg' : '../../images/profile/badge-user.svg'}}"
             mode="aspectFit"
+            style="width: 30rpx; height: 30rpx; margin-right: 10rpx;"
           ></image>
-          <text class="profile-type">{{profile.userType}}</text>
+          <text style="color: #5d9348; font-size: 22rpx; font-weight: 700; letter-spacing: 2rpx;">{{profile.userType}}</text>
         </view>
-        <text class="profile-note">一起让中药渣重生，为猫咪造福</text>
+        <text style="display: block; margin-top: 28rpx; color: #666358; font-size: 23rpx; line-height: 1.8;">一起让中药渣重生，为猫咪造福</text>
       </view>
-      <image class="profile-arrow" src="../../images/profile/chevron-right.svg" mode="aspectFit"></image>
+
+      <image src="../../images/profile/chevron-right.svg" mode="aspectFit" style="width: 28rpx; height: 28rpx; margin-top: 142rpx; margin-left: 16rpx; flex-shrink: 0;"></image>
     </view>
   </view>
 
-  <view class="tool-card">
-    <view class="tool-head">
-      <view class="tool-title-row">
-        <image class="tool-title-icon" src="../../images/profile/leaf-title.svg" mode="aspectFit"></image>
-        <text class="tool-title">工具区</text>
+  <view style="margin-top: 32rpx; border-radius: 36rpx; padding: 34rpx 28rpx 34rpx; background: rgba(255,252,246,0.88); box-shadow: 0 18rpx 46rpx rgba(168,164,125,0.14);">
+    <view style="display: flex; flex-direction: row; align-items: center; margin-bottom: 30rpx;">
+      <image src="../../images/profile/leaf-title.svg" mode="aspectFit" style="width: 34rpx; height: 34rpx; margin-right: 12rpx;"></image>
+      <text style="color: #27322b; font-size: 36rpx; font-weight: 700; letter-spacing: 2rpx;">工具区</text>
+    </view>
+
+    <view wx:if="{{profile.userType === '管理员'}}" style="display: flex; flex-direction: row; justify-content: space-between;">
+      <view
+        bindtap="goToFeedback"
+        style="width: 47%; min-height: 388rpx; border-radius: 34rpx; background: linear-gradient(180deg, rgba(255,253,247,0.96) 0%, rgba(248,245,236,0.98) 100%); box-shadow: inset 0 0 0 2rpx rgba(244,239,225,0.92), 0 18rpx 42rpx rgba(187,183,145,0.10); padding: 30rpx 20rpx 28rpx; box-sizing: border-box;"
+      >
+        <view style="height: 246rpx; display: flex; align-items: center; justify-content: center;">
+          <image src="../../images/profile/tool-feedback-card.svg" mode="aspectFit" style="width: 230rpx; height: 230rpx;"></image>
+        </view>
+        <text style="display: block; margin-top: 18rpx; text-align: center; color: #223328; font-size: 36rpx; font-weight: 700; letter-spacing: 2rpx;">用户反馈</text>
+      </view>
+
+      <view
+        bindtap="goToUsers"
+        style="width: 47%; min-height: 388rpx; border-radius: 34rpx; background: linear-gradient(180deg, rgba(250,252,246,0.98) 0%, rgba(240,247,231,0.98) 100%); box-shadow: inset 0 0 0 2rpx rgba(236,244,223,0.92), 0 18rpx 42rpx rgba(187,183,145,0.10); padding: 30rpx 20rpx 28rpx; box-sizing: border-box;"
+      >
+        <view style="height: 246rpx; display: flex; align-items: center; justify-content: center;">
+          <image src="../../images/profile/tool-manage-card.svg" mode="aspectFit" style="width: 230rpx; height: 230rpx;"></image>
+        </view>
+        <text style="display: block; margin-top: 18rpx; text-align: center; color: #223328; font-size: 36rpx; font-weight: 700; letter-spacing: 2rpx;">用户管理</text>
       </view>
     </view>
 
-    <view class="tool-grid {{profile.userType === '管理员' ? 'tool-grid-admin' : 'tool-grid-single'}}">
-      <view class="tool-panel" bindtap="goToFeedback">
-        <view class="tool-panel-visual">
-          <image class="tool-panel-graphic" src="../../images/profile/tool-feedback-card.svg" mode="aspectFit"></image>
-        </view>
-        <text class="tool-panel-title">{{profile.userType === '管理员' ? '用户反馈' : '帮助工具'}}</text>
+    <view
+      wx:else
+      bindtap="goToFeedback"
+      style="min-height: 408rpx; border-radius: 34rpx; background: linear-gradient(180deg, rgba(255,253,247,0.96) 0%, rgba(248,245,236,0.98) 100%); box-shadow: inset 0 0 0 2rpx rgba(244,239,225,0.92), 0 18rpx 42rpx rgba(187,183,145,0.10); padding: 30rpx 20rpx 28rpx; box-sizing: border-box;"
+    >
+      <view style="height: 266rpx; display: flex; align-items: center; justify-content: center;">
+        <image src="../../images/profile/tool-feedback-card.svg" mode="aspectFit" style="width: 250rpx; height: 250rpx;"></image>
       </view>
-
-      <view wx:if="{{profile.userType === '管理员'}}" class="tool-panel tool-panel-soft" bindtap="goToUsers">
-        <view class="tool-panel-visual">
-          <image class="tool-panel-graphic" src="../../images/profile/tool-manage-card.svg" mode="aspectFit"></image>
-        </view>
-        <text class="tool-panel-title">用户管理</text>
-      </view>
+      <text style="display: block; margin-top: 20rpx; text-align: center; color: #223328; font-size: 38rpx; font-weight: 700; letter-spacing: 2rpx;">帮助工具</text>
     </view>
   </view>
 </view>
