@@ -27,6 +27,8 @@ Page({
             formattedTime: item.created_at ? String(item.created_at).replace('T', ' ').slice(0, 16) : '',
             nickname: item.nickname_snapshot || '未设置昵称',
             email: item.email_snapshot || '未填写邮箱',
+            sentiment: item.sentiment || '积极',
+            sentimentClass: item.sentiment === '消极' ? 'sentiment-negative' : 'sentiment-positive',
           })),
         });
       })

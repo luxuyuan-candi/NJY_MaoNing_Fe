@@ -85,6 +85,35 @@
   color: #48413a;
 }
 
+.feedback-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16rpx;
+}
+
+.feedback-sentiment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 82rpx;
+  height: 42rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+.sentiment-positive {
+  color: #3f7d4b;
+  background: #e9f4df;
+}
+
+.sentiment-negative {
+  color: #a15a3d;
+  background: #f8e7dc;
+}
+
 .empty-note {
   padding: 40rpx 0 10rpx;
   text-align: center;

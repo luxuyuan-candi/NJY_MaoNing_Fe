@@ -14,6 +14,9 @@
           </view>
           <text class="feedback-email">{{item.email}}</text>
           <text class="feedback-content">{{item.content}}</text>
+          <view class="feedback-foot">
+            <text class="feedback-sentiment {{item.sentimentClass}}">{{item.sentiment}}</text>
+          </view>
         </view>
       </block>
     </view>
