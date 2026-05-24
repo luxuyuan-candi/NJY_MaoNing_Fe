@@ -84,6 +84,30 @@ function fetchFeedbacks() {
   });
 }
 
+function fetchFeedbackStats() {
+  return request({
+    url: '/api/feedbacks/stats',
+    method: 'GET',
+  }).then((res) => {
+    if (res.data && res.data.success) {
+      return res.data.data || { positive: 0, negative: 0, total: 0 };
+    }
+    throw new Error((res.data && res.data.msg) || '获取反馈统计失败');
+  });
+}
+
+function fetchNegativeFeedbackTop5() {
+  return request({
+    url: '/api/feedbacks/negative-top5',
+    method: 'GET',
+  }).then((res) => {
+    if (res.data && res.data.success) {
+      return res.data.data || [];
+    }
+    throw new Error((res.data && res.data.msg) || '获取消极问题统计失败');
+  });
+}
+
 function fetchUsers() {
   return request({
     url: '/api/users',
@@ -118,6 +142,8 @@ module.exports = {
   updateProfile,
   submitFeedback,
   fetchFeedbacks,
+  fetchFeedbackStats,
+  fetchNegativeFeedbackTop5,
   fetchUsers,
   updateUserType,
 };

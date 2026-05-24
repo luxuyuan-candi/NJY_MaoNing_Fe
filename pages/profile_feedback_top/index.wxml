@@ -1,0 +1,26 @@
+<view class="page-shell top-page">
+  <view class="profile-card top-hero">
+    <text class="top-title">消极问题 TOP5</text>
+    <text class="top-subtitle">按消极反馈中的问题分类统计。</text>
+  </view>
+
+  <view class="profile-card top-card">
+    <view wx:if="{{rows.length}}">
+      <block wx:for="{{rows}}" wx:key="problem_category">
+        <view class="top-item">
+          <view class="rank-badge">{{item.rank}}</view>
+          <view class="top-main">
+            <view class="top-row">
+              <text class="category-name">{{item.problem_category}}</text>
+              <text class="category-count">{{item.count}} 条</text>
+            </view>
+            <view class="bar-track">
+              <view class="bar-fill" style="width: {{item.percent}}%;"></view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="empty-note">暂无消极反馈。</view>
+  </view>
+</view>

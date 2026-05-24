@@ -5,6 +5,22 @@
   </view>
 
   <view wx:if="{{profile.userType === '管理员'}}" class="profile-card feedback-card">
+    <view class="feedback-stats">
+      <view class="stat-box stat-positive">
+        <text class="stat-number">{{stats.positive}}</text>
+        <text class="stat-label">积极</text>
+      </view>
+      <view class="stat-box stat-negative">
+        <text class="stat-number">{{stats.negative}}</text>
+        <text class="stat-label">消极</text>
+      </view>
+      <view class="stat-box stat-total">
+        <text class="stat-number">{{stats.total}}</text>
+        <text class="stat-label">总数</text>
+      </view>
+    </view>
+    <button class="top5-btn" bindtap="goToNegativeTop5">查看消极问题 TOP5</button>
+
     <view wx:if="{{feedbacks.length}}">
       <block wx:for="{{feedbacks}}" wx:key="id">
         <view class="feedback-item">
@@ -15,6 +31,7 @@
           <text class="feedback-email">{{item.email}}</text>
           <text class="feedback-content">{{item.content}}</text>
           <view class="feedback-foot">
+            <text class="feedback-category">{{item.problemCategory}}</text>
             <text class="feedback-sentiment {{item.sentimentClass}}">{{item.sentiment}}</text>
           </view>
         </view>

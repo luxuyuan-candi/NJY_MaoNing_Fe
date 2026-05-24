@@ -1,5 +1,10 @@
 const { ensureLogin, getCachedProfile } = require('../../utils/auth');
-const { fetchFeedbacks, fetchProfile, submitFeedback } = require('../../utils/profileApi');
+const {
+  fetchFeedbacks,
+  fetchFeedbackStats,
+  fetchProfile,
+  submitFeedback,
+} = require('../../utils/profileApi');
 
 Page({
   data: {
@@ -7,6 +12,11 @@ Page({
       userType: '普通用户',
     },
     feedbacks: [],
+    stats: {
+      positive: 0,
+      negative: 0,
+      total: 0,
+    },
     draft: '',
   },
 
@@ -16,12 +26,13 @@ Page({
       .then((profile) => {
         this.setData({ profile });
         if (profile.userType === '管理员') {
-          return fetchFeedbacks();
+          return Promise.all([fetchFeedbacks(), fetchFeedbackStats()]);
         }
-        return [];
+        return [[], this.data.stats];
       })
-      .then((feedbacks) => {
+      .then(([feedbacks, stats]) => {
         this.setData({
+          stats,
           feedbacks: feedbacks.map((item) => ({
             ...item,
             formattedTime: item.created_at ? String(item.created_at).replace('T', ' ').slice(0, 16) : '',
@@ -29,6 +40,7 @@ Page({
             email: item.email_snapshot || '未填写邮箱',
             sentiment: item.sentiment || '积极',
             sentimentClass: item.sentiment === '消极' ? 'sentiment-negative' : 'sentiment-positive',
+            problemCategory: item.problem_category || '其他问题',
           })),
         });
       })
@@ -59,5 +71,11 @@ Page({
       .catch((error) => {
         wx.showToast({ title: error.message || '提交失败', icon: 'none' });
       });
+  },
+
+  goToNegativeTop5() {
+    wx.navigateTo({
+      url: '/pages/profile_feedback_top/index',
+    });
   },
 });

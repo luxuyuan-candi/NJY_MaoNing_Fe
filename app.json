@@ -5,6 +5,7 @@
     "pages/profile/index",
     "pages/profile_settings/index",
     "pages/profile_feedback/index",
+    "pages/profile_feedback_top/index",
     "pages/profile_users/index",
     "pages/yaozha/index",
     "pages/yaozha_add/index",
