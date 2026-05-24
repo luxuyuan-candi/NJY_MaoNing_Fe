@@ -3,7 +3,7 @@
 
   <view class="feedback-content-wrap">
     <view class="feedback-hero">
-      <text class="feedback-title">{{profile.userType === '管理员' ? '反馈查看' : '帮助反馈'}}</text>
+      <text class="feedback-title">{{profile.userType === '管理员' ? '反馈管理' : '帮助反馈'}}</text>
     </view>
 
     <view wx:if="{{profile.userType === '管理员'}}">
@@ -30,8 +30,7 @@
       </view>
 
       <view class="top5-panel" bindtap="goToNegativeTop5">
-        <view class="leaf-placeholder"></view>
-        <text class="top5-text">查看消极问题 TOP5</text>
+        <text class="top5-text">问题TOP5</text>
         <text class="top5-arrow">›</text>
       </view>
 

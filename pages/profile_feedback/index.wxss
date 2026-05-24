@@ -126,15 +126,6 @@
   box-sizing: border-box;
 }
 
-.leaf-placeholder {
-  width: 96rpx;
-  height: 54rpx;
-  margin-right: 22rpx;
-  border-radius: 60% 8% 60% 8%;
-  background: linear-gradient(135deg, rgba(165, 207, 102, 0.55), rgba(112, 169, 69, 0.12));
-  transform: rotate(-12deg);
-}
-
 .top5-text {
   flex: 1;
   color: #0e6b2e;
