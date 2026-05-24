@@ -15,19 +15,13 @@
           </view>
         </view>
         <view class="stat-box stat-negative">
-          <view class="stat-illustration stat-mail">
-            <view class="mail-box"></view>
-            <view class="mail-flag"></view>
-          </view>
+          <image class="stat-illustration stat-image" src="../../images/profile/feedback-down.png" mode="aspectFit"></image>
           <view class="stat-copy">
             <text class="stat-number">{{stats.negative}}</text>
           </view>
         </view>
         <view class="stat-box stat-total">
-          <view class="stat-illustration stat-board">
-            <view class="board-paper"></view>
-            <view class="board-lens"></view>
-          </view>
+          <image class="stat-illustration stat-image" src="../../images/profile/feedback-summary.png" mode="aspectFit"></image>
           <view class="stat-copy">
             <text class="stat-number">{{stats.total}}</text>
           </view>
