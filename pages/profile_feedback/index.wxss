@@ -41,9 +41,19 @@
   margin-top: 34rpx;
   padding: 14rpx 12rpx;
   border-radius: 24rpx;
-  background: rgba(255, 255, 248, 0.78) url('../../images/profile/feedback-stats-bg.jpg') center / 100% 100% no-repeat;
+  background: rgba(255, 255, 248, 0.78);
   box-shadow: 0 8rpx 20rpx rgba(64, 101, 63, 0.08);
   box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.feedback-stats-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .stat-box {
@@ -55,6 +65,7 @@
   justify-content: center;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
 }
 
 .stat-box + .stat-box::before {

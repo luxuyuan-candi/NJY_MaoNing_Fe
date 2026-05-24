@@ -8,6 +8,7 @@
 
     <view wx:if="{{profile.userType === '管理员'}}">
       <view class="feedback-stats">
+        <image class="feedback-stats-bg" src="../../images/profile/feedback-stats-bg.jpg" mode="aspectFill"></image>
         <view class="stat-box stat-positive">
           <image class="stat-illustration stat-image" src="../../images/profile/feedback-up.png" mode="aspectFit"></image>
           <view class="stat-copy">
