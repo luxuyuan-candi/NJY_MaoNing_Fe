@@ -36,11 +36,13 @@ Page({
           feedbacks: feedbacks.map((item) => ({
             ...item,
             formattedTime: item.created_at ? String(item.created_at).replace('T', ' ').slice(0, 16) : '',
+            formattedDate: item.created_at ? String(item.created_at).slice(0, 10) : '',
             nickname: item.nickname_snapshot || '未设置昵称',
             email: item.email_snapshot || '未填写邮箱',
             sentiment: item.sentiment || '积极',
             sentimentClass: item.sentiment === '消极' ? 'sentiment-negative' : 'sentiment-positive',
             problemCategory: item.problem_category || '其他问题',
+            feedbackInitial: (item.nickname_snapshot || '用').slice(0, 1),
           })),
         });
       })

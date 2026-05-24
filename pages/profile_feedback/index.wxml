@@ -1,48 +1,87 @@
 <view class="page-shell feedback-page">
-  <view class="profile-card feedback-hero">
-    <text class="feedback-title">{{profile.userType === '管理员' ? '反馈查看' : '帮助反馈'}}</text>
-    <text class="feedback-subtitle">{{profile.userType === '管理员' ? '查看普通用户提交的反馈内容。' : '遇到问题或有建议时，可以在这里提交反馈。'}}</text>
-  </view>
+  <image class="feedback-bg" src="../../images/profile/feedback-bg.jpg" mode="widthFix"></image>
 
-  <view wx:if="{{profile.userType === '管理员'}}" class="profile-card feedback-card">
-    <view class="feedback-stats">
-      <view class="stat-box stat-positive">
-        <text class="stat-number">{{stats.positive}}</text>
-        <text class="stat-label">积极</text>
-      </view>
-      <view class="stat-box stat-negative">
-        <text class="stat-number">{{stats.negative}}</text>
-        <text class="stat-label">消极</text>
-      </view>
-      <view class="stat-box stat-total">
-        <text class="stat-number">{{stats.total}}</text>
-        <text class="stat-label">总数</text>
-      </view>
+  <view class="feedback-content-wrap">
+    <view class="feedback-hero">
+      <text class="feedback-title">{{profile.userType === '管理员' ? '反馈查看' : '帮助反馈'}}</text>
     </view>
-    <button class="top5-btn" bindtap="goToNegativeTop5">查看消极问题 TOP5</button>
 
-    <view wx:if="{{feedbacks.length}}">
-      <block wx:for="{{feedbacks}}" wx:key="id">
-        <view class="feedback-item">
-          <view class="feedback-head">
-            <text class="feedback-name">{{item.nickname}}</text>
-            <text class="feedback-time">{{item.formattedTime}}</text>
+    <view wx:if="{{profile.userType === '管理员'}}">
+      <view class="feedback-stats">
+        <view class="stat-box stat-positive">
+          <view class="stat-illustration stat-tree">
+            <view class="stat-tree-crown"></view>
+            <view class="stat-tree-trunk"></view>
           </view>
-          <text class="feedback-email">{{item.email}}</text>
-          <text class="feedback-content">{{item.content}}</text>
-          <view class="feedback-foot">
-            <text class="feedback-category">{{item.problemCategory}}</text>
-            <text class="feedback-sentiment {{item.sentimentClass}}">{{item.sentiment}}</text>
+          <view class="stat-copy">
+            <text class="stat-number">{{stats.positive}}</text>
+            <text class="stat-label">积极</text>
           </view>
         </view>
-      </block>
-    </view>
-    <view wx:else class="empty-note">当前暂无反馈记录。</view>
-  </view>
+        <view class="stat-box stat-negative">
+          <view class="stat-illustration stat-mail">
+            <view class="mail-box"></view>
+            <view class="mail-flag"></view>
+          </view>
+          <view class="stat-copy">
+            <text class="stat-number">{{stats.negative}}</text>
+            <text class="stat-label">消极</text>
+          </view>
+        </view>
+        <view class="stat-box stat-total">
+          <view class="stat-illustration stat-board">
+            <view class="board-paper"></view>
+            <view class="board-lens"></view>
+          </view>
+          <view class="stat-copy">
+            <text class="stat-number">{{stats.total}}</text>
+            <text class="stat-label">总数</text>
+          </view>
+        </view>
+      </view>
 
-  <view wx:else class="profile-card feedback-card">
-    <text class="field-label">反馈内容</text>
-    <textarea class="feedback-input" placeholder="请输入你的问题、建议或使用反馈" value="{{draft}}" bindinput="onDraftChange" maxlength="300"></textarea>
-    <button class="primary-btn submit-btn" bindtap="submitFeedback">提交反馈</button>
+      <view class="top5-panel" bindtap="goToNegativeTop5">
+        <view class="leaf-placeholder"></view>
+        <text class="top5-text">查看消极问题 TOP5</text>
+        <text class="top5-arrow">›</text>
+      </view>
+
+      <view class="feedback-card">
+        <view wx:if="{{feedbacks.length}}">
+          <block wx:for="{{feedbacks}}" wx:key="id">
+            <view class="feedback-item">
+              <view class="feedback-avatar">
+                <text>{{item.feedbackInitial}}</text>
+              </view>
+              <view class="feedback-body">
+                <view class="feedback-head">
+                  <view class="feedback-person">
+                    <text class="feedback-name">{{item.nickname}}</text>
+                    <text class="feedback-email">{{item.email}}</text>
+                  </view>
+                  <view class="feedback-date">
+                    <view class="calendar-icon"></view>
+                    <text>{{item.formattedDate}}</text>
+                  </view>
+                </view>
+                <text class="feedback-content">{{item.content}}</text>
+                <view class="feedback-foot">
+                  <text class="feedback-category">{{item.problemCategory}}</text>
+                  <text class="feedback-sentiment {{item.sentimentClass}}">{{item.sentiment}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view wx:else class="empty-note">当前暂无反馈记录。</view>
+      </view>
+    </view>
+
+    <view wx:else class="feedback-form-card">
+      <view class="form-icon-placeholder"></view>
+      <text class="field-label">反馈内容</text>
+      <textarea class="feedback-input" placeholder="请输入你的问题、建议或使用反馈" value="{{draft}}" bindinput="onDraftChange" maxlength="300"></textarea>
+      <button class="submit-btn" bindtap="submitFeedback">提交反馈</button>
+    </view>
   </view>
 </view>
