@@ -114,9 +114,9 @@
 }
 
 .top5-panel {
-  height: 262rpx;
+  height: 96rpx;
   margin-top: 26rpx;
-  padding: 0 44rpx;
+  padding: 0 28rpx;
   background: transparent;
   display: flex;
   align-items: center;
@@ -139,7 +139,7 @@
   z-index: 1;
   flex: 1;
   color: #0e6b2e;
-  font-size: 40rpx;
+  font-size: 34rpx;
   font-weight: 900;
   text-align: center;
 }
@@ -148,7 +148,7 @@
   position: relative;
   z-index: 1;
   color: #096321;
-  font-size: 72rpx;
+  font-size: 64rpx;
   line-height: 1;
   font-weight: 700;
 }
