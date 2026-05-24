@@ -114,22 +114,20 @@
 }
 
 .top5-panel {
-  min-height: 90rpx;
+  height: 112rpx;
   margin-top: 26rpx;
   padding: 0 28rpx;
-  border-radius: 24rpx;
-  background: rgba(249, 253, 237, 0.9);
-  box-shadow: 0 8rpx 20rpx rgba(62, 111, 50, 0.12);
+  background: transparent;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
 }
 
 .top5-bg {
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -140,7 +138,7 @@
   z-index: 1;
   flex: 1;
   color: #0e6b2e;
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 900;
   text-align: center;
 }
@@ -149,7 +147,7 @@
   position: relative;
   z-index: 1;
   color: #096321;
-  font-size: 64rpx;
+  font-size: 58rpx;
   line-height: 1;
   font-weight: 700;
 }

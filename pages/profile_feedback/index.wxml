@@ -30,7 +30,7 @@
       </view>
 
       <view class="top5-panel" bindtap="goToNegativeTop5">
-        <image class="top5-bg" src="../../images/profile/feedback-top5-bg.jpg" mode="aspectFill"></image>
+        <image class="top5-bg" src="../../images/profile/feedback-top5-bg.jpg" mode="aspectFit"></image>
         <text class="top5-text">问题TOP5</text>
         <text class="top5-arrow">›</text>
       </view>
