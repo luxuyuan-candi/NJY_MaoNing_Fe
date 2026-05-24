@@ -41,7 +41,7 @@
   margin-top: 34rpx;
   padding: 14rpx 12rpx;
   border-radius: 24rpx;
-  background: rgba(255, 255, 248, 0.78);
+  background: rgba(255, 255, 248, 0.78) url('../../images/profile/feedback-stats-bg.jpg') center / 100% 100% no-repeat;
   box-shadow: 0 8rpx 20rpx rgba(64, 101, 63, 0.08);
   box-sizing: border-box;
 }
