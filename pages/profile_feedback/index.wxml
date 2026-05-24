@@ -12,7 +12,6 @@
           <image class="stat-illustration stat-image" src="../../images/profile/feedback-up.png" mode="aspectFit"></image>
           <view class="stat-copy">
             <text class="stat-number">{{stats.positive}}</text>
-            <text class="stat-label">积极</text>
           </view>
         </view>
         <view class="stat-box stat-negative">
@@ -22,7 +21,6 @@
           </view>
           <view class="stat-copy">
             <text class="stat-number">{{stats.negative}}</text>
-            <text class="stat-label">消极</text>
           </view>
         </view>
         <view class="stat-box stat-total">
@@ -32,7 +30,6 @@
           </view>
           <view class="stat-copy">
             <text class="stat-number">{{stats.total}}</text>
-            <text class="stat-label">总数</text>
           </view>
         </view>
       </view>

@@ -38,58 +38,58 @@
 
 .feedback-stats {
   display: flex;
-  gap: 20rpx;
   margin-top: 34rpx;
+  padding: 14rpx 12rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 248, 0.78);
+  box-shadow: 0 8rpx 20rpx rgba(64, 101, 63, 0.08);
+  box-sizing: border-box;
 }
 
 .stat-box {
   flex: 1;
-  min-height: 130rpx;
-  padding: 14rpx 12rpx;
-  border-radius: 22rpx;
+  min-height: 106rpx;
+  padding: 6rpx 14rpx;
   display: flex;
   align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  box-shadow: 0 8rpx 20rpx rgba(64, 101, 63, 0.12);
+  position: relative;
 }
 
-.stat-positive {
-  background: rgba(247, 252, 235, 0.9);
-  border: 2rpx solid rgba(187, 220, 158, 0.68);
-}
-
-.stat-negative {
-  background: rgba(255, 248, 235, 0.9);
-  border: 2rpx solid rgba(235, 196, 137, 0.72);
-}
-
-.stat-total {
-  background: rgba(236, 250, 255, 0.9);
-  border: 2rpx solid rgba(151, 207, 220, 0.72);
+.stat-box + .stat-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  bottom: 18rpx;
+  width: 2rpx;
+  border-radius: 999rpx;
+  background: rgba(74, 118, 66, 0.22);
 }
 
 .stat-illustration {
-  width: 78rpx;
-  height: 82rpx;
-  margin-right: 8rpx;
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 10rpx;
   position: relative;
   flex-shrink: 0;
 }
 
 .stat-image {
-  width: 86rpx;
-  height: 86rpx;
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 8rpx;
 }
 
 .stat-copy {
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 auto;
 }
 
 .stat-number {
   display: block;
   color: #0c6a2d;
-  font-size: 54rpx;
+  font-size: 52rpx;
   line-height: 1;
   font-weight: 900;
 }
@@ -102,20 +102,12 @@
   color: #2a6c82;
 }
 
-.stat-label {
-  display: block;
-  margin-top: 10rpx;
-  color: #1e321f;
-  font-size: 25rpx;
-  line-height: 1;
-}
-
 .mail-box {
   position: absolute;
-  left: 10rpx;
-  bottom: 6rpx;
-  width: 52rpx;
-  height: 46rpx;
+  left: 8rpx;
+  bottom: 8rpx;
+  width: 48rpx;
+  height: 42rpx;
   border-radius: 10rpx;
   background: #9b6a35;
   box-shadow: inset -10rpx 0 0 rgba(94, 58, 28, 0.2);
@@ -135,20 +127,20 @@
 
 .mail-flag {
   position: absolute;
-  left: 42rpx;
-  top: 4rpx;
-  width: 20rpx;
-  height: 22rpx;
+  left: 39rpx;
+  top: 6rpx;
+  width: 18rpx;
+  height: 20rpx;
   border-radius: 4rpx 4rpx 4rpx 0;
   background: #d95538;
 }
 
 .board-paper {
   position: absolute;
-  left: 12rpx;
-  top: 10rpx;
-  width: 42rpx;
-  height: 58rpx;
+  left: 10rpx;
+  top: 9rpx;
+  width: 39rpx;
+  height: 54rpx;
   border-radius: 8rpx;
   background: #f8f6ef;
   border: 4rpx solid #6f7775;
@@ -157,9 +149,9 @@
 .board-lens {
   position: absolute;
   right: 0;
-  bottom: 0;
-  width: 34rpx;
-  height: 34rpx;
+  bottom: 2rpx;
+  width: 32rpx;
+  height: 32rpx;
   border-radius: 50%;
   border: 6rpx solid #4e8292;
 }
