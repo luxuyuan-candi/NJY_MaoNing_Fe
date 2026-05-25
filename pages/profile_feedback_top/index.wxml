@@ -2,12 +2,6 @@
   <image class="page-bg" src="../../images/feedback_top5/bg.jpg" mode="widthFix"></image>
 
   <view class="top-content">
-    <view class="title-section">
-      <text class="top-title">消极问题 TOP5</text>
-      <view class="title-underline"></view>
-      <text class="top-subtitle">按消极反馈中的问题分类统计</text>
-    </view>
-
     <view class="ranking-panel">
       <view wx:if="{{rows.length}}">
         <block wx:for="{{rows}}" wx:key="problem_category">

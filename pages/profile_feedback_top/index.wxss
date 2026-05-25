@@ -16,43 +16,12 @@
 .top-content {
   position: relative;
   z-index: 1;
-  padding: 118rpx 32rpx 0;
+  padding: 360rpx 32rpx 0;
   box-sizing: border-box;
-}
-
-.title-section {
-  padding-left: 38rpx;
-}
-
-.top-title {
-  display: block;
-  color: #194e18;
-  font-size: 62rpx;
-  line-height: 1.12;
-  font-weight: 900;
-  letter-spacing: 0;
-}
-
-.title-underline {
-  width: 170rpx;
-  height: 10rpx;
-  margin-top: 18rpx;
-  border-radius: 999rpx;
-  background: #6c9f3b;
-}
-
-.top-subtitle {
-  display: block;
-  margin-top: 34rpx;
-  color: #548138;
-  font-size: 29rpx;
-  line-height: 1.35;
-  font-weight: 700;
 }
 
 .ranking-panel {
   min-height: 850rpx;
-  margin-top: 74rpx;
   padding: 42rpx 34rpx 40rpx;
   border-radius: 48rpx;
   background: rgba(255, 255, 246, 0.86);
@@ -68,16 +37,16 @@
 }
 
 .rank-badge {
-  width: 70rpx;
-  height: 70rpx;
-  margin-right: 26rpx;
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 14rpx;
   flex-shrink: 0;
 }
 
 .category-icon {
-  width: 94rpx;
-  height: 94rpx;
-  margin-right: 28rpx;
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 22rpx;
   flex-shrink: 0;
 }
 
