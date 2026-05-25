@@ -16,7 +16,7 @@
 .top-content {
   position: relative;
   z-index: 1;
-  padding: 300rpx 32rpx 0;
+  padding: 260rpx 32rpx 0;
   box-sizing: border-box;
 }
 
