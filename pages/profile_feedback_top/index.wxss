@@ -16,17 +16,13 @@
 .top-content {
   position: relative;
   z-index: 1;
-  padding: 360rpx 32rpx 0;
+  padding: 300rpx 32rpx 0;
   box-sizing: border-box;
 }
 
 .ranking-panel {
   min-height: 850rpx;
   padding: 42rpx 34rpx 40rpx;
-  border-radius: 48rpx;
-  background: rgba(255, 255, 246, 0.86);
-  border: 6rpx solid rgba(203, 225, 170, 0.9);
-  box-shadow: 0 10rpx 30rpx rgba(90, 128, 62, 0.12);
   box-sizing: border-box;
 }
 
