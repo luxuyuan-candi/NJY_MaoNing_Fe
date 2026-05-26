@@ -1,13 +1,20 @@
 const { buildUrl, request, uploadFile } = require('./request');
 const { setCachedProfile } = require('./auth');
 
+const ADMIN_USER_TYPES = ['管理员', '高级管理员', '超级管理员'];
+const SUPER_ADMIN_USER_TYPE = '超级管理员';
+
 function normalizeProfile(profile) {
   if (!profile) {
     return profile;
   }
+  const userType = profile.userType || '普通用户';
   return {
     ...profile,
+    userType,
     avatar: profile.avatar ? buildUrl(profile.avatar) : '',
+    isAdmin: ADMIN_USER_TYPES.includes(userType),
+    isSuperAdmin: userType === SUPER_ADMIN_USER_TYPE,
   };
 }
 

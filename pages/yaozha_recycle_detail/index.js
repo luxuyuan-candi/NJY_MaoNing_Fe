@@ -60,7 +60,7 @@ Page({
   },
 
   markAsFinished() {
-    if (this.data.profile.userType !== '管理员') {
+    if (!this.data.profile.isAdmin) {
       wx.showToast({ title: '仅管理员可操作回收', icon: 'none' });
       return;
     }

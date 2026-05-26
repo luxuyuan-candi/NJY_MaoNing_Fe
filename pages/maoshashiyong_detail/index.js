@@ -53,7 +53,7 @@ Page({
   },
 
   markAsFinished() {
-    if (this.data.profile.userType !== '管理员') {
+    if (!this.data.profile.isAdmin) {
       wx.showToast({ title: '仅管理员可审批', icon: 'none' });
       return;
     }
@@ -65,7 +65,7 @@ Page({
   },
 
   onConfirm() {
-    if (this.data.profile.userType !== '管理员') {
+    if (!this.data.profile.isAdmin) {
       wx.showToast({ title: '仅管理员可审批', icon: 'none' });
       this.setData({ showModal: false });
       return;

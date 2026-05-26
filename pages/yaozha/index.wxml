@@ -48,7 +48,7 @@
   </view>
 
   <view class="action-row">
-    <button wx:if="{{profile.userType === '管理员'}}" class="section-card soft-action soft-action-sage action-btn" bindtap="goToStatistics">
+    <button wx:if="{{profile.isAdmin}}" class="section-card soft-action soft-action-sage action-btn" bindtap="goToStatistics">
       <view class="action-icon">
         <image class="circle-icon" src="../../images/yaozha/action-stats.png" mode="aspectFit"></image>
       </view>

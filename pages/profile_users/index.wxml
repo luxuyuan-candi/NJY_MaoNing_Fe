@@ -1,7 +1,7 @@
 <view class="page-shell users-page">
   <view class="profile-card users-hero">
     <text class="users-title">用户管理</text>
-    <text class="users-subtitle">管理员可在这里统一调整本地用户的类型设置。</text>
+    <text class="users-subtitle">仅超级管理员可在这里统一调整用户权限。</text>
   </view>
 
   <view class="profile-card users-card">

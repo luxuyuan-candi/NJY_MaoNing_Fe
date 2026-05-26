@@ -50,7 +50,7 @@ Page({
     ensureLogin()
       .then(() => fetchProfile())
       .then((profile) => {
-        if (profile.userType !== '管理员') {
+        if (!profile.isAdmin) {
           wx.showToast({ title: '无权限', icon: 'none' });
           setTimeout(() => wx.navigateBack(), 600);
           return [];

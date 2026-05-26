@@ -25,7 +25,7 @@ Page({
       .then(() => fetchProfile())
       .then((profile) => {
         this.setData({ profile });
-        if (profile.userType === '管理员') {
+        if (profile.isAdmin) {
           return Promise.all([fetchFeedbacks(), fetchFeedbackStats()]);
         }
         return [[], this.data.stats];

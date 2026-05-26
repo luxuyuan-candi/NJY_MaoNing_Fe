@@ -4,11 +4,11 @@ const { fetchUsers, updateUserType } = require('../../utils/profileApi');
 Page({
   data: {
     users: [],
-    userTypes: ['普通用户', '管理员'],
+    userTypes: ['普通用户', '管理员', '高级管理员', '超级管理员'],
   },
 
   onShow() {
-    const userTypes = ['普通用户', '管理员'];
+    const userTypes = this.data.userTypes;
     ensureLogin()
       .then(() => fetchUsers())
       .then((users) => {

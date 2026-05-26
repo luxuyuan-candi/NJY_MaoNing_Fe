@@ -3,10 +3,10 @@
 
   <view class="feedback-content-wrap">
     <view class="feedback-hero">
-      <text class="feedback-title">{{profile.userType === '管理员' ? '反馈管理' : '帮助反馈'}}</text>
+      <text class="feedback-title">{{profile.isAdmin ? '反馈管理' : '帮助反馈'}}</text>
     </view>
 
-    <view wx:if="{{profile.userType === '管理员'}}">
+    <view wx:if="{{profile.isAdmin}}">
       <view class="feedback-stats">
         <image class="feedback-stats-bg" src="../../images/profile/feedback-stats-bg.jpg" mode="aspectFill"></image>
         <view class="stat-box stat-positive">
