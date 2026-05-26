@@ -109,6 +109,11 @@
   box-sizing: border-box;
 }
 
+.user-type-picker.readonly {
+  background: #f1eee8;
+  color: #8a7d72;
+}
+
 .empty-note {
   padding: 40rpx 0 10rpx;
   text-align: center;

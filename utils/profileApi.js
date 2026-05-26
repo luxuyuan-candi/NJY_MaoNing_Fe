@@ -1,7 +1,7 @@
 const { buildUrl, request, uploadFile } = require('./request');
 const { setCachedProfile } = require('./auth');
 
-const ADMIN_USER_TYPES = ['管理员', '高级管理员', '超级管理员'];
+const ADMIN_USER_TYPES = ['管理员', '超级管理员'];
 const SUPER_ADMIN_USER_TYPE = '超级管理员';
 
 function normalizeProfile(profile) {

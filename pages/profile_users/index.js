@@ -1,18 +1,23 @@
 const { ensureLogin } = require('../../utils/auth');
-const { fetchUsers, updateUserType } = require('../../utils/profileApi');
+const { fetchProfile, fetchUsers, updateUserType } = require('../../utils/profileApi');
 
 Page({
   data: {
+    profile: {
+      userType: '普通用户',
+      isSuperAdmin: false,
+    },
     users: [],
-    userTypes: ['普通用户', '管理员', '高级管理员', '超级管理员'],
+    userTypes: ['普通用户', '管理员', '超级管理员'],
   },
 
   onShow() {
     const userTypes = this.data.userTypes;
     ensureLogin()
-      .then(() => fetchUsers())
-      .then((users) => {
+      .then(() => Promise.all([fetchProfile(), fetchUsers()]))
+      .then(([profile, users]) => {
         this.setData({
+          profile,
           users: users.map((item) => ({
             ...item,
             id: item.openid,
@@ -27,6 +32,10 @@ Page({
   },
 
   onTypeChange(e) {
+    if (!this.data.profile.isSuperAdmin) {
+      wx.showToast({ title: '仅超级管理员可修改权限', icon: 'none' });
+      return;
+    }
     const { id } = e.currentTarget.dataset;
     const index = Number(e.detail.value);
     const userType = this.data.userTypes[index] || '普通用户';
